@@ -86,3 +86,8 @@ juliaup default rc   ## make release candidate version the default
 ```
 
  3. Choose a dataset along with a script to analyze it written in another language (R or python) as we will spend part of the workshop translating participants' scripts to Julia.
+ 
+ Addint new image
+ 
+ 
+ ![](images/logo.png)
