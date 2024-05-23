@@ -25,9 +25,6 @@ format:
   revealjs: 
     output-file: slides-index.html
   pdf: default
-  website:
-    image: "images/logo.png"
-    page-navigation: true
 ---
 
 # Welcome
