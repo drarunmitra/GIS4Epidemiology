@@ -72,7 +72,7 @@ Participants are required to follow the next steps before the day of the worksho
 
  2. Install RStudio. 
  
- 3. Install packages
+ 3. Install packages 
 
   - tidyverse: `install.packages('tidyverse')`
   - sf: `install.packages('sf')`
