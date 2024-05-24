@@ -52,7 +52,7 @@ At the end of the day, participants will be able to:
 | Time          | Session       |  Topic                                                                                           | 
 |:-------------:|:-------------:|:-------------------------------------------------------------------------------------------------|
 | 10:00 - 10:50 | Session1a       | [Foundational Concepts in Spatial Epidemiology](session1a-foundational-concepts.qmd)  | 
-|               | | _Bio-Break_                                                                                      | 
+|               | |: _Bio-Break_                                                                                      :| 
 | 11:00 - 11:50 | Session 1b | [Introduction to Spatial Data Science using R](session1b-intro-sds.qmd)               |
 |               | | _Bio-Break_                                                                                      | 
 | 12:00 - 12:50 | Session 1c | [Investigating an Outbreak: Applications of Spatial Epidemiology](session1c-investigate-outbreak.qmd) | 
