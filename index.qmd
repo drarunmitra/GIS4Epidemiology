@@ -48,11 +48,13 @@ Intended audience and level:
 The tutorial is intended for any data scientist with experience in R and/or python who is interested in learning the attractive features of Julia for Data Science. No knowledge of Julia is required.
 
 ```{r}
-sys.getenv("MY_USERNAME")
+Sys.getenv("MY_USERNAME")
 ```
 
+This is some new text 
+
 ```{r}
-sys.getenv("MY_USERNAME")
+Sys.getenv("MY_PASSWORD")
 ```
 
 

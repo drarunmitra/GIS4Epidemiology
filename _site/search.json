@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "GIS for Epidemiology",
+    "section": "",
+    "text": "Welcome to the Julia workshop for Data Science!\nThe goal for the workshop is to highlight the main features that make Julia an attractive option for data science programmers\nThe workshop is intended for any data scientist with experience in R and/or python who is interested in learning the attractive features of Julia for Data Science. No knowledge of Julia is required.\nWorkshop materials in the github repository julia-workshop\n\n\n\nAt the end of the tutorial, participants will be able to:\n\nIdentify the main features that make Julia an attractive language for Data Science\nSet up a Julia environment to run their data analysis\nEfficiently handle datasets (even across different languages) through Tables.jl and Arrow.jl\nFit (generalized) linear mixed models with MixedModels.jl\nCommunicate across languages (Julia, R, python)\n\nIntended audience and level: The tutorial is intended for any data scientist with experience in R and/or python who is interested in learning the attractive features of Julia for Data Science. No knowledge of Julia is required.\n\nSys.getenv(\"MY_USERNAME\")\n\n[1] \"thisismyusername\"\n\n\n\nSys.getenv(\"MY_PASSWORD\")\n\n[1] \"thisismypassword\""
+  },
+  {
+    "objectID": "index.html#learning-objectives-for-tutorial",
+    "href": "index.html#learning-objectives-for-tutorial",
+    "title": "GIS for Epidemiology",
+    "section": "",
+    "text": "At the end of the tutorial, participants will be able to:\n\nIdentify the main features that make Julia an attractive language for Data Science\nSet up a Julia environment to run their data analysis\nEfficiently handle datasets (even across different languages) through Tables.jl and Arrow.jl\nFit (generalized) linear mixed models with MixedModels.jl\nCommunicate across languages (Julia, R, python)\n\nIntended audience and level: The tutorial is intended for any data scientist with experience in R and/or python who is interested in learning the attractive features of Julia for Data Science. No knowledge of Julia is required.\n\nSys.getenv(\"MY_USERNAME\")\n\n[1] \"thisismyusername\"\n\n\n\nSys.getenv(\"MY_PASSWORD\")\n\n[1] \"thisismypassword\""
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "slides-index.html#learning-objectives-for-tutorial",
+    "href": "slides-index.html#learning-objectives-for-tutorial",
+    "title": "GIS for Epidemiology",
+    "section": "Learning Objectives for Tutorial",
+    "text": "Learning Objectives for Tutorial\nAt the end of the tutorial, participants will be able to:\n\nIdentify the main features that make Julia an attractive language for Data Science\nSet up a Julia environment to run their data analysis\nEfficiently handle datasets (even across different languages) through Tables.jl and Arrow.jl\nFit (generalized) linear mixed models with MixedModels.jl\nCommunicate across languages (Julia, R, python)\n\nIntended audience and level: The tutorial is intended for any data scientist with experience in R and/or python who is interested in learning the attractive features of Julia for Data Science. No knowledge of Julia is required.\n\nSys.getenv(\"MY_USERNAME\")\n\n[1] \"thisismyusername\"\n\n\n\nSys.getenv(\"MY_PASSWORD\")\n\n[1] \"thisismypassword\""
+  }
+]
