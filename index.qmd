@@ -2,7 +2,7 @@
 title: "GIS for Epidemiology"
 subtitle: "Day 2 of **Geospatial Technology for Public Health Policy** Workshop <br>*May 27--29, 2024 --- GISE Hub, IIT Bombay<br>\\@Central University Gujarat (CUG), Gandhinagar*" 
 date: "May 28, 2024"
-logo: "images/logo.png"
+
 author:
   - name: Prof. (Dr.) Biju Soman
     affiliations:
