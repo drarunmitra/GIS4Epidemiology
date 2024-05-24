@@ -47,6 +47,15 @@ At the end of the tutorial, participants will be able to:
 Intended audience and level:
 The tutorial is intended for any data scientist with experience in R and/or python who is interested in learning the attractive features of Julia for Data Science. No knowledge of Julia is required.
 
+```{r}
+sys.getenv("MY_USERNAME")
+```
+
+```{r}
+sys.getenv("MY_USERNAME")
+```
+
+
 # Schedule
 
 | Time          | Topic                                                                         | Presenter                    |
