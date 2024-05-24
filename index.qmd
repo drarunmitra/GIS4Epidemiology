@@ -49,20 +49,20 @@ At the end of the day, participants will be able to:
 
 # Schedule
 
-| Time          | Topic                                                                                            | Presenter |
-|:-------------:|:-------------------------------------------------------------------------------------------------|:----------|
-| 10:00 - 10:50 | [Session 1a: Foundational Concepts in Spatial Epidemiology](session1a-foundational-concepts.qmd)  | Prof. Biju Soman & Dr. Arun Mitra |
-|               | _Bio-Break_                                                                                      | |
-| 11:00 - 11:50 | [Session 1b: Introduction to Spatial Data Science using R](session1b-intro-sds.qmd)               | Prof. Biju Soman & Dr. Arun Mitra |
-|               | _Bio-Break_                                                                                      | |
-| 12:00 - 12:50 | [Session 1c: Investigating an Outbreak: Applications of Spatial Epidemiology](session1c-investigate-outbreak.qmd) | Prof. Biju Soman & Dr. Arun Mitra |
-|               | _Lunch_                                                                                          | |
-| 14:00 - 14:50 | [Session 2a: Spatial Data Visualization: Principles and Best Practices](session2a-spatial-data-vis.qmd) | Prof. Biju Soman & Dr. Arun Mitra |
-|               | _Bio-Break_                                                                                      | |
-| 15:00 - 15:50 | [Session 2b: Case Studies: Spatial Data Analysis and Visualization](session2b-case-studies.qmd) | Prof. Biju Soman & Dr. Arun Mitra |
-|               | _Bio-Break_                                                                                      | |
-| 16:00 - 16:50 | [Session 2c: Hands-on Exercises](session2c-hands-on.qmd) | Prof. Biju Soman & Dr. Arun Mitra |
-| 16:50 - 17:00 | _Q&A Session_              |  | 
+| Time          | Session       |  Topic                                                                                           | 
+|:-------------:|:-------------:|:-------------------------------------------------------------------------------------------------|
+| 10:00 - 10:50 | Session1a       | [Foundational Concepts in Spatial Epidemiology](session1a-foundational-concepts.qmd)  | 
+|               | | _Bio-Break_                                                                                      | 
+| 11:00 - 11:50 | Session 1b | [Introduction to Spatial Data Science using R](session1b-intro-sds.qmd)               |
+|               | | _Bio-Break_                                                                                      | 
+| 12:00 - 12:50 | Session 1c | [Investigating an Outbreak: Applications of Spatial Epidemiology](session1c-investigate-outbreak.qmd) | 
+|               | | _Lunch_                                                                                          | 
+| 14:00 - 14:50 | Session 2a | [Spatial Data Visualization: Principles and Best Practices](session2a-spatial-data-vis.qmd) | 
+|               | | _Bio-Break_                                                                                      | 
+| 15:00 - 15:50 | Session 2b | [Case Studies: Spatial Data Analysis and Visualization](session2b-case-studies.qmd) | 
+|               | | _Bio-Break_                                                                                      | 
+| 16:00 - 16:50 | Session 2c | [Hands-on Exercises](session2c-hands-on.qmd) | 
+| 16:50 - 17:00 | | _Q&A Session_              |  
 
 # In preparation for the workshop
 
