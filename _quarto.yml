@@ -9,8 +9,12 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - href: session1.qmd
+        text: Session One
+      - href: session2.qmd
+        text: Session Two      
       - about.qmd
-      - materials/prerequisites_GIS4EPI.qmd
+      # - materials/prerequisites_GIS4EPI.qmd
 
 format:
   html:
