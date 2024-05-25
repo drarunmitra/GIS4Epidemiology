@@ -5,6 +5,7 @@ website:
   title: "GIS4Epidemiology"
   image: "images/logo1.png"
   favicon: "images/logo.png"
+  page-navigation: true
   navbar:
     left:
       - href: index.qmd
