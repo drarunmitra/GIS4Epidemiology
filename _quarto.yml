@@ -3,9 +3,16 @@ project:
 
 website:
   title: "GIS4Epidemiology"
-  image: "images/logo1.png"
+  description: "Homepage for GIS4EPI - Workshop at Central University Gujarat (CUG), 28th May 2024."
   favicon: "images/logo.png"
+  site-url: "https://drarunmitra.github.io/GIS4Epidemiology/"
   page-navigation: true
+  
+  page-footer:
+    right: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
+    left: "&copy; Copyright 2024, Arun Mitra"
+    background: "#D9E3E4"
+    
   navbar:
     left:
       - text: Home
