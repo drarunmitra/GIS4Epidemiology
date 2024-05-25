@@ -1,5 +1,19 @@
 [
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site This is the about page add news"
+  },
+  {
+    "objectID": "slides-index.html#learning-objectives-for-tutorial",
+    "href": "slides-index.html#learning-objectives-for-tutorial",
+    "title": "GIS for Epidemiology",
+    "section": "Learning Objectives for Tutorial",
+    "text": "Learning Objectives for Tutorial\nAt the end of the day, participants will be able to:\n\nIdentify the main features that make Julia an attractive language for Data Science\nSet up a Julia environment to run their data analysis\nEfficiently handle datasets (even across different languages) through Tables.jl and Arrow.jl\nFit (generalized) linear mixed models with MixedModels.jl\nCommunicate across languages (Julia, R, python)"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "GIS for Epidemiology",
@@ -12,19 +26,5 @@
     "title": "GIS for Epidemiology",
     "section": "",
     "text": "At the end of the day, participants will be able to:\n\nIdentify the main features that make Julia an attractive language for Data Science\nSet up a Julia environment to run their data analysis\nEfficiently handle datasets (even across different languages) through Tables.jl and Arrow.jl\nFit (generalized) linear mixed models with MixedModels.jl\nCommunicate across languages (Julia, R, python)"
-  },
-  {
-    "objectID": "slides-index.html#learning-objectives-for-tutorial",
-    "href": "slides-index.html#learning-objectives-for-tutorial",
-    "title": "GIS for Epidemiology",
-    "section": "Learning Objectives for Tutorial",
-    "text": "Learning Objectives for Tutorial\nAt the end of the day, participants will be able to:\n\nIdentify the main features that make Julia an attractive language for Data Science\nSet up a Julia environment to run their data analysis\nEfficiently handle datasets (even across different languages) through Tables.jl and Arrow.jl\nFit (generalized) linear mixed models with MixedModels.jl\nCommunicate across languages (Julia, R, python)"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site This is the about page add news"
   }
 ]

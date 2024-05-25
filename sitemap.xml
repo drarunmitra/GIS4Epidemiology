@@ -1,15 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://drarunmitra.github.io/GIS4Epidemiology/index.html</loc>
-    <lastmod>2024-05-24T14:52:21.719Z</lastmod>
+    <loc>https://drarunmitra.github.io/GIS4Epidemiology/session1.html</loc>
+    <lastmod>2024-05-25T01:24:25.123Z</lastmod>
   </url>
   <url>
-    <loc>https://drarunmitra.github.io/GIS4Epidemiology/slides-index.html</loc>
-    <lastmod>2024-05-24T14:52:21.719Z</lastmod>
+    <loc>https://drarunmitra.github.io/GIS4Epidemiology/session1a-foundational-concepts.html</loc>
+    <lastmod>2024-05-25T01:24:25.123Z</lastmod>
+  </url>
+  <url>
+    <loc>https://drarunmitra.github.io/GIS4Epidemiology/session2b-case-studies.html</loc>
+    <lastmod>2024-05-25T01:24:25.123Z</lastmod>
+  </url>
+  <url>
+    <loc>https://drarunmitra.github.io/GIS4Epidemiology/session2c-hands-on.html</loc>
+    <lastmod>2024-05-25T01:24:25.123Z</lastmod>
+  </url>
+  <url>
+    <loc>https://drarunmitra.github.io/GIS4Epidemiology/session2.html</loc>
+    <lastmod>2024-05-25T01:24:25.123Z</lastmod>
+  </url>
+  <url>
+    <loc>https://drarunmitra.github.io/GIS4Epidemiology/session1c-investigate-outbreak.html</loc>
+    <lastmod>2024-05-25T01:24:25.123Z</lastmod>
   </url>
   <url>
     <loc>https://drarunmitra.github.io/GIS4Epidemiology/about.html</loc>
-    <lastmod>2024-05-24T14:52:21.719Z</lastmod>
+    <lastmod>2024-05-25T01:24:25.119Z</lastmod>
+  </url>
+  <url>
+    <loc>https://drarunmitra.github.io/GIS4Epidemiology/session2a-spatial-data-vis.html</loc>
+    <lastmod>2024-05-25T01:24:25.123Z</lastmod>
+  </url>
+  <url>
+    <loc>https://drarunmitra.github.io/GIS4Epidemiology/slides-index.html</loc>
+    <lastmod>2024-05-25T01:24:25.123Z</lastmod>
+  </url>
+  <url>
+    <loc>https://drarunmitra.github.io/GIS4Epidemiology/index.html</loc>
+    <lastmod>2024-05-25T01:24:25.123Z</lastmod>
+  </url>
+  <url>
+    <loc>https://drarunmitra.github.io/GIS4Epidemiology/session1b-intro-sds.html</loc>
+    <lastmod>2024-05-25T01:24:25.123Z</lastmod>
   </url>
 </urlset>
