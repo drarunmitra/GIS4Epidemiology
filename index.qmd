@@ -66,17 +66,5 @@ At the end of the day, participants will be able to:
 
 # In preparation for the workshop
 
-Participants are required to follow the next steps before the day of the workshop:
-
- 1. Install R
-
- 2. Install RStudio. 
- 
- 3. Install packages 
-
-  - tidyverse: `install.packages('tidyverse')`
-  - sf: `install.packages('sf')`
-  - rgeoda: `install.packages('rgeoda')`
-  - tidyverse: `install.packages('tidyverse')`
-  - leaflet: `install.packages('leaflet')`
-  - here: `install.packages('here')`
+Participants are required to go through the [workshop pre-requisites](prerequisites_GIS4EPI.qmd) before the commencement of the workshop. 
+This document provides a brief overview of the requisite concepts and provides a step-by-step tutorial on how to install the tools required for the workshop.
