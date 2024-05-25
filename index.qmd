@@ -19,12 +19,6 @@ affiliations:
     name: All India Intstitute of Medical Sciences (AIIMS), Bibinagar, Hyderabad
     city: Bibinagar, Hyderabad
     state: TS
-    
-format: 
-  html: default
-  revealjs: 
-    output-file: slides-index.html
-  pdf: default
 ---
 
 # Welcome

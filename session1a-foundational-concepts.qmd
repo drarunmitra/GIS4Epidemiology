@@ -1,5 +1,11 @@
 ---
 title: "Foundational concetps in Spatial Epidemiology"
+
+format: 
+  html: default
+  revealjs: 
+    output-file: slides-index.html
+  pdf: default
 ---
 
 Spatial epidemiology is a crucial branch of epidemiology that focuses on the geographical distribution of health outcomes and the factors that influence them. By integrating spatial analysis into public health research, it provides valuable insights into how location and environment affect disease patterns and health outcomes.
