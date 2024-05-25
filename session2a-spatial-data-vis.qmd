@@ -1,4 +1,10 @@
 ---
 title: "Spatial Data Visualization: Principles and Best Practices"
+
+format: 
+  html: default
+  revealjs: 
+    output-file: slides-index.html
+  pdf: default
 ---
 

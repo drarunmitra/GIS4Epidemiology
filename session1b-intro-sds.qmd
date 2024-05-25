@@ -1,4 +1,10 @@
 ---
 title: "Introduction to Spatial Data Science using R"
+
+format: 
+  html: default
+  revealjs: 
+    output-file: slides-index.html
+  pdf: default
 ---
 

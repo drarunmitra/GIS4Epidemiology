@@ -1,4 +1,10 @@
 ---
 title: "Case Studies: Spatial Data Analysis and Visualization"
+
+format: 
+  html: default
+  revealjs: 
+    output-file: slides-index.html
+  pdf: default
 ---
 

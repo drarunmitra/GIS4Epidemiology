@@ -1,4 +1,11 @@
 ---
 title: "Investigating an Outbreak: Applications of Spatial Epidemiology"
+
+format: 
+  html: default
+  revealjs: 
+    output-file: slides-index.html
+  pdf: default
+
 ---
 
