@@ -19,7 +19,6 @@ website:
         href: index.qmd
         
       - text: Session One
-        href: session1.qmd
         menu:
           - text: Session 1A
             href: session1a-foundational-concepts.qmd
@@ -29,7 +28,6 @@ website:
             href: session1c-investigate-outbreak.qmd
             
       - text: Session Two
-        href: session2.qmd
         menu:
           - text: Session 2A
             href: session2a-spatial-data-vis.qmd
