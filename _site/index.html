@@ -23,40 +23,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -131,6 +97,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./session1.html"> 
+<span class="menu-text">Session One</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./session2.html"> 
+<span class="menu-text">Session Two</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
@@ -152,7 +126,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a>
   <ul class="collapse">
-  <li><a href="#learning-objectives-for-tutorial" id="toc-learning-objectives-for-tutorial" class="nav-link" data-scroll-target="#learning-objectives-for-tutorial">Learning Objectives for Tutorial</a></li>
+  <li><a href="#learning-objectives-for-the-workshop" id="toc-learning-objectives-for-the-workshop" class="nav-link" data-scroll-target="#learning-objectives-for-the-workshop">Learning Objectives for the Workshop</a></li>
   </ul></li>
   <li><a href="#schedule" id="toc-schedule" class="nav-link" data-scroll-target="#schedule">Schedule</a></li>
   <li><a href="#in-preparation-for-the-workshop" id="toc-in-preparation-for-the-workshop" class="nav-link" data-scroll-target="#in-preparation-for-the-workshop">In preparation for the workshop</a></li>
@@ -212,35 +186,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="welcome" class="level1">
 <h1>Welcome</h1>
 <ul>
-<li>Welcome to the Julia workshop for Data Science!</li>
-<li>The goal for the workshop is to highlight the main features that make Julia an attractive option for data science programmers</li>
-<li>The workshop is intended for any data scientist with experience in R and/or python who is interested in learning the attractive features of Julia for Data Science. No knowledge of Julia is required.</li>
-<li>Workshop materials in the github repository <a href="https://github.com/crsl4/julia-workshop">julia-workshop</a></li>
+<li>Welcome to the Day 2 of <strong>Geospatial Technology for Public Health Policy</strong> Workshop!</li>
+<li>The goal for today is to highlight the applications of GIS in Epidemiology while providing the foundational concepts in Spatial Epidemiology.</li>
+<li>The workshop introduces the participants to the field of Spatial Data Science through the statistical programming language R.</li>
+<li>The workshop is intended as an introductory window into the world of spatial data analysis and visualization for public health policy.</li>
+<li>Workshop materials in the github repository <a href="https://github.com/drarunmitra/GIS4Epidemiology">GIS4EPI-Workshop</a></li>
 </ul>
-<section id="learning-objectives-for-tutorial" class="level2">
-<h2 class="anchored" data-anchor-id="learning-objectives-for-tutorial">Learning Objectives for Tutorial</h2>
-<p>At the end of the tutorial, participants will be able to:</p>
+<section id="learning-objectives-for-the-workshop" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives-for-the-workshop">Learning Objectives for the Workshop</h2>
+<p>At the end of the day, participants will be able to:</p>
 <ul>
-<li>Identify the main features that make Julia an attractive language for Data Science</li>
-<li>Set up a Julia environment to run their data analysis</li>
-<li>Efficiently handle datasets (even across different languages) through Tables.jl and Arrow.jl</li>
-<li>Fit (generalized) linear mixed models with MixedModels.jl</li>
-<li>Communicate across languages (Julia, R, python)</li>
+<li>Understand and Apply Foundational Concepts in Spatial Epidemiology</li>
+<li>Utilize Tools and Techniques for Spatial Data Analysis and Spatial Data Science</li>
+<li>Implement Best Practices for Reproducible Spatial Data Research and Analysis</li>
+<li>Analyze and Interpret Spatial Data for Public Health Applications</li>
+<li>Explore the applications of spatial epidemiology in public health research and practice</li>
+<li>Gain hands-on experience with spatial data analysis and visualization</li>
 </ul>
-<p>Intended audience and level: The tutorial is intended for any data scientist with experience in R and/or python who is interested in learning the attractive features of Julia for Data Science. No knowledge of Julia is required.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.getenv</span>(<span class="st">"MY_USERNAME"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "thisismyusername"</code></pre>
-</div>
-</div>
-<p>This is some new text</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.getenv</span>(<span class="st">"MY_PASSWORD"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "thisismypassword"</code></pre>
-</div>
-</div>
 </section>
 </section>
 <section id="schedule" class="level1">
@@ -249,91 +211,77 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <thead>
 <tr class="header">
 <th style="text-align: center;">Time</th>
-<th style="text-align: center;">Topic</th>
-<th style="text-align: center;">Presenter</th>
+<th style="text-align: center;">Session</th>
+<th style="text-align: left;">Topic</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">11:00 - 11:30</td>
-<td style="text-align: center;"><a href="session1-get-started.qmd">Session 1: Get Started with Julia</a></td>
-<td style="text-align: center;">Claudia Solis-Lemus</td>
+<td style="text-align: center;">10:00 - 10:50</td>
+<td style="text-align: center;">Session1a</td>
+<td style="text-align: left;"><a href="./session1a-foundational-concepts.html">Foundational Concepts in Spatial Epidemiology</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">11:30 - 12:30</td>
-<td style="text-align: center;"><a href="session2a-tables-and-arrow.qmd">Session 2a: Data Tables and Arrow files</a></td>
-<td style="text-align: center;">Douglas Bates</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">12:30 - 1:00</td>
-<td style="text-align: center;"><a href="session2b-interval-overlap.qmd">Session 2b: Interval Overlap</a></td>
-<td style="text-align: center;">Douglas Bates</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">1:00 - 2:00</td>
-<td style="text-align: center;">Lunch break</td>
 <td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">2:00 - 2:30</td>
-<td style="text-align: center;"><a href="session3a-linear-mixed-effects.qmd">Session 3a: Linear Mixed-effects Models</a></td>
-<td style="text-align: center;">Douglas Bates</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">2:20 - 3:00</td>
-<td style="text-align: center;"><a href="session3b-glmm.qmd">Session 3b: Generalized Linear Mixed Models</a></td>
-<td style="text-align: center;">Douglas Bates</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">3:00 - 4:00</td>
-<td style="text-align: center;"><a href="session4-exercise.qmd">Session 4: Hands-on exercise</a></td>
-<td style="text-align: center;">Sam Ozminkowski and Bella Wu</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">4:00 - 4:15</td>
-<td style="text-align: center;">Coffee break</td>
 <td style="text-align: center;"></td>
+<td style="text-align: left;"><em>Bio-Break</em></td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">4:15 - 5:00</td>
-<td style="text-align: center;">Presentation of selected participants’ scripts and Q&amp;A</td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;">11:00 - 11:50</td>
+<td style="text-align: center;">Session 1b</td>
+<td style="text-align: left;"><a href="./session1b-intro-sds.html">Introduction to Spatial Data Science using R</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">5:00 - 5:30</td>
-<td style="text-align: center;"><a href="session5-other-tools.qmd">Session 5: Other important Data Science tools</a></td>
-<td style="text-align: center;">Claudia Solis-Lemus</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><em>Bio-Break</em></td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">5:30 - 6:00</td>
-<td style="text-align: center;"><a href="session6-conclusions.qmd">Session 6: Conclusions and questions</a></td>
-<td style="text-align: center;">Claudia Solis-Lemus</td>
+<td style="text-align: center;">12:00 - 12:50</td>
+<td style="text-align: center;">Session 1c</td>
+<td style="text-align: left;"><a href="./session1c-investigate-outbreak.html">Investigating an Outbreak: Applications of Spatial Epidemiology</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><em>Lunch</em></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">14:00 - 14:50</td>
+<td style="text-align: center;">Session 2a</td>
+<td style="text-align: left;"><a href="./session2a-spatial-data-vis.html">Spatial Data Visualization: Principles and Best Practices</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><em>Bio-Break</em></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">15:00 - 15:50</td>
+<td style="text-align: center;">Session 2b</td>
+<td style="text-align: left;"><a href="./session2b-case-studies.html">Case Studies: Spatial Data Analysis and Visualization</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><em>Bio-Break</em></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">16:00 - 16:50</td>
+<td style="text-align: center;">Session 2c</td>
+<td style="text-align: left;"><a href="./session2c-hands-on.html">Hands-on Exercises</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">16:50 - 17:00</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><em>Q&amp;A Session</em></td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="in-preparation-for-the-workshop" class="level1">
 <h1>In preparation for the workshop</h1>
-<p>Participants are required to follow the next steps before the day of the workshop:</p>
-<ol type="1">
-<li><p>Git clone the workshop repository: <code>git clone https://github.com/crsl4/julia-workshop.git</code></p></li>
-<li><p>Install Julia. The recommended option is to use <a href="https://github.com/JuliaLang/juliaup">JuliaUp</a>:</p></li>
-</ol>
-<ul>
-<li><p>Windows: <code>winget install julia -s msstore</code></p></li>
-<li><p>Mac and Linux: <code>curl -fsSL https://install.julialang.org | sh</code></p></li>
-<li><p>Homebrew users: <code>brew install juliaup</code></p></li>
-</ul>
-<p>After JuliaUp is installed, you can install different Julia versions with:</p>
-<pre class="shell"><code>juliaup add release  ## installs release version
-juliaup add rc       ## installs release candidate version
-juliaup st           ## status of julia versions installed
-juliaup default rc   ## make release candidate version the default</code></pre>
-<ol start="3" type="1">
-<li>Choose a dataset along with a script to analyze it written in another language (R or python) as we will spend part of the workshop translating participants’ scripts to Julia.</li>
-</ol>
-<p>Adding new image</p>
-<p><img src="images/logo.png" class="img-fluid"></p>
+<p>Participants are required to go through the <a href="prerequisites_GIS4EPI.qmd">workshop pre-requisites</a> before the commencement of the workshop. This document provides a brief overview of the requisite concepts and provides a step-by-step tutorial on how to install the tools required for the workshop.</p>
 
 
 </section>
