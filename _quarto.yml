@@ -11,8 +11,22 @@ website:
         text: Home
       - href: session1.qmd
         text: Session One
+        menu:
+          - href: session1a.qmd
+            text: Session 1A
+          - href: session1b.qmd
+            text: Session 1B
+          - href: session1c.qmd
+            text: Session 1C
       - href: session2.qmd
-        text: Session Two      
+        text: Session Two
+        menu:
+          - href: session2a.qmd
+            text: Session 2A
+          - href: session2b.qmd
+            text: Session 2B
+          - href: session2c.qmd
+            text: Session 2C      
       - about.qmd
 
 format:

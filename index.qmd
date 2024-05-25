@@ -35,15 +35,16 @@ format:
   - The workshop is intended as an introductory window into the world of spatial data analysis and visualization for public health policy.
   - Workshop materials in the github repository [GIS4EPI-Workshop](https://github.com/drarunmitra/GIS4Epidemiology)
 
-## Learning Objectives for Tutorial
+## Learning Objectives for the Workshop
 
 At the end of the day, participants will be able to:
 
-  - Identify the main features that make Julia an attractive language for Data Science
-  - Set up a Julia environment to run their data analysis
-  - Efficiently handle datasets (even across different languages) through Tables.jl and Arrow.jl
-  - Fit (generalized) linear mixed models with MixedModels.jl
-  - Communicate across languages (Julia, R, python)
+- Understand and Apply Foundational Concepts in Spatial Epidemiology:
+- Utilize Tools and Techniques for Spatial Data Analysis and Spatial Data Science
+- Implement Best Practices for Reproducible Spatial Data Research
+- Analyze and Interpret Spatial Data for Public Health Applications
+- Explore the applications of spatial epidemiology in public health research and practice
+- Gain hands-on experience with spatial data analysis and visualization
 
 
 
