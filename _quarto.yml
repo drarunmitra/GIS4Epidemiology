@@ -10,8 +10,7 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: session1.qmd
-        text: Session One
+      - text: Session One
         menu:
           - href: session1a.qmd
             text: Session 1A
@@ -19,8 +18,7 @@ website:
             text: Session 1B
           - href: session1c.qmd
             text: Session 1C
-      - href: session2.qmd
-        text: Session Two
+      - text: Session Two
         menu:
           - href: session2a.qmd
             text: Session 2A
