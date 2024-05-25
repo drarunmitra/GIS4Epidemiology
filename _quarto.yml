@@ -1,5 +1,5 @@
 project:
-  type: website
+  type: default
 
 website:
   title: "GIS4Epidemiology"
@@ -10,6 +10,7 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
+      - prerequisites_GIS4EPI.qmd
 
 format:
   html:
