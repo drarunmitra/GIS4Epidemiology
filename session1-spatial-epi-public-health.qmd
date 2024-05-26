@@ -1,7 +1,11 @@
 ---
 title: "How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission"
-author: "Chia-Hsien Lin and Tzai-Hung Wen"
-date: 2022
+
+format: 
+  html: default
+  revealjs: 
+    output-file: slides-index.html
+  pdf: default
 ---
 
 # Introduction
