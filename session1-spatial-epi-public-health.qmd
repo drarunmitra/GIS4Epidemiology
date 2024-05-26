@@ -8,7 +8,7 @@ format:
   pdf: default
 ---
 
-# Introduction
+## Introduction
 ::: columns
 ::: column
 - **Infectious diseases** can be transmitted:
@@ -23,9 +23,8 @@ format:
 :::
 :::
 
----
 
-# Spatial Data Types
+## Spatial Data Types
 - **Point Data**: 
   - Raw data such as incidences, deaths, physical locations (e.g., hospitals)
 - **Aggregate Data**: 
@@ -36,17 +35,16 @@ format:
 - **Aggregate Data** helps in understanding broader trends but can obscure local variations.
 :::
 
----
 
-# Disease Mapping Techniques
-## Location Mapping
+## Disease Mapping Techniques
+### Location Mapping
 - Historical examples:
   - Yellow fever in New York (1798)
   - Cholera in London (1854)
 - **Advantages**: Quick observation of disease spread.
 - **Limitations**: Privacy issues, difficulty in reflecting population distributions.
 
-## Surface Mapping
+### Surface Mapping
 - **Choropleth Maps**:
   - Example: Filariasis in India, Q fever in the Netherlands.
 - **Advantages**: Visualize incidence rates clearly.
@@ -55,16 +53,15 @@ format:
 ![Choropleth Map Example](/images/image2.jpg)
 *Figure 2: Example of a choropleth map showing disease incidence.*
 
----
 
-# Advanced Mapping Techniques
+## Advanced Mapping Techniques
 ::: columns
 ::: column
-## Bayesian Smoothing
+### Bayesian Smoothing
 - Reduces bias in local risk estimation.
 - **Example**: Applied in studies of dengue, influenza, and tuberculosis.
 
-## Kernel Density Estimation (KDE)
+### Kernel Density Estimation (KDE)
 - Identifies dense points and visualizes as smooth surfaces.
 - **Example**: Dengue cases in Delhi.
 :::
@@ -77,10 +74,8 @@ format:
 :::
 :::
 
----
-
-# Overall Spatial Patterns
-## Clustering Methods
+## Overall Spatial Patterns
+### Clustering Methods
 - **Nearest Neighbour Ratio**:
   - Assesses clustering degree (e.g., rabies in China).
 - **Ripley’s K Function**:
@@ -93,51 +88,49 @@ format:
 - Clustering methods help identify hotspots and inform targeted interventions.
 :::
 
----
 
-# Statistical Tests for Clustering
-## Point Data
+
+## Statistical Tests for Clustering
+###  Point Data
 - **Nearest Neighbour Ratio**
 - **Cuzick and Edwards’ test**
 - **Ripley’s K function**
 
-## Aggregate Data
+###  Aggregate Data
 - **Spatial autocorrelation statistics** (e.g., Moran’s I)
 
 ::: notes
 - These tests are crucial for confirming whether observed patterns are statistically significant.
 :::
 
----
 
-# Hot Spot Detection
-## Local Indicators of Spatial Association (LISA)
+## Hot Spot Detection
+###  Local Indicators of Spatial Association (LISA)
 - Identifies clusters of high or low values.
 
-## Spatial Scan Statistics
+###  Spatial Scan Statistics
 - Detects clusters in space and time (e.g., leishmaniasis in Brazil).
 
 ![Hot Spot Detection](/images/image6.jpg)
 *Figure 6: Example of hot spot detection using LISA and spatial scan statistics.*
 
----
 
-# Identifying Risk Factors
-## Neighbourhood Effect
+##  Identifying Risk Factors
+###  Neighbourhood Effect
 - Disease risk influenced by nearby cases.
 
-## Spatial Heterogeneity
+###  Spatial Heterogeneity
 - Variation in disease risk across different areas.
 
-## Spatial Regression Methods
+###  Spatial Regression Methods
 - Adjust for neighbourhood effects and spatial heterogeneity.
 
 ![Risk Factors](/images/image7.jpg)
 *Figure 7: Illustration of neighbourhood effect and spatial heterogeneity.*
 
----
 
-# Conclusion
+
+##  Conclusion
 - **Spatial epidemiology** provides insights into the spread and control of infectious diseases.
 - **Future Directions**: Enhancing GPS methods, optimizing Bayesian estimations.
 - **Key Impact**: Improved disease surveillance, hypothesis generation, and strategic control measures.
@@ -145,7 +138,6 @@ format:
 ![Conclusion](/images/image8.jpg)
 *Figure 8: The impact of spatial epidemiology on disease control.*
 
----
 
-# References
+##  References
 - Lin, C.-H., & Wen, T.-H. (2022). How spatial epidemiology helps understand infectious human disease transmission.
