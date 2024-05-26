@@ -4,7 +4,7 @@ title: "Case Studies: Spatial Data Analysis and Visualization"
 format: 
   html: default
   revealjs: 
-    output-file: slides-index.html
+    output-file: slides-case-studies.html
   pdf: default
 ---
 

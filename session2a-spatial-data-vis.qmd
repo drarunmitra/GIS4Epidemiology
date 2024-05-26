@@ -4,7 +4,7 @@ title: "Spatial Data Visualization: Principles and Best Practices"
 format: 
   html: default
   revealjs: 
-    output-file: slides-index.html
+    output-file: slides-spatial-data-vis.html
   pdf: default
 ---
 
