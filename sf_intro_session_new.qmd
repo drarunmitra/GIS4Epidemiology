@@ -43,12 +43,12 @@ This package incorporates:
 ::: {.content-hidden when-format="pdf"}
 
 ![`sf` package](/images/sf_hex.gif)
-![sf package gif](/images/sf_hex.png)
+
 :::
 
 ::: {.content-hidden unless-format="pdf"}
 
-![sf package gif](https://www.example.com/images/sf_package.gif)
+![sf package gif](/images/sf_hex.png)
 
 :::
 
