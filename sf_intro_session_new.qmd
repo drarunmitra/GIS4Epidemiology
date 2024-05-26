@@ -64,18 +64,18 @@ install.packages("sf")
 - **Efficiency**: More efficient and user-friendly than previous spatial packages.
 - **Standards**: Adheres to international standards for spatial data.
   
-![sf package usage](https://www.example.com/images/sf_horst.jpg)
+![sf package usage](/images/sf_horst.jpg)
 
 ## Geometry Types in `sf`
 
 ::: columns
 ::: {.column width="50%"}
-![WKT Primitives](https://www.example.com/images/wkt_primitives.png)
-![WKT Multipart](https://www.example.com/images/wkt_multipart.png)
+![WKT Primitives](/images/wkt_primitives.png)
+![WKT Multipart](/images/wkt_multipart.png)
 :::
 
 ::: {.column width="50%"}
-![sf Classes](https://www.example.com/images/sf-classes.png)
+![sf Classes](/images/sf-classes.png)
 :::
 :::
 
@@ -119,11 +119,11 @@ ggplot(spatial_data) +
   - `st_write()`: Write spatial data.
   - `st_transform()`: Transform coordinate systems.
   
-![sf Concept Map](https://www.example.com/images/sf_concept_map.png)
+![sf Concept Map](/images/sf_concept_map.png)
 
 ## Dependencies of the `sf` Package
 
-![sf Dependencies](https://www.example.com/images/sf_deps.png)
+![sf Dependencies](/images/sf_deps.png)
 
 - **Key Dependencies**:
   - GDAL: Geospatial Data Abstraction Library
@@ -219,11 +219,11 @@ ggplot(transformed_data) + geom_sf()
 
 ::: columns
 ::: {.column width="60%"}
-![sf Cheatsheet 1](https://www.example.com/images/sf_cheatsheet.png)
+![sf Cheatsheet 1](/images/sf_cheatsheet.png)
 :::
 
 ::: {.column width="40%"}
-![sf Cheatsheet 2](https://www.example.com/images/sf_cheatsheet2.png)
+![sf Cheatsheet 2](/images/sf_cheatsheet2.png)
 :::
 :::
 
