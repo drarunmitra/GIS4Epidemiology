@@ -61,5 +61,5 @@ At the end of the day, participants will be able to:
 
 # In preparation for the workshop
 
-Participants are required to go through the [workshop pre-requisites](prerequisites_GIS4EPI.qmd) before the commencement of the workshop. 
+Participants are required to go through the [workshop pre-requisites](_materials/prerequisites_GIS4EPI.qmd) before the commencement of the workshop. 
 This document provides a brief overview of the requisite concepts and provides a step-by-step tutorial on how to install the tools required for the workshop.

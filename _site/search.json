@@ -89,5 +89,96 @@
     "title": "GIS for Epidemiology",
     "section": "Learning Objectives for the Workshop",
     "text": "Learning Objectives for the Workshop\nAt the end of the day, participants will be able to:\n\nUnderstand and Apply Foundational Concepts in Spatial Epidemiology\nUtilize Tools and Techniques for Spatial Data Analysis and Spatial Data Science\nImplement Best Practices for Reproducible Spatial Data Research and Analysis\nAnalyze and Interpret Spatial Data for Public Health Applications\nExplore the applications of spatial epidemiology in public health research and practice\nGain hands-on experience with spatial data analysis and visualization"
+  },
+  {
+    "objectID": "session1-spatial-epi-public-health.html",
+    "href": "session1-spatial-epi-public-health.html",
+    "title": "How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission",
+    "section": "",
+    "text": "Infectious diseases can be transmitted:\n\nDirectly (e.g., influenza)\nIndirectly (e.g., through water, soil)\n\nSpatial dimensions are crucial for understanding and managing diseases.\nAdvancements in computing and statistical methods enhance disease visualization and analysis.\n\n\n Figure 1: Visualization of spatial dimensions in disease spread."
+  },
+  {
+    "objectID": "session1-spatial-epi-public-health.html#location-mapping",
+    "href": "session1-spatial-epi-public-health.html#location-mapping",
+    "title": "How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission",
+    "section": "Location Mapping",
+    "text": "Location Mapping\n\nHistorical examples:\n\nYellow fever in New York (1798)\nCholera in London (1854)\n\nAdvantages: Quick observation of disease spread.\nLimitations: Privacy issues, difficulty in reflecting population distributions."
+  },
+  {
+    "objectID": "session1-spatial-epi-public-health.html#surface-mapping",
+    "href": "session1-spatial-epi-public-health.html#surface-mapping",
+    "title": "How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission",
+    "section": "Surface Mapping",
+    "text": "Surface Mapping\n\nChoropleth Maps:\n\nExample: Filariasis in India, Q fever in the Netherlands.\n\nAdvantages: Visualize incidence rates clearly.\nLimitations: May hide demographic factors, sensitive to spatial scales.\n\n Figure 2: Example of a choropleth map showing disease incidence."
+  },
+  {
+    "objectID": "session1-spatial-epi-public-health.html#bayesian-smoothing",
+    "href": "session1-spatial-epi-public-health.html#bayesian-smoothing",
+    "title": "How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission",
+    "section": "Bayesian Smoothing",
+    "text": "Bayesian Smoothing\n\nReduces bias in local risk estimation.\nExample: Applied in studies of dengue, influenza, and tuberculosis."
+  },
+  {
+    "objectID": "session1-spatial-epi-public-health.html#kernel-density-estimation-kde",
+    "href": "session1-spatial-epi-public-health.html#kernel-density-estimation-kde",
+    "title": "How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission",
+    "section": "Kernel Density Estimation (KDE)",
+    "text": "Kernel Density Estimation (KDE)\n\nIdentifies dense points and visualizes as smooth surfaces.\nExample: Dengue cases in Delhi."
+  },
+  {
+    "objectID": "session1-spatial-epi-public-health.html#clustering-methods",
+    "href": "session1-spatial-epi-public-health.html#clustering-methods",
+    "title": "How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission",
+    "section": "Clustering Methods",
+    "text": "Clustering Methods\n\nNearest Neighbour Ratio:\n\nAssesses clustering degree (e.g., rabies in China).\n\nRipley’s K Function:\n\nMeasures spatial clustering over distance (e.g., leishmaniasis in Brazil).\n\n\n Figure 5: Visualization of clustering methods.\n\n\nClustering methods help identify hotspots and inform targeted interventions."
+  },
+  {
+    "objectID": "session1-spatial-epi-public-health.html#point-data",
+    "href": "session1-spatial-epi-public-health.html#point-data",
+    "title": "How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission",
+    "section": "Point Data",
+    "text": "Point Data\n\nNearest Neighbour Ratio\nCuzick and Edwards’ test\nRipley’s K function"
+  },
+  {
+    "objectID": "session1-spatial-epi-public-health.html#aggregate-data",
+    "href": "session1-spatial-epi-public-health.html#aggregate-data",
+    "title": "How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission",
+    "section": "Aggregate Data",
+    "text": "Aggregate Data\n\nSpatial autocorrelation statistics (e.g., Moran’s I)\n\n\n\nThese tests are crucial for confirming whether observed patterns are statistically significant."
+  },
+  {
+    "objectID": "session1-spatial-epi-public-health.html#local-indicators-of-spatial-association-lisa",
+    "href": "session1-spatial-epi-public-health.html#local-indicators-of-spatial-association-lisa",
+    "title": "How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission",
+    "section": "Local Indicators of Spatial Association (LISA)",
+    "text": "Local Indicators of Spatial Association (LISA)\n\nIdentifies clusters of high or low values."
+  },
+  {
+    "objectID": "session1-spatial-epi-public-health.html#spatial-scan-statistics",
+    "href": "session1-spatial-epi-public-health.html#spatial-scan-statistics",
+    "title": "How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission",
+    "section": "Spatial Scan Statistics",
+    "text": "Spatial Scan Statistics\n\nDetects clusters in space and time (e.g., leishmaniasis in Brazil).\n\n Figure 6: Example of hot spot detection using LISA and spatial scan statistics."
+  },
+  {
+    "objectID": "session1-spatial-epi-public-health.html#neighbourhood-effect",
+    "href": "session1-spatial-epi-public-health.html#neighbourhood-effect",
+    "title": "How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission",
+    "section": "Neighbourhood Effect",
+    "text": "Neighbourhood Effect\n\nDisease risk influenced by nearby cases."
+  },
+  {
+    "objectID": "session1-spatial-epi-public-health.html#spatial-heterogeneity",
+    "href": "session1-spatial-epi-public-health.html#spatial-heterogeneity",
+    "title": "How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission",
+    "section": "Spatial Heterogeneity",
+    "text": "Spatial Heterogeneity\n\nVariation in disease risk across different areas."
+  },
+  {
+    "objectID": "session1-spatial-epi-public-health.html#spatial-regression-methods",
+    "href": "session1-spatial-epi-public-health.html#spatial-regression-methods",
+    "title": "How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission",
+    "section": "Spatial Regression Methods",
+    "text": "Spatial Regression Methods\n\nAdjust for neighbourhood effects and spatial heterogeneity.\n\n Figure 7: Illustration of neighbourhood effect and spatial heterogeneity."
   }
 ]
