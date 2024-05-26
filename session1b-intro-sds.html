@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>GIS4Epidemiology - Introduction to Spatial Data Science using R</title>
+<title>GIS4Epidemiology - Introduction to Spatial Data Science</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -68,6 +68,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -99,16 +128,28 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-session-one">    
         <li>
-    <a class="dropdown-item" href="./session1a-foundational-concepts.html">
- <span class="dropdown-text">Session 1A</span></a>
+    <a class="dropdown-item" href="./session1-spatial-epi-public-health.html">
+ <span class="dropdown-text">GIS and Public Health</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./session1b-intro-sds.html">
- <span class="dropdown-text">Session 1B</span></a>
+    <a class="dropdown-item" href="./session1a-concepts-spatial-data-science.html">
+ <span class="dropdown-text">Introduction to Spatial Data Science</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./session1a-foundational-concepts-spatial-epi.html">
+ <span class="dropdown-text">Concepts in Spatial Epidemiology</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./session1a-foundational-concepts.html">
+ <span class="dropdown-text">Concepts in Spatial Epidemilogy</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./sf_intro_session_new.html">
+ <span class="dropdown-text">Spatial Data Science in R</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./session1c-investigate-outbreak.html">
- <span class="dropdown-text">Session 1C</span></a>
+ <span class="dropdown-text">Spatial Data Analysis</span></a>
   </li>  
     </ul>
   </li>
@@ -119,15 +160,15 @@ ul.task-list li input[type="checkbox"] {
     <ul class="dropdown-menu" aria-labelledby="nav-menu-session-two">    
         <li>
     <a class="dropdown-item" href="./session2a-spatial-data-vis.html">
- <span class="dropdown-text">Session 2A</span></a>
+ <span class="dropdown-text">Spatial Data Visualization</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./session2b-case-studies.html">
- <span class="dropdown-text">Session 2B</span></a>
+ <span class="dropdown-text">Case Studies</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./session2c-hands-on.html">
- <span class="dropdown-text">Session 2C</span></a>
+ <span class="dropdown-text">Exercises</span></a>
   </li>  
     </ul>
   </li>
@@ -147,14 +188,54 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#acknowledge" id="toc-acknowledge" class="nav-link active" data-scroll-target="#acknowledge">Acknowledge</a></li>
+  <li><a href="#sctimst-trivandrum" id="toc-sctimst-trivandrum" class="nav-link" data-scroll-target="#sctimst-trivandrum">SCTIMST, Trivandrum</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#work-plan" id="toc-work-plan" class="nav-link" data-scroll-target="#work-plan">Work plan</a></li>
+  <li><a href="#lectures" id="toc-lectures" class="nav-link" data-scroll-target="#lectures">Lectures</a></li>
+  <li><a href="#lab-work" id="toc-lab-work" class="nav-link" data-scroll-target="#lab-work">Lab work</a></li>
+  <li><a href="#what-information-does-gis-use" id="toc-what-information-does-gis-use" class="nav-link" data-scroll-target="#what-information-does-gis-use">What information does GIS use?</a></li>
+  <li><a href="#what-is-spatial-data-science" id="toc-what-is-spatial-data-science" class="nav-link" data-scroll-target="#what-is-spatial-data-science">What is Spatial Data Science?</a></li>
+  <li><a href="#spatial-data-science" id="toc-spatial-data-science" class="nav-link" data-scroll-target="#spatial-data-science">Spatial Data Science</a></li>
+  <li><a href="#gis" id="toc-gis" class="nav-link" data-scroll-target="#gis">GIS</a></li>
+  <li><a href="#layers---image---data" id="toc-layers---image---data" class="nav-link" data-scroll-target="#layers---image---data">Layers - Image - Data</a></li>
+  <li><a href="#gis-world-vs.-real-world" id="toc-gis-world-vs.-real-world" class="nav-link" data-scroll-target="#gis-world-vs.-real-world">GIS world vs.&nbsp;Real World</a></li>
+  <li><a href="#skills-for-public-health-data-science" id="toc-skills-for-public-health-data-science" class="nav-link" data-scroll-target="#skills-for-public-health-data-science">Skills for public health data science</a></li>
+  <li><a href="#r-software-for-spatial-data-science-sds" id="toc-r-software-for-spatial-data-science-sds" class="nav-link" data-scroll-target="#r-software-for-spatial-data-science-sds">R software for Spatial Data Science (SDS)</a></li>
+  <li><a href="#the-spatial-data-revolution" id="toc-the-spatial-data-revolution" class="nav-link" data-scroll-target="#the-spatial-data-revolution">The Spatial Data ‘Revolution’</a></li>
+  <li><a href="#sds-in-public-health" id="toc-sds-in-public-health" class="nav-link" data-scroll-target="#sds-in-public-health">SDS in Public Health</a></li>
+  <li><a href="#traditional-datasets-in-healthcare" id="toc-traditional-datasets-in-healthcare" class="nav-link" data-scroll-target="#traditional-datasets-in-healthcare">Traditional datasets in healthcare</a></li>
+  <li><a href="#traditional-health-and-allied-sector-data" id="toc-traditional-health-and-allied-sector-data" class="nav-link" data-scroll-target="#traditional-health-and-allied-sector-data">Traditional health and allied sector data</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
+  <li><a href="#new-forms-of-spatial-data" id="toc-new-forms-of-spatial-data" class="nav-link" data-scroll-target="#new-forms-of-spatial-data"><em>New Forms</em> of spatial data</a></li>
+  <li><a href="#challenges-arribas-bel-2014" id="toc-challenges-arribas-bel-2014" class="nav-link" data-scroll-target="#challenges-arribas-bel-2014">Challenges (Arribas-Bel, 2014)</a></li>
+  <li><a href="#part-2" id="toc-part-2" class="nav-link" data-scroll-target="#part-2">Part 2</a></li>
+  <li><a href="#geovisualisation" id="toc-geovisualisation" class="nav-link" data-scroll-target="#geovisualisation">(Geo)visualisation</a></li>
+  <li><a href="#a-map-for-everyone" id="toc-a-map-for-everyone" class="nav-link" data-scroll-target="#a-map-for-everyone">A map for everyone</a></li>
+  <li><a href="#maceachren-kraak-1997" id="toc-maceachren-kraak-1997" class="nav-link" data-scroll-target="#maceachren-kraak-1997">MacEachren &amp; Kraak (1997)</a></li>
+  <li><a href="#dibiases-1990-swoopy" id="toc-dibiases-1990-swoopy" class="nav-link" data-scroll-target="#dibiases-1990-swoopy">DiBiase’s (1990) “Swoopy”</a></li>
+  <li><a href="#exploratory-visualization" id="toc-exploratory-visualization" class="nav-link" data-scroll-target="#exploratory-visualization">Exploratory Visualization</a></li>
+  <li><a href="#explanatory-visualization" id="toc-explanatory-visualization" class="nav-link" data-scroll-target="#explanatory-visualization">Explanatory Visualization</a></li>
+  <li><a href="#choropleths" id="toc-choropleths" class="nav-link" data-scroll-target="#choropleths">Choropleths</a></li>
+  <li><a href="#part-3" id="toc-part-3" class="nav-link" data-scroll-target="#part-3">Part 3</a></li>
+  <li><a href="#spatial-weights" id="toc-spatial-weights" class="nav-link" data-scroll-target="#spatial-weights"><strong>Spatial Weights</strong></a></li>
+  <li><a href="#spatial-weight-matrices" id="toc-spatial-weight-matrices" class="nav-link" data-scroll-target="#spatial-weight-matrices">Spatial Weight Matrices</a></li>
+  <li><a href="#core-element-in-several-spatial-analysis-techniques" id="toc-core-element-in-several-spatial-analysis-techniques" class="nav-link" data-scroll-target="#core-element-in-several-spatial-analysis-techniques">Core element in several spatial analysis techniques</a></li>
+  <li><a href="#spatial-weights-1" id="toc-spatial-weights-1" class="nav-link" data-scroll-target="#spatial-weights-1">Spatial Weights</a></li>
+  <li><a href="#website" id="toc-website" class="nav-link" data-scroll-target="#website">Website</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="slides-intro-sds.html"><i class="bi bi-file-slides"></i>RevealJS</a></li><li><a href="session1b-intro-sds.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introduction to Spatial Data Science using R</h1>
+<h1 class="title">Introduction to Spatial Data Science</h1>
 </div>
 
 
@@ -171,8 +252,295 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="acknowledge" class="level2">
+<h2 class="anchored" data-anchor-id="acknowledge">Acknowledge</h2>
+<ul>
+<li>Dr.&nbsp;Elisabetta Pietrostefani &amp;</li>
+<li>Dr.&nbsp;Carmen Cabrera-Arnau</li>
+</ul>
+<p><em>A course in Geographic Data Science</em></p>
+</section>
+<section id="sctimst-trivandrum" class="level2">
+<h2 class="anchored" data-anchor-id="sctimst-trivandrum">SCTIMST, Trivandrum</h2>
+<div style="font-size:70%">
+<ul>
+<li>Sree Chitra Tirunal Institute for Medical Sciences &amp; Technology, Trivandrum</li>
+<li>An Institution of National Importance established by the Act of the Indian Parliament (Act No.52, 1980)</li>
+</ul>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="font-size:70%">
+<ul>
+<li><p>Dept. of Science &amp; Technology</p></li>
+<li><p>Three major focus areas</p>
+<ul>
+<li>Bio-Medical Technology Wing</li>
+<li>Super specialty Hospital</li>
+<li>Public Health (AMCHSS)</li>
+</ul></li>
+<li><p>Healthcare Technology development</p></li>
+<li><p>inter-disciplinary initiatives</p></li>
+<li><p>Running MPH program since 1997, PhD programs since 2003</p></li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<div style="font-size:60%">
+<p><img src="./images/sctimst_three_institutes.jpg" class="img-fluid"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<ul>
+<li>Public Health - Science <em>vs.</em> Advocacy</li>
+<li>The need for participatory decision making in public health</li>
+<li>The transparency of open data science approach</li>
+<li>The beauty of computational reports, presentations, etc.</li>
+</ul>
+</section>
+<section id="work-plan" class="level2">
+<h2 class="anchored" data-anchor-id="work-plan">Work plan</h2>
+</section>
+<section id="lectures" class="level2">
+<h2 class="anchored" data-anchor-id="lectures">Lectures</h2>
+<ul>
+<li>Essential concepts</li>
+<li>Mainly to get the big picture</li>
+<li>Enthusing interest rather than teaching</li>
+<li>Welcome to the open data science initiative!</li>
+</ul>
+</section>
+<section id="lab-work" class="level2">
+<h2 class="anchored" data-anchor-id="lab-work">Lab work</h2>
+<ul>
+<li>Do it yourself</li>
+<li>Get skilled in the process</li>
+<li>Come out of your comfort zones and collaborate!</li>
+<li>Use data for dialogue!</li>
+</ul>
+</section>
+<section id="what-information-does-gis-use" class="level2">
+<h2 class="anchored" data-anchor-id="what-information-does-gis-use">What information does GIS use?</h2>
+<ul>
+<li><p>Data that defines geographical features like roads, rivers</p></li>
+<li><p>Soil types, land use, elevation</p></li>
+<li><p>Demographics, socioeconomic attributes</p></li>
+<li><p>Environmental, climate, air-quality</p></li>
+<li><p>Annotations that label features and places</p></li>
+</ul>
+</section>
+<section id="what-is-spatial-data-science" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-spatial-data-science">What is Spatial Data Science?</h2>
+</section>
+<section id="spatial-data-science" class="level2">
+<h2 class="anchored" data-anchor-id="spatial-data-science">Spatial Data Science</h2>
+<ul>
+<li><strong>Analyse</strong> and <strong>extract</strong> insights from geospatial data</li>
+<li>Work with <strong>real-world data</strong> on a number of domains and problems</li>
+<li>Acquire key <strong>data science skills</strong> and important tools to answer spatial questions</li>
+</ul>
+<center>
+<p><mark>It is especially true in public health</mark></p>
+<center>
+</center></center></section>
+<section id="gis" class="level2">
+<h2 class="anchored" data-anchor-id="gis">GIS</h2>
+<p><img src="./images/layers.png" class="img-fluid"></p>
+</section>
+<section id="layers---image---data" class="level2">
+<h2 class="anchored" data-anchor-id="layers---image---data">Layers - Image - Data</h2>
+<p><img src="./images/geo_data.jpg" class="img-fluid"></p>
+</section>
+<section id="gis-world-vs.-real-world" class="level2">
+<h2 class="anchored" data-anchor-id="gis-world-vs.-real-world">GIS world vs.&nbsp;Real World</h2>
+<p><img src="./images/realworld.png" class="img-fluid"></p>
+</section>
+<section id="skills-for-public-health-data-science" class="level2">
+<h2 class="anchored" data-anchor-id="skills-for-public-health-data-science">Skills for public health data science</h2>
+<p><strong>Hard Skills</strong> - Programming Language - Transparency and Reproducibility - Version control</p>
+<p><strong>Soft Skills</strong> - Communication - Storytelling - Geospatial analytics acumen - Ethical skills</p>
+</section>
+<section id="r-software-for-spatial-data-science-sds" class="level2">
+<h2 class="anchored" data-anchor-id="r-software-for-spatial-data-science-sds">R software for Spatial Data Science (SDS)</h2>
+<p><strong>Graphical User Interfaces (GUIs)</strong></p>
+<ul>
+<li>QGIS and GRASS has revolutionized Open source Spatial Information Systems (GIS).</li>
+<li>However, the reproducibility aspect has many challenges</li>
+</ul>
+<p><strong>Command Line Interfaces (CLIs)</strong></p>
+<p>Command Line Interface (CLIs) of R software is a good way to bring in reproducible algorithms for GIS/SDS</p>
+</section>
+<section id="the-spatial-data-revolution" class="level2">
+<h2 class="anchored" data-anchor-id="the-spatial-data-revolution">The Spatial Data ‘Revolution’</h2>
+<p><strong>Advanced Hardware</strong>: High-performance computer hardware and efficient algorithms allow us to process vast data sets quickly.</p>
+<p><strong>Scalable Software</strong>: Scalable solutions with the R environment help us to sift through the data deluge, and extract valuable insights from the noise.</p>
+<p><strong>Spatial Databases</strong>: The advent of spatial databases empowers us to store and manipulate manageable subsets within the vast ocean of spatial data.</p>
+</section>
+<section id="sds-in-public-health" class="level2">
+<h2 class="anchored" data-anchor-id="sds-in-public-health">SDS in Public Health</h2>
+<ul>
+<li><strong>Data Science</strong>:“gathering data messaging it into a tractable form, making it tell its story and presenting that story to others”</li>
+</ul>
+<p><br></p>
+<p>Loukides (2011) What is Data Science?</p>
+</section>
+<section id="traditional-datasets-in-healthcare" class="level2">
+<h2 class="anchored" data-anchor-id="traditional-datasets-in-healthcare">Traditional datasets in healthcare</h2>
+<ul>
+<li>Collected for the purpose (carefully designed)</li>
+<li>Detailed and informative (“rich profile and portraits of the country”)</li>
+<li>High quality</li>
+</ul>
+</section>
+<section id="traditional-health-and-allied-sector-data" class="level2">
+<h2 class="anchored" data-anchor-id="traditional-health-and-allied-sector-data">Traditional health and allied sector data</h2>
+<ul>
+<li>Massive enterprises (very costly)</li>
+<li>Coarse in resolution (to preserve privacy they need to be aggregated)</li>
+<li>Slow - the more detailed, the less frequent they are available</li>
+</ul>
+</section>
+<section id="examples" class="level2">
+<h2 class="anchored" data-anchor-id="examples">Examples</h2>
+<ul>
+<li>Decennial census (census geographies)</li>
+<li>Longitudinal surveys</li>
+<li>Custom collected surveys, interviews etc.</li>
+<li>Economic or well-being indicators</li>
+</ul>
+</section>
+<section id="new-forms-of-spatial-data" class="level2">
+<h2 class="anchored" data-anchor-id="new-forms-of-spatial-data"><em>New Forms</em> of spatial data</h2>
+<p>Tied into the geo-data revolution</p>
+<ul>
+<li><p>Accidental : created for different purposes but available for analysis as a side effect</p></li>
+<li><p>Very diverse in nature: resolution and quality but, potentially much more detailed in both space and time</p></li>
+</ul>
+</section>
+<section id="challenges-arribas-bel-2014" class="level2">
+<h2 class="anchored" data-anchor-id="challenges-arribas-bel-2014">Challenges (Arribas-Bel, 2014)</h2>
+<ul>
+<li>Bias</li>
+<li>Technical barriers</li>
+<li>Methodological “mismatch”</li>
+</ul>
+</section>
+<section id="part-2" class="level2">
+<h2 class="anchored" data-anchor-id="part-2">Part 2</h2>
+</section>
+<section id="geovisualisation" class="level2">
+<h2 class="anchored" data-anchor-id="geovisualisation">(Geo)visualisation</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><img src="./images/monalisa_data.png" class="img-fluid"></p>
+</div><div class="column" style="width:5%;">
+<!-- empty column to create gap -->
+</div><div class="column" style="width:30%;">
+<p><img src="./images/monalisa.png" class="img-fluid"></p>
+</div><div class="column" style="width:30%;">
+<div class="fragment">
+<div style="font-size:70%">
+<p>By encoding information visually, they allow to present large amounts of numbers in a meaningful way.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="a-map-for-everyone" class="level2">
+<h2 class="anchored" data-anchor-id="a-map-for-everyone">A map for everyone</h2>
+<p><strong>A real public health tool</strong></p>
+<p>Maps can fulfill several needs, looking very different depending on the end-goal.</p>
+<p><strong>MacEachren &amp; Kraak (1997)</strong> identify three main dimensions:</p>
+<ul>
+<li>Knowledge of what is being plotted</li>
+<li>Target audience</li>
+<li>Degree of interactivity</li>
+</ul>
+</section>
+<section id="maceachren-kraak-1997" class="level2">
+<h2 class="anchored" data-anchor-id="maceachren-kraak-1997">MacEachren &amp; Kraak (1997)</h2>
+<p><img src="./images/carto.png" class="img-fluid"></p>
+</section>
+<section id="dibiases-1990-swoopy" class="level2">
+<h2 class="anchored" data-anchor-id="dibiases-1990-swoopy">DiBiase’s (1990) “Swoopy”</h2>
+<p>Translating numbers into a (visual) language that the human brain “speaks better”</p>
+<p><img src="./images/geovis.png" class="img-fluid"></p>
+</section>
+<section id="exploratory-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="exploratory-visualization">Exploratory Visualization</h2>
+<p><br></p>
+<p>“forces us to notice what we never expected to see” (Tukey 1977: vi)</p>
+<p><br></p>
+<ul>
+<li><p>Mostly for ourselves in the course of the research process.</p></li>
+<li><p>Many, quick and dirty, and rather unattractive graphs.</p></li>
+</ul>
+</section>
+<section id="explanatory-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="explanatory-visualization">Explanatory Visualization</h2>
+<p><br></p>
+<p>“forces readers to see the information the designer wanted to convey” (Kosslyn 1994: 271)</p>
+<p><br></p>
+<ul>
+<li><p>Mostly for others after the research is completed.</p></li>
+<li><p>Few, carefully crafted, and attractive graphs.</p></li>
+</ul>
+</section>
+<section id="choropleths" class="level2">
+<h2 class="anchored" data-anchor-id="choropleths">Choropleths</h2>
+<p><em>Thematic map in which values of a variable are encoded using a color gradient of some sort</em></p>
+<ul>
+<li><p>Counterpart of the histogram</p>
+<p><strong>Both allows us to gage the distribution of a variable</strong></p></li>
+</ul>
+</section>
+<section id="part-3" class="level2">
+<h2 class="anchored" data-anchor-id="part-3">Part 3</h2>
+</section>
+<section id="spatial-weights" class="level2">
+<h2 class="anchored" data-anchor-id="spatial-weights"><strong>Spatial Weights</strong></h2>
+<p>For a statistical method to be explicitly spatial, it needs to contain some representation of the geography, or spatial context. One of the most common ways is through <strong>Spatial Weights Matrices</strong></p>
+<ul>
+<li>(Geo)Visualization: translating numbers into a (visual) language (colors) that the human brain can interpret.</li>
+<li>Spatial Weights Matrices: translating geography into a (numerical) language that a computer can interpret.</li>
+</ul>
+</section>
+<section id="spatial-weight-matrices" class="level2">
+<h2 class="anchored" data-anchor-id="spatial-weight-matrices">Spatial Weight Matrices</h2>
+<p>Spatial Weights Matrices are building block for spatial analysis and statistics.</p>
+<p>They are used to assign a weighted average or sum of neighbouring data values to an observation, or other point in space.</p>
+<ul>
+<li><p>Relates to concepts of spatial ‘smoothing’ and interpolating data</p></li>
+<li><p>They can be used to see how one’s characteristics or outcomes is correlated with their neighbours: e.g.&nbsp;education, criminality, disease risk factors,…</p></li>
+</ul>
+</section>
+<section id="core-element-in-several-spatial-analysis-techniques" class="level2">
+<h2 class="anchored" data-anchor-id="core-element-in-several-spatial-analysis-techniques">Core element in several spatial analysis techniques</h2>
+<ul>
+<li>Spatial autocorrelation</li>
+<li>Spatial clustering/geo-demographics</li>
+<li>Spatial regression</li>
+</ul>
+</section>
+<section id="spatial-weights-1" class="level2">
+<h2 class="anchored" data-anchor-id="spatial-weights-1">Spatial Weights</h2>
+<p>Spatial Weights represented by <span class="math display">\[W\]</span> N x N positive matrix that contains spatial relations that are translated into values</p>
+<ul>
+<li>If you are not a neighbour, <span class="math inline">\(value = 0\)</span></li>
+<li>If you are a neighbour, <span class="math inline">\(value&lt;0\)</span></li>
+</ul>
+</section>
+<section id="website" class="level2">
+<h2 class="anchored" data-anchor-id="website">Website</h2>
+<p><img src="./images/website.jpg" class="img-fluid"></p>
+<center>
+<a href="https://drarunmitra.github.io/GIS4Epidemiology/"><code>https://drarunmitra.github.io/GIS4Epidemiology/</code></a>
+</center>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

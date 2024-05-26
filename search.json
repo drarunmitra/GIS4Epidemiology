@@ -1,5 +1,1174 @@
 [
   {
+    "objectID": "sf_intro_session_new.html",
+    "href": "sf_intro_session_new.html",
+    "title": "Introduction to the  sf Package",
+    "section": "",
+    "text": "Objective: Learn the basics of the sf package in R for spatial data analysis.\nWhy sf?: Simplifies handling, analysis, and visualization of spatial data in R."
+  },
+  {
+    "objectID": "sf_intro_session_new.html#introduction",
+    "href": "sf_intro_session_new.html#introduction",
+    "title": "Introduction to the  sf Package",
+    "section": "",
+    "text": "Objective: Learn the basics of the sf package in R for spatial data analysis.\nWhy sf?: Simplifies handling, analysis, and visualization of spatial data in R."
+  },
+  {
+    "objectID": "sf_intro_session_new.html#overview-of-spatial-data-in-r",
+    "href": "sf_intro_session_new.html#overview-of-spatial-data-in-r",
+    "title": "Introduction to the  sf Package",
+    "section": "Overview of Spatial Data in R",
+    "text": "Overview of Spatial Data in R\n\nSpatial Data: Data associated with locations in a geometric space.\nTypes:\n\nPoint data\nLine data\nPolygon data\n\nApplications: Environmental monitoring, urban planning, epidemiology."
+  },
+  {
+    "objectID": "sf_intro_session_new.html#the-sf-package",
+    "href": "sf_intro_session_new.html#the-sf-package",
+    "title": "Introduction to the  sf Package",
+    "section": "The sf Package",
+    "text": "The sf Package\n\n\nThe sf package is an R implementation of Simple Features.\nThis package incorporates:\n\nA new spatial data class system in R\nFunctions for reading and writing data\nTools for spatial operations on vectors\n\n\n\n\n\nsf package\n\n\ninstall.packages(\"sf\")"
+  },
+  {
+    "objectID": "sf_intro_session_new.html#why-the-sf-package",
+    "href": "sf_intro_session_new.html#why-the-sf-package",
+    "title": "Introduction to the  sf Package",
+    "section": "Why the sf Package?",
+    "text": "Why the sf Package?\n\nIntegration: Seamlessly integrates with the tidyverse.\nEfficiency: More efficient and user-friendly than previous spatial packages.\nStandards: Adheres to international standards for spatial data.\n\n\n\n\nsf package usage"
+  },
+  {
+    "objectID": "sf_intro_session_new.html#geometry-types-in-sf",
+    "href": "sf_intro_session_new.html#geometry-types-in-sf",
+    "title": "Introduction to the  sf Package",
+    "section": "Geometry Types in sf",
+    "text": "Geometry Types in sf\n\n\n \n\n\n\n\nsf Classes"
+  },
+  {
+    "objectID": "sf_intro_session_new.html#loading-spatial-data-into-r-using-sf",
+    "href": "sf_intro_session_new.html#loading-spatial-data-into-r-using-sf",
+    "title": "Introduction to the  sf Package",
+    "section": "Loading Spatial Data into R using sf",
+    "text": "Loading Spatial Data into R using sf\nlibrary(sf)\npath_to_shape_file &lt;- \"path/to/shapefile.shp\"\nspatial_data &lt;- st_read(path_to_shape_file)"
+  },
+  {
+    "objectID": "sf_intro_session_new.html#viewing-the-sf-object",
+    "href": "sf_intro_session_new.html#viewing-the-sf-object",
+    "title": "Introduction to the  sf Package",
+    "section": "Viewing the sf Object",
+    "text": "Viewing the sf Object\nprint(spatial_data)"
+  },
+  {
+    "objectID": "sf_intro_session_new.html#plotting-the-sf-object",
+    "href": "sf_intro_session_new.html#plotting-the-sf-object",
+    "title": "Introduction to the  sf Package",
+    "section": "Plotting the sf Object",
+    "text": "Plotting the sf Object\n\n\nggplot(spatial_data) +\n  geom_sf()\n\nggplot(spatial_data) +\n  geom_sf(aes(color = some_attribute))"
+  },
+  {
+    "objectID": "sf_intro_session_new.html#concept-of-the-sf-package",
+    "href": "sf_intro_session_new.html#concept-of-the-sf-package",
+    "title": "Introduction to the  sf Package",
+    "section": "Concept of the sf Package",
+    "text": "Concept of the sf Package\n\nSpatial Data Frame: Combines attributes and geometry.\nKey Functions:\n\nst_read(): Read spatial data.\nst_write(): Write spatial data.\nst_transform(): Transform coordinate systems.\n\n\n\n\n\nsf Concept Map"
+  },
+  {
+    "objectID": "sf_intro_session_new.html#dependencies-of-the-sf-package",
+    "href": "sf_intro_session_new.html#dependencies-of-the-sf-package",
+    "title": "Introduction to the  sf Package",
+    "section": "Dependencies of the sf Package",
+    "text": "Dependencies of the sf Package\n\n\n\nsf Dependencies\n\n\n\nKey Dependencies:\n\nGDAL: Geospatial Data Abstraction Library\nPROJ: Cartographic Projections Library\nGEOS: Geometry Engine"
+  },
+  {
+    "objectID": "sf_intro_session_new.html#methods-in-sf",
+    "href": "sf_intro_session_new.html#methods-in-sf",
+    "title": "Introduction to the  sf Package",
+    "section": "Methods in sf",
+    "text": "Methods in sf\nmethods(class=\"sf\")\n\nCommon Methods:\n\nst_union(): Union of geometries.\nst_intersection(): Intersection of geometries.\nst_buffer(): Buffer around geometries."
+  },
+  {
+    "objectID": "sf_intro_session_new.html#interactive-mapping-with-sf",
+    "href": "sf_intro_session_new.html#interactive-mapping-with-sf",
+    "title": "Introduction to the  sf Package",
+    "section": "Interactive Mapping with sf",
+    "text": "Interactive Mapping with sf\nlibrary(mapview)\nmapview(spatial_data)"
+  },
+  {
+    "objectID": "sf_intro_session_new.html#practical-exercise-loading-and-plotting-data",
+    "href": "sf_intro_session_new.html#practical-exercise-loading-and-plotting-data",
+    "title": "Introduction to the  sf Package",
+    "section": "Practical Exercise: Loading and Plotting Data",
+    "text": "Practical Exercise: Loading and Plotting Data\n\nLoad Data:\n\nUse st_read() to load spatial data.\nExample shapefile: \"path/to/shapefile.shp\"\n\nView Data:\n\nPrint the sf object.\n\nPlot Data:\n\nUse ggplot2 to create a basic map.\n\n\nlibrary(sf)\nspatial_data &lt;- st_read(\"path/to/shapefile.shp\")\nprint(spatial_data)\nggplot(spatial_data) + geom_sf()"
+  },
+  {
+    "objectID": "sf_intro_session_new.html#practical-exercise-advanced-plotting",
+    "href": "sf_intro_session_new.html#practical-exercise-advanced-plotting",
+    "title": "Introduction to the  sf Package",
+    "section": "Practical Exercise: Advanced Plotting",
+    "text": "Practical Exercise: Advanced Plotting\n\nColor by Attribute:\n\nUse aes() to map colors to an attribute.\n\nInteractive Map:\n\nUse mapview for interactive mapping.\n\n\nggplot(spatial_data) + geom_sf(aes(color = attribute))\nlibrary(mapview)\nmapview(spatial_data)"
+  },
+  {
+    "objectID": "sf_intro_session_new.html#spatial-operations-with-sf",
+    "href": "sf_intro_session_new.html#spatial-operations-with-sf",
+    "title": "Introduction to the  sf Package",
+    "section": "Spatial Operations with sf",
+    "text": "Spatial Operations with sf\n\nBuffering: Create buffer zones around geometries.\n\nbuffered &lt;- st_buffer(spatial_data, dist = 100)\nggplot(buffered) + geom_sf()\n\nIntersection: Find intersecting areas between geometries.\n\nintersection &lt;- st_intersection(spatial_data, another_spatial_layer)\nggplot(intersection) + geom_sf()"
+  },
+  {
+    "objectID": "sf_intro_session_new.html#spatial-joins-with-sf",
+    "href": "sf_intro_session_new.html#spatial-joins-with-sf",
+    "title": "Introduction to the  sf Package",
+    "section": "Spatial Joins with sf",
+    "text": "Spatial Joins with sf\n\nSpatial Join: Combine attributes from different spatial datasets based on their spatial relationship.\n\njoined_data &lt;- st_join(spatial_data, another_spatial_layer)\nggplot(joined_data) + geom_sf()"
+  },
+  {
+    "objectID": "sf_intro_session_new.html#coordinate-transformations-with-sf",
+    "href": "sf_intro_session_new.html#coordinate-transformations-with-sf",
+    "title": "Introduction to the  sf Package",
+    "section": "Coordinate Transformations with sf",
+    "text": "Coordinate Transformations with sf\n\nTransform Coordinates: Change the coordinate reference system (CRS) of spatial data.\n\ntransformed_data &lt;- st_transform(spatial_data, crs = 4326)\nggplot(transformed_data) + geom_sf()"
+  },
+  {
+    "objectID": "sf_intro_session_new.html#where-to-look-for-help",
+    "href": "sf_intro_session_new.html#where-to-look-for-help",
+    "title": "Introduction to the  sf Package",
+    "section": "Where to Look for Help?",
+    "text": "Where to Look for Help?\n\n\n\n\n\nsf Cheatsheet 1\n\n\n\n\n\n\nsf Cheatsheet 2\n\n\n\n\n\nResource: sf Cheatsheet"
+  },
+  {
+    "objectID": "sf_intro_session_new.html#questions",
+    "href": "sf_intro_session_new.html#questions",
+    "title": "Introduction to the  sf Package",
+    "section": "Questions",
+    "text": "Questions\n\nAny doubts or questions?\nHands-on practice time!"
+  },
+  {
+    "objectID": "slides-intro-sf.html#introduction",
+    "href": "slides-intro-sf.html#introduction",
+    "title": "Introduction to the  sf Package",
+    "section": "Introduction",
+    "text": "Introduction\n\nObjective: Learn the basics of the sf package in R for spatial data analysis.\nWhy sf?: Simplifies handling, analysis, and visualization of spatial data in R."
+  },
+  {
+    "objectID": "slides-intro-sf.html#overview-of-spatial-data-in-r",
+    "href": "slides-intro-sf.html#overview-of-spatial-data-in-r",
+    "title": "Introduction to the  sf Package",
+    "section": "Overview of Spatial Data in R",
+    "text": "Overview of Spatial Data in R\n\nSpatial Data: Data associated with locations in a geometric space.\nTypes:\n\nPoint data\nLine data\nPolygon data\n\nApplications: Environmental monitoring, urban planning, epidemiology."
+  },
+  {
+    "objectID": "slides-intro-sf.html#the-sf-package",
+    "href": "slides-intro-sf.html#the-sf-package",
+    "title": "Introduction to the  sf Package",
+    "section": "The sf Package",
+    "text": "The sf Package\n\n\nThe sf package is an R implementation of Simple Features.\nThis package incorporates:\n\nA new spatial data class system in R\nFunctions for reading and writing data\nTools for spatial operations on vectors\n\n\n\n\n\nsf package\n\n\ninstall.packages(\"sf\")"
+  },
+  {
+    "objectID": "slides-intro-sf.html#why-the-sf-package",
+    "href": "slides-intro-sf.html#why-the-sf-package",
+    "title": "Introduction to the  sf Package",
+    "section": "Why the sf Package?",
+    "text": "Why the sf Package?\n\nIntegration: Seamlessly integrates with the tidyverse.\nEfficiency: More efficient and user-friendly than previous spatial packages.\nStandards: Adheres to international standards for spatial data.\n\n\nsf package usage"
+  },
+  {
+    "objectID": "slides-intro-sf.html#geometry-types-in-sf",
+    "href": "slides-intro-sf.html#geometry-types-in-sf",
+    "title": "Introduction to the  sf Package",
+    "section": "Geometry Types in sf",
+    "text": "Geometry Types in sf\n\n\n \n\n\n\n\nsf Classes"
+  },
+  {
+    "objectID": "slides-intro-sf.html#loading-spatial-data-into-r-using-sf",
+    "href": "slides-intro-sf.html#loading-spatial-data-into-r-using-sf",
+    "title": "Introduction to the  sf Package",
+    "section": "Loading Spatial Data into R using sf",
+    "text": "Loading Spatial Data into R using sf\nlibrary(sf)\npath_to_shape_file &lt;- \"path/to/shapefile.shp\"\nspatial_data &lt;- st_read(path_to_shape_file)"
+  },
+  {
+    "objectID": "slides-intro-sf.html#viewing-the-sf-object",
+    "href": "slides-intro-sf.html#viewing-the-sf-object",
+    "title": "Introduction to the  sf Package",
+    "section": "Viewing the sf Object",
+    "text": "Viewing the sf Object\nprint(spatial_data)"
+  },
+  {
+    "objectID": "slides-intro-sf.html#plotting-the-sf-object",
+    "href": "slides-intro-sf.html#plotting-the-sf-object",
+    "title": "Introduction to the  sf Package",
+    "section": "Plotting the sf Object",
+    "text": "Plotting the sf Object\n\n\nggplot(spatial_data) +\n  geom_sf()\n\nggplot(spatial_data) +\n  geom_sf(aes(color = some_attribute))"
+  },
+  {
+    "objectID": "slides-intro-sf.html#concept-of-the-sf-package",
+    "href": "slides-intro-sf.html#concept-of-the-sf-package",
+    "title": "Introduction to the  sf Package",
+    "section": "Concept of the sf Package",
+    "text": "Concept of the sf Package\n\nSpatial Data Frame: Combines attributes and geometry.\nKey Functions:\n\nst_read(): Read spatial data.\nst_write(): Write spatial data.\nst_transform(): Transform coordinate systems.\n\n\n\nsf Concept Map"
+  },
+  {
+    "objectID": "slides-intro-sf.html#dependencies-of-the-sf-package",
+    "href": "slides-intro-sf.html#dependencies-of-the-sf-package",
+    "title": "Introduction to the  sf Package",
+    "section": "Dependencies of the sf Package",
+    "text": "Dependencies of the sf Package\n\nsf Dependencies\nKey Dependencies:\n\nGDAL: Geospatial Data Abstraction Library\nPROJ: Cartographic Projections Library\nGEOS: Geometry Engine"
+  },
+  {
+    "objectID": "slides-intro-sf.html#methods-in-sf",
+    "href": "slides-intro-sf.html#methods-in-sf",
+    "title": "Introduction to the  sf Package",
+    "section": "Methods in sf",
+    "text": "Methods in sf\nmethods(class=\"sf\")\n\nCommon Methods:\n\nst_union(): Union of geometries.\nst_intersection(): Intersection of geometries.\nst_buffer(): Buffer around geometries."
+  },
+  {
+    "objectID": "slides-intro-sf.html#interactive-mapping-with-sf",
+    "href": "slides-intro-sf.html#interactive-mapping-with-sf",
+    "title": "Introduction to the  sf Package",
+    "section": "Interactive Mapping with sf",
+    "text": "Interactive Mapping with sf\nlibrary(mapview)\nmapview(spatial_data)"
+  },
+  {
+    "objectID": "slides-intro-sf.html#practical-exercise-loading-and-plotting-data",
+    "href": "slides-intro-sf.html#practical-exercise-loading-and-plotting-data",
+    "title": "Introduction to the  sf Package",
+    "section": "Practical Exercise: Loading and Plotting Data",
+    "text": "Practical Exercise: Loading and Plotting Data\n\nLoad Data:\n\nUse st_read() to load spatial data.\nExample shapefile: \"path/to/shapefile.shp\"\n\nView Data:\n\nPrint the sf object.\n\nPlot Data:\n\nUse ggplot2 to create a basic map.\n\n\nlibrary(sf)\nspatial_data &lt;- st_read(\"path/to/shapefile.shp\")\nprint(spatial_data)\nggplot(spatial_data) + geom_sf()"
+  },
+  {
+    "objectID": "slides-intro-sf.html#practical-exercise-advanced-plotting",
+    "href": "slides-intro-sf.html#practical-exercise-advanced-plotting",
+    "title": "Introduction to the  sf Package",
+    "section": "Practical Exercise: Advanced Plotting",
+    "text": "Practical Exercise: Advanced Plotting\n\nColor by Attribute:\n\nUse aes() to map colors to an attribute.\n\nInteractive Map:\n\nUse mapview for interactive mapping.\n\n\nggplot(spatial_data) + geom_sf(aes(color = attribute))\nlibrary(mapview)\nmapview(spatial_data)"
+  },
+  {
+    "objectID": "slides-intro-sf.html#spatial-operations-with-sf",
+    "href": "slides-intro-sf.html#spatial-operations-with-sf",
+    "title": "Introduction to the  sf Package",
+    "section": "Spatial Operations with sf",
+    "text": "Spatial Operations with sf\n\nBuffering: Create buffer zones around geometries.\n\nbuffered &lt;- st_buffer(spatial_data, dist = 100)\nggplot(buffered) + geom_sf()\n\nIntersection: Find intersecting areas between geometries.\n\nintersection &lt;- st_intersection(spatial_data, another_spatial_layer)\nggplot(intersection) + geom_sf()"
+  },
+  {
+    "objectID": "slides-intro-sf.html#spatial-joins-with-sf",
+    "href": "slides-intro-sf.html#spatial-joins-with-sf",
+    "title": "Introduction to the  sf Package",
+    "section": "Spatial Joins with sf",
+    "text": "Spatial Joins with sf\n\nSpatial Join: Combine attributes from different spatial datasets based on their spatial relationship.\n\njoined_data &lt;- st_join(spatial_data, another_spatial_layer)\nggplot(joined_data) + geom_sf()"
+  },
+  {
+    "objectID": "slides-intro-sf.html#coordinate-transformations-with-sf",
+    "href": "slides-intro-sf.html#coordinate-transformations-with-sf",
+    "title": "Introduction to the  sf Package",
+    "section": "Coordinate Transformations with sf",
+    "text": "Coordinate Transformations with sf\n\nTransform Coordinates: Change the coordinate reference system (CRS) of spatial data.\n\ntransformed_data &lt;- st_transform(spatial_data, crs = 4326)\nggplot(transformed_data) + geom_sf()"
+  },
+  {
+    "objectID": "slides-intro-sf.html#where-to-look-for-help",
+    "href": "slides-intro-sf.html#where-to-look-for-help",
+    "title": "Introduction to the  sf Package",
+    "section": "Where to Look for Help?",
+    "text": "Where to Look for Help?\n\n\n\n\n\nsf Cheatsheet 1\n\n\n\n\n\n\nsf Cheatsheet 2\n\n\n\n\n\nResource: sf Cheatsheet"
+  },
+  {
+    "objectID": "slides-intro-sf.html#questions",
+    "href": "slides-intro-sf.html#questions",
+    "title": "Introduction to the  sf Package",
+    "section": "Questions",
+    "text": "Questions\n\nAny doubts or questions?\nHands-on practice time!"
+  },
+  {
+    "objectID": "session1a-foundational-concepts-spatial-epi.html",
+    "href": "session1a-foundational-concepts-spatial-epi.html",
+    "title": "Spatial Epidemiology and Public Health Practice",
+    "section": "",
+    "text": "Definition: Study of geographic patterns and variations in disease.\nHistorical Context:\n\nJohn Snow’s Cholera Map (1854): Traced cholera outbreak in London.\n\n\n\nJohn Snow’s work in 1854 demonstrated the power of mapping in understanding disease transmission."
+  },
+  {
+    "objectID": "session1a-foundational-concepts-spatial-epi.html#introduction-to-spatial-epidemiology",
+    "href": "session1a-foundational-concepts-spatial-epi.html#introduction-to-spatial-epidemiology",
+    "title": "Spatial Epidemiology and Public Health Practice",
+    "section": "",
+    "text": "Definition: Study of geographic patterns and variations in disease.\nHistorical Context:\n\nJohn Snow’s Cholera Map (1854): Traced cholera outbreak in London.\n\n\n\nJohn Snow’s work in 1854 demonstrated the power of mapping in understanding disease transmission."
+  },
+  {
+    "objectID": "session1a-foundational-concepts-spatial-epi.html#importance-in-public-health",
+    "href": "session1a-foundational-concepts-spatial-epi.html#importance-in-public-health",
+    "title": "Spatial Epidemiology and Public Health Practice",
+    "section": "Importance in Public Health",
+    "text": "Importance in Public Health\n\nApplications:\n\nIdentifying disease clusters.\nAnalyzing geographic patterns of risk factors.\nInforming public health interventions.\n\nModern Usage:\n\nApplied to both infectious and non-communicable diseases.\nExample: Diabetes belt in the U.S. identified using spatial analysis.\n\n\n\nSpatial epidemiology is crucial for recognizing and addressing public health issues, including non-communicable diseases."
+  },
+  {
+    "objectID": "session1a-foundational-concepts-spatial-epi.html#key-concepts-in-spatial-epidemiology",
+    "href": "session1a-foundational-concepts-spatial-epi.html#key-concepts-in-spatial-epidemiology",
+    "title": "Spatial Epidemiology and Public Health Practice",
+    "section": "Key Concepts in Spatial Epidemiology",
+    "text": "Key Concepts in Spatial Epidemiology\n\nGeographic Information Systems (GIS):\n\nTools for spatial analysis of health data.\nEnables visualization and data integration.\n\nSpatial Clustering: Identifying regions with higher than expected disease incidence.\nSpace-Time Analysis: Examining changes in disease patterns over time.\n\n\nGIS technology underpins spatial epidemiology, allowing for detailed analysis and visualization of health data."
+  },
+  {
+    "objectID": "session1a-foundational-concepts-spatial-epi.html#case-study-stroke-belt-in-the-u.s.",
+    "href": "session1a-foundational-concepts-spatial-epi.html#case-study-stroke-belt-in-the-u.s.",
+    "title": "Spatial Epidemiology and Public Health Practice",
+    "section": "Case Study: Stroke Belt in the U.S.",
+    "text": "Case Study: Stroke Belt in the U.S.\n\nStroke Belt:\n\nHigh stroke mortality in 11 southeastern states.\nIdentified using spatial epidemiology.\n\nImplications:\n\nFocused public health interventions.\nAnalysis of contributing factors like hypertension and lifestyle.\n\n\n\nThe Stroke Belt exemplifies how spatial epidemiology can highlight health disparities and guide interventions."
+  },
+  {
+    "objectID": "session1a-foundational-concepts-spatial-epi.html#case-study-diabetes-belt-in-the-u.s.",
+    "href": "session1a-foundational-concepts-spatial-epi.html#case-study-diabetes-belt-in-the-u.s.",
+    "title": "Spatial Epidemiology and Public Health Practice",
+    "section": "Case Study: Diabetes Belt in the U.S.",
+    "text": "Case Study: Diabetes Belt in the U.S.\n\nDiabetes Belt:\n\nHigh prevalence of diabetes in 15 southern states.\nLinked to obesity and sedentary lifestyles.\n\nInterventions:\n\nTargeted public health campaigns.\nCommunity-based lifestyle programs.\n\n\n\nIdentifying the Diabetes Belt helped tailor public health strategies to address the specific needs of the affected regions."
+  },
+  {
+    "objectID": "session1a-foundational-concepts-spatial-epi.html#spatial-epidemiology-in-india",
+    "href": "session1a-foundational-concepts-spatial-epi.html#spatial-epidemiology-in-india",
+    "title": "Spatial Epidemiology and Public Health Practice",
+    "section": "Spatial Epidemiology in India",
+    "text": "Spatial Epidemiology in India\n\nHealthcare Accessibility:\n\nGIS used to plan health service locations.\nEnsures no geographic deprivation of essential services.\n\nExample:\n\nMapping of tuberculosis and malaria to improve intervention strategies.\n\n\n\nIn India, GIS and spatial epidemiology are crucial for optimizing healthcare accessibility and tailoring interventions to specific regions."
+  },
+  {
+    "objectID": "session1a-foundational-concepts-spatial-epi.html#advancements-in-gis-techniques",
+    "href": "session1a-foundational-concepts-spatial-epi.html#advancements-in-gis-techniques",
+    "title": "Spatial Epidemiology and Public Health Practice",
+    "section": "Advancements in GIS Techniques",
+    "text": "Advancements in GIS Techniques\n\nTechnological Improvements:\n\nEnhanced spatial resolution.\nAdvanced data integration capabilities.\n\nPredictive Modeling:\n\nUsing historical data to predict future trends.\nIncorporating socioeconomic and environmental factors.\n\n\n\nAdvances in GIS technology have significantly enhanced the capabilities of spatial epidemiology, enabling more precise and comprehensive analyses."
+  },
+  {
+    "objectID": "session1a-foundational-concepts-spatial-epi.html#common-themes-in-spatial-epidemiology",
+    "href": "session1a-foundational-concepts-spatial-epi.html#common-themes-in-spatial-epidemiology",
+    "title": "Spatial Epidemiology and Public Health Practice",
+    "section": "Common Themes in Spatial Epidemiology",
+    "text": "Common Themes in Spatial Epidemiology\n\nData Integration:\n\nCombining health, socioeconomic, and environmental data.\nComprehensive analysis of disease patterns.\n\nPublic Health Impact:\n\nInforming targeted interventions.\nAllocating resources effectively.\n\nChallenges:\n\nEnsuring data quality and completeness.\nAddressing ethical concerns regarding privacy and confidentiality.\n\n\n\nRecurring themes in spatial epidemiology include the integration of diverse data sources, the impactful use of this data for public health interventions, and the challenges associated with data quality and ethics."
+  },
+  {
+    "objectID": "session1a-foundational-concepts-spatial-epi.html#practical-exercise-mapping-disease-incidence",
+    "href": "session1a-foundational-concepts-spatial-epi.html#practical-exercise-mapping-disease-incidence",
+    "title": "Spatial Epidemiology and Public Health Practice",
+    "section": "Practical Exercise: Mapping Disease Incidence",
+    "text": "Practical Exercise: Mapping Disease Incidence\n\nObjective:\n\nUse GIS software to map the incidence of a chosen disease.\nIdentify potential clusters and discuss possible causes.\n\nSteps:\n\nCollect and input data into GIS software.\nVisualize the spatial distribution of the disease.\nAnalyze patterns and identify clusters.\n\n\n\nThis exercise will help participants apply spatial analysis techniques to real-world data, reinforcing the concepts discussed."
+  },
+  {
+    "objectID": "session1a-foundational-concepts-spatial-epi.html#practical-exercise-space-time-analysis",
+    "href": "session1a-foundational-concepts-spatial-epi.html#practical-exercise-space-time-analysis",
+    "title": "Spatial Epidemiology and Public Health Practice",
+    "section": "Practical Exercise: Space-Time Analysis",
+    "text": "Practical Exercise: Space-Time Analysis\n\nObjective:\n\nAnalyze changes in disease incidence over time across different regions.\nPredict future trends based on historical data.\n\nSteps:\n\nCollect time-series data on disease incidence.\nInput data into GIS software.\nVisualize and analyze space-time patterns.\n\n\n\nSpace-time analysis will enable participants to understand how disease patterns evolve over time and predict future trends."
+  },
+  {
+    "objectID": "session1a-foundational-concepts-spatial-epi.html#limitations-and-challenges",
+    "href": "session1a-foundational-concepts-spatial-epi.html#limitations-and-challenges",
+    "title": "Spatial Epidemiology and Public Health Practice",
+    "section": "Limitations and Challenges",
+    "text": "Limitations and Challenges\n\nEcological Fallacy: Misinterpreting aggregate data as applicable to individuals.\nData Quality: Inconsistent or incomplete data can affect analysis.\nConfidentiality: Ensuring patient privacy when mapping diseases in small areas.\n\n\nChallenges in spatial epidemiology include ecological fallacy, data quality issues, and maintaining confidentiality."
+  },
+  {
+    "objectID": "session1a-foundational-concepts-spatial-epi.html#conclusion",
+    "href": "session1a-foundational-concepts-spatial-epi.html#conclusion",
+    "title": "Spatial Epidemiology and Public Health Practice",
+    "section": "Conclusion",
+    "text": "Conclusion\n\nImpact on Public Health:\n\nProvides crucial insights for disease prevention and control.\nHelps allocate resources effectively and design targeted interventions.\n\nFuture Directions:\n\nContinued integration with emerging technologies and data sources.\nGreater emphasis on addressing data quality and ethical concerns.\n\n\n\nSpatial epidemiology continues to play a vital role in public health, with ongoing advancements and applications promising to further enhance its impact."
+  },
+  {
+    "objectID": "session1a-foundational-concepts-spatial-epi.html#references",
+    "href": "session1a-foundational-concepts-spatial-epi.html#references",
+    "title": "Spatial Epidemiology and Public Health Practice",
+    "section": "References",
+    "text": "References\n\nLin W. (2022). “How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission.”\nLiu L., et al. (2022). “Epidemiology for public health practice: The application of spatial epidemiology.”\nBhattacharya D. (2023). “Geographic Information Systems Applications in India’s Public Health.”\n\n::: Ensure to review the referenced articles for detailed insights and further reading on the topics discussed in this presentation. :::"
+  },
+  {
+    "objectID": "slides-spatial-epi-public-health.html#introduction-to-spatial-epidemiology",
+    "href": "slides-spatial-epi-public-health.html#introduction-to-spatial-epidemiology",
+    "title": "Spatial Epidemiology and Public Health Practice",
+    "section": "Introduction to Spatial Epidemiology",
+    "text": "Introduction to Spatial Epidemiology\n\nDefinition: Study of geographic patterns and variations in disease.\nHistorical Context:\n\nJohn Snow’s Cholera Map (1854): Traced cholera outbreak in London.\n\n\n\nJohn Snow’s work in 1854 demonstrated the power of mapping in understanding disease transmission."
+  },
+  {
+    "objectID": "slides-spatial-epi-public-health.html#importance-in-public-health",
+    "href": "slides-spatial-epi-public-health.html#importance-in-public-health",
+    "title": "Spatial Epidemiology and Public Health Practice",
+    "section": "Importance in Public Health",
+    "text": "Importance in Public Health\n\nApplications:\n\nIdentifying disease clusters.\nAnalyzing geographic patterns of risk factors.\nInforming public health interventions.\n\nModern Usage:\n\nApplied to both infectious and non-communicable diseases.\nExample: Diabetes belt in the U.S. identified using spatial analysis.\n\n\n\nSpatial epidemiology is crucial for recognizing and addressing public health issues, including non-communicable diseases."
+  },
+  {
+    "objectID": "slides-spatial-epi-public-health.html#key-concepts-in-spatial-epidemiology",
+    "href": "slides-spatial-epi-public-health.html#key-concepts-in-spatial-epidemiology",
+    "title": "Spatial Epidemiology and Public Health Practice",
+    "section": "Key Concepts in Spatial Epidemiology",
+    "text": "Key Concepts in Spatial Epidemiology\n\nGeographic Information Systems (GIS):\n\nTools for spatial analysis of health data.\nEnables visualization and data integration.\n\nSpatial Clustering: Identifying regions with higher than expected disease incidence.\nSpace-Time Analysis: Examining changes in disease patterns over time.\n\n\nGIS technology underpins spatial epidemiology, allowing for detailed analysis and visualization of health data."
+  },
+  {
+    "objectID": "slides-spatial-epi-public-health.html#case-study-stroke-belt-in-the-u.s.",
+    "href": "slides-spatial-epi-public-health.html#case-study-stroke-belt-in-the-u.s.",
+    "title": "Spatial Epidemiology and Public Health Practice",
+    "section": "Case Study: Stroke Belt in the U.S.",
+    "text": "Case Study: Stroke Belt in the U.S.\n\nStroke Belt:\n\nHigh stroke mortality in 11 southeastern states.\nIdentified using spatial epidemiology.\n\nImplications:\n\nFocused public health interventions.\nAnalysis of contributing factors like hypertension and lifestyle.\n\n\n\nThe Stroke Belt exemplifies how spatial epidemiology can highlight health disparities and guide interventions."
+  },
+  {
+    "objectID": "slides-spatial-epi-public-health.html#case-study-diabetes-belt-in-the-u.s.",
+    "href": "slides-spatial-epi-public-health.html#case-study-diabetes-belt-in-the-u.s.",
+    "title": "Spatial Epidemiology and Public Health Practice",
+    "section": "Case Study: Diabetes Belt in the U.S.",
+    "text": "Case Study: Diabetes Belt in the U.S.\n\nDiabetes Belt:\n\nHigh prevalence of diabetes in 15 southern states.\nLinked to obesity and sedentary lifestyles.\n\nInterventions:\n\nTargeted public health campaigns.\nCommunity-based lifestyle programs.\n\n\n\nIdentifying the Diabetes Belt helped tailor public health strategies to address the specific needs of the affected regions."
+  },
+  {
+    "objectID": "slides-spatial-epi-public-health.html#spatial-epidemiology-in-india",
+    "href": "slides-spatial-epi-public-health.html#spatial-epidemiology-in-india",
+    "title": "Spatial Epidemiology and Public Health Practice",
+    "section": "Spatial Epidemiology in India",
+    "text": "Spatial Epidemiology in India\n\nHealthcare Accessibility:\n\nGIS used to plan health service locations.\nEnsures no geographic deprivation of essential services.\n\nExample:\n\nMapping of tuberculosis and malaria to improve intervention strategies.\n\n\n\nIn India, GIS and spatial epidemiology are crucial for optimizing healthcare accessibility and tailoring interventions to specific regions."
+  },
+  {
+    "objectID": "slides-spatial-epi-public-health.html#advancements-in-gis-techniques",
+    "href": "slides-spatial-epi-public-health.html#advancements-in-gis-techniques",
+    "title": "Spatial Epidemiology and Public Health Practice",
+    "section": "Advancements in GIS Techniques",
+    "text": "Advancements in GIS Techniques\n\nTechnological Improvements:\n\nEnhanced spatial resolution.\nAdvanced data integration capabilities.\n\nPredictive Modeling:\n\nUsing historical data to predict future trends.\nIncorporating socioeconomic and environmental factors.\n\n\n\nAdvances in GIS technology have significantly enhanced the capabilities of spatial epidemiology, enabling more precise and comprehensive analyses."
+  },
+  {
+    "objectID": "slides-spatial-epi-public-health.html#common-themes-in-spatial-epidemiology",
+    "href": "slides-spatial-epi-public-health.html#common-themes-in-spatial-epidemiology",
+    "title": "Spatial Epidemiology and Public Health Practice",
+    "section": "Common Themes in Spatial Epidemiology",
+    "text": "Common Themes in Spatial Epidemiology\n\nData Integration:\n\nCombining health, socioeconomic, and environmental data.\nComprehensive analysis of disease patterns.\n\nPublic Health Impact:\n\nInforming targeted interventions.\nAllocating resources effectively.\n\nChallenges:\n\nEnsuring data quality and completeness.\nAddressing ethical concerns regarding privacy and confidentiality.\n\n\n\nRecurring themes in spatial epidemiology include the integration of diverse data sources, the impactful use of this data for public health interventions, and the challenges associated with data quality and ethics."
+  },
+  {
+    "objectID": "slides-spatial-epi-public-health.html#practical-exercise-mapping-disease-incidence",
+    "href": "slides-spatial-epi-public-health.html#practical-exercise-mapping-disease-incidence",
+    "title": "Spatial Epidemiology and Public Health Practice",
+    "section": "Practical Exercise: Mapping Disease Incidence",
+    "text": "Practical Exercise: Mapping Disease Incidence\n\nObjective:\n\nUse GIS software to map the incidence of a chosen disease.\nIdentify potential clusters and discuss possible causes.\n\nSteps:\n\nCollect and input data into GIS software.\nVisualize the spatial distribution of the disease.\nAnalyze patterns and identify clusters.\n\n\n\nThis exercise will help participants apply spatial analysis techniques to real-world data, reinforcing the concepts discussed."
+  },
+  {
+    "objectID": "slides-spatial-epi-public-health.html#practical-exercise-space-time-analysis",
+    "href": "slides-spatial-epi-public-health.html#practical-exercise-space-time-analysis",
+    "title": "Spatial Epidemiology and Public Health Practice",
+    "section": "Practical Exercise: Space-Time Analysis",
+    "text": "Practical Exercise: Space-Time Analysis\n\nObjective:\n\nAnalyze changes in disease incidence over time across different regions.\nPredict future trends based on historical data.\n\nSteps:\n\nCollect time-series data on disease incidence.\nInput data into GIS software.\nVisualize and analyze space-time patterns.\n\n\n\nSpace-time analysis will enable participants to understand how disease patterns evolve over time and predict future trends."
+  },
+  {
+    "objectID": "slides-spatial-epi-public-health.html#limitations-and-challenges",
+    "href": "slides-spatial-epi-public-health.html#limitations-and-challenges",
+    "title": "Spatial Epidemiology and Public Health Practice",
+    "section": "Limitations and Challenges",
+    "text": "Limitations and Challenges\n\nEcological Fallacy: Misinterpreting aggregate data as applicable to individuals.\nData Quality: Inconsistent or incomplete data can affect analysis.\nConfidentiality: Ensuring patient privacy when mapping diseases in small areas.\n\n\nChallenges in spatial epidemiology include ecological fallacy, data quality issues, and maintaining confidentiality."
+  },
+  {
+    "objectID": "slides-spatial-epi-public-health.html#conclusion",
+    "href": "slides-spatial-epi-public-health.html#conclusion",
+    "title": "Spatial Epidemiology and Public Health Practice",
+    "section": "Conclusion",
+    "text": "Conclusion\n\nImpact on Public Health:\n\nProvides crucial insights for disease prevention and control.\nHelps allocate resources effectively and design targeted interventions.\n\nFuture Directions:\n\nContinued integration with emerging technologies and data sources.\nGreater emphasis on addressing data quality and ethical concerns.\n\n\n\nSpatial epidemiology continues to play a vital role in public health, with ongoing advancements and applications promising to further enhance its impact."
+  },
+  {
+    "objectID": "slides-spatial-epi-public-health.html#references",
+    "href": "slides-spatial-epi-public-health.html#references",
+    "title": "Spatial Epidemiology and Public Health Practice",
+    "section": "References",
+    "text": "References\n\nLin W. (2022). “How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission.”\nLiu L., et al. (2022). “Epidemiology for public health practice: The application of spatial epidemiology.”\nBhattacharya D. (2023). “Geographic Information Systems Applications in India’s Public Health.”\n\n::: Ensure to review the referenced articles for detailed insights and further reading on the topics discussed in this presentation. :::"
+  },
+  {
+    "objectID": "session1-spatial-epi-public-health.html",
+    "href": "session1-spatial-epi-public-health.html",
+    "title": "How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission",
+    "section": "",
+    "text": "Infectious diseases can be transmitted:\n\nDirectly (e.g., influenza)\nIndirectly (e.g., through water, soil)\n\nSpatial dimensions are crucial for understanding and managing diseases.\nAdvancements in computing and statistical methods enhance disease visualization and analysis.\n\n\n Figure 1: Visualization of spatial dimensions in disease spread."
+  },
+  {
+    "objectID": "session1-spatial-epi-public-health.html#introduction",
+    "href": "session1-spatial-epi-public-health.html#introduction",
+    "title": "How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission",
+    "section": "",
+    "text": "Infectious diseases can be transmitted:\n\nDirectly (e.g., influenza)\nIndirectly (e.g., through water, soil)\n\nSpatial dimensions are crucial for understanding and managing diseases.\nAdvancements in computing and statistical methods enhance disease visualization and analysis.\n\n\n Figure 1: Visualization of spatial dimensions in disease spread."
+  },
+  {
+    "objectID": "session1-spatial-epi-public-health.html#spatial-data-types",
+    "href": "session1-spatial-epi-public-health.html#spatial-data-types",
+    "title": "How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission",
+    "section": "Spatial Data Types",
+    "text": "Spatial Data Types\n\nPoint Data:\n\nRaw data such as incidences, deaths, physical locations (e.g., hospitals)\n\nAggregate Data:\n\nSummaries of individual points like incidence rates by area\n\n\n\n\nPoint Data provides detailed and precise information, allowing for pinpointing specific outbreak locations.\nAggregate Data helps in understanding broader trends but can obscure local variations."
+  },
+  {
+    "objectID": "session1-spatial-epi-public-health.html#disease-mapping-techniques",
+    "href": "session1-spatial-epi-public-health.html#disease-mapping-techniques",
+    "title": "How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission",
+    "section": "Disease Mapping Techniques",
+    "text": "Disease Mapping Techniques\n\nLocation Mapping\n\nHistorical examples:\n\nYellow fever in New York (1798)\nCholera in London (1854)\n\nAdvantages: Quick observation of disease spread.\nLimitations: Privacy issues, difficulty in reflecting population distributions.\n\n\n\nSurface Mapping\n\nChoropleth Maps:\n\nExample: Filariasis in India, Q fever in the Netherlands.\n\nAdvantages: Visualize incidence rates clearly.\nLimitations: May hide demographic factors, sensitive to spatial scales.\n\n Figure 2: Example of a choropleth map showing disease incidence."
+  },
+  {
+    "objectID": "session1-spatial-epi-public-health.html#advanced-mapping-techniques",
+    "href": "session1-spatial-epi-public-health.html#advanced-mapping-techniques",
+    "title": "How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission",
+    "section": "Advanced Mapping Techniques",
+    "text": "Advanced Mapping Techniques\n\n\n\nBayesian Smoothing\n\nReduces bias in local risk estimation.\nExample: Applied in studies of dengue, influenza, and tuberculosis.\n\n\n\nKernel Density Estimation (KDE)\n\nIdentifies dense points and visualizes as smooth surfaces.\nExample: Dengue cases in Delhi.\n\n\n\n Figure 3: Illustration of Bayesian Smoothing applied to disease data.\n Figure 4: KDE showing the density of dengue cases."
+  },
+  {
+    "objectID": "session1-spatial-epi-public-health.html#overall-spatial-patterns",
+    "href": "session1-spatial-epi-public-health.html#overall-spatial-patterns",
+    "title": "How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission",
+    "section": "Overall Spatial Patterns",
+    "text": "Overall Spatial Patterns\n\nClustering Methods\n\nNearest Neighbour Ratio:\n\nAssesses clustering degree (e.g., rabies in China).\n\nRipley’s K Function:\n\nMeasures spatial clustering over distance (e.g., leishmaniasis in Brazil).\n\n\n Figure 5: Visualization of clustering methods.\n\n\nClustering methods help identify hotspots and inform targeted interventions."
+  },
+  {
+    "objectID": "session1-spatial-epi-public-health.html#statistical-tests-for-clustering",
+    "href": "session1-spatial-epi-public-health.html#statistical-tests-for-clustering",
+    "title": "How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission",
+    "section": "Statistical Tests for Clustering",
+    "text": "Statistical Tests for Clustering\n\nPoint Data\n\nNearest Neighbour Ratio\nCuzick and Edwards’ test\nRipley’s K function\n\n\n\nAggregate Data\n\nSpatial autocorrelation statistics (e.g., Moran’s I)\n\n\n\nThese tests are crucial for confirming whether observed patterns are statistically significant."
+  },
+  {
+    "objectID": "session1-spatial-epi-public-health.html#hot-spot-detection",
+    "href": "session1-spatial-epi-public-health.html#hot-spot-detection",
+    "title": "How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission",
+    "section": "Hot Spot Detection",
+    "text": "Hot Spot Detection\n\nLocal Indicators of Spatial Association (LISA)\n\nIdentifies clusters of high or low values.\n\n\n\nSpatial Scan Statistics\n\nDetects clusters in space and time (e.g., leishmaniasis in Brazil).\n\n Figure 6: Example of hot spot detection using LISA and spatial scan statistics."
+  },
+  {
+    "objectID": "session1-spatial-epi-public-health.html#identifying-risk-factors",
+    "href": "session1-spatial-epi-public-health.html#identifying-risk-factors",
+    "title": "How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission",
+    "section": "Identifying Risk Factors",
+    "text": "Identifying Risk Factors\n\nNeighbourhood Effect\n\nDisease risk influenced by nearby cases.\n\n\n\nSpatial Heterogeneity\n\nVariation in disease risk across different areas.\n\n\n\nSpatial Regression Methods\n\nAdjust for neighbourhood effects and spatial heterogeneity.\n\n Figure 7: Illustration of neighbourhood effect and spatial heterogeneity."
+  },
+  {
+    "objectID": "session1-spatial-epi-public-health.html#conclusion",
+    "href": "session1-spatial-epi-public-health.html#conclusion",
+    "title": "How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission",
+    "section": "Conclusion",
+    "text": "Conclusion\n\nSpatial epidemiology provides insights into the spread and control of infectious diseases.\nFuture Directions: Enhancing GPS methods, optimizing Bayesian estimations.\nKey Impact: Improved disease surveillance, hypothesis generation, and strategic control measures.\n\n Figure 8: The impact of spatial epidemiology on disease control."
+  },
+  {
+    "objectID": "session1-spatial-epi-public-health.html#references",
+    "href": "session1-spatial-epi-public-health.html#references",
+    "title": "How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission",
+    "section": "References",
+    "text": "References\n\nLin, C.-H., & Wen, T.-H. (2022). How spatial epidemiology helps understand infectious human disease transmission."
+  },
+  {
+    "objectID": "slides-spatial-epi.html#introduction",
+    "href": "slides-spatial-epi.html#introduction",
+    "title": "How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission",
+    "section": "Introduction",
+    "text": "Introduction\n\n\n\nInfectious diseases can be transmitted:\n\nDirectly (e.g., influenza)\nIndirectly (e.g., through water, soil)\n\nSpatial dimensions are crucial for understanding and managing diseases.\nAdvancements in computing and statistical methods enhance disease visualization and analysis.\n\n\n Figure 1: Visualization of spatial dimensions in disease spread."
+  },
+  {
+    "objectID": "slides-spatial-epi.html#spatial-data-types",
+    "href": "slides-spatial-epi.html#spatial-data-types",
+    "title": "How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission",
+    "section": "Spatial Data Types",
+    "text": "Spatial Data Types\n\nPoint Data:\n\nRaw data such as incidences, deaths, physical locations (e.g., hospitals)\n\nAggregate Data:\n\nSummaries of individual points like incidence rates by area\n\n\n\n\nPoint Data provides detailed and precise information, allowing for pinpointing specific outbreak locations.\nAggregate Data helps in understanding broader trends but can obscure local variations."
+  },
+  {
+    "objectID": "slides-spatial-epi.html#disease-mapping-techniques",
+    "href": "slides-spatial-epi.html#disease-mapping-techniques",
+    "title": "How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission",
+    "section": "Disease Mapping Techniques",
+    "text": "Disease Mapping Techniques\nLocation Mapping\n\nHistorical examples:\n\nYellow fever in New York (1798)\nCholera in London (1854)\n\nAdvantages: Quick observation of disease spread.\nLimitations: Privacy issues, difficulty in reflecting population distributions.\n\nSurface Mapping\n\nChoropleth Maps:\n\nExample: Filariasis in India, Q fever in the Netherlands.\n\nAdvantages: Visualize incidence rates clearly.\nLimitations: May hide demographic factors, sensitive to spatial scales.\n\n Figure 2: Example of a choropleth map showing disease incidence."
+  },
+  {
+    "objectID": "slides-spatial-epi.html#advanced-mapping-techniques",
+    "href": "slides-spatial-epi.html#advanced-mapping-techniques",
+    "title": "How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission",
+    "section": "Advanced Mapping Techniques",
+    "text": "Advanced Mapping Techniques\n\n\nBayesian Smoothing\n\nReduces bias in local risk estimation.\nExample: Applied in studies of dengue, influenza, and tuberculosis.\n\nKernel Density Estimation (KDE)\n\nIdentifies dense points and visualizes as smooth surfaces.\nExample: Dengue cases in Delhi.\n\n\n Figure 3: Illustration of Bayesian Smoothing applied to disease data.\n Figure 4: KDE showing the density of dengue cases."
+  },
+  {
+    "objectID": "slides-spatial-epi.html#overall-spatial-patterns",
+    "href": "slides-spatial-epi.html#overall-spatial-patterns",
+    "title": "How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission",
+    "section": "Overall Spatial Patterns",
+    "text": "Overall Spatial Patterns\nClustering Methods\n\nNearest Neighbour Ratio:\n\nAssesses clustering degree (e.g., rabies in China).\n\nRipley’s K Function:\n\nMeasures spatial clustering over distance (e.g., leishmaniasis in Brazil).\n\n\n Figure 5: Visualization of clustering methods.\n\n\nClustering methods help identify hotspots and inform targeted interventions."
+  },
+  {
+    "objectID": "slides-spatial-epi.html#statistical-tests-for-clustering",
+    "href": "slides-spatial-epi.html#statistical-tests-for-clustering",
+    "title": "How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission",
+    "section": "Statistical Tests for Clustering",
+    "text": "Statistical Tests for Clustering\nPoint Data\n\nNearest Neighbour Ratio\nCuzick and Edwards’ test\nRipley’s K function\n\nAggregate Data\n\nSpatial autocorrelation statistics (e.g., Moran’s I)\n\n\n\nThese tests are crucial for confirming whether observed patterns are statistically significant."
+  },
+  {
+    "objectID": "slides-spatial-epi.html#hot-spot-detection",
+    "href": "slides-spatial-epi.html#hot-spot-detection",
+    "title": "How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission",
+    "section": "Hot Spot Detection",
+    "text": "Hot Spot Detection\nLocal Indicators of Spatial Association (LISA)\n\nIdentifies clusters of high or low values.\n\nSpatial Scan Statistics\n\nDetects clusters in space and time (e.g., leishmaniasis in Brazil).\n\n Figure 6: Example of hot spot detection using LISA and spatial scan statistics."
+  },
+  {
+    "objectID": "slides-spatial-epi.html#identifying-risk-factors",
+    "href": "slides-spatial-epi.html#identifying-risk-factors",
+    "title": "How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission",
+    "section": "Identifying Risk Factors",
+    "text": "Identifying Risk Factors\nNeighbourhood Effect\n\nDisease risk influenced by nearby cases.\n\nSpatial Heterogeneity\n\nVariation in disease risk across different areas.\n\nSpatial Regression Methods\n\nAdjust for neighbourhood effects and spatial heterogeneity.\n\n Figure 7: Illustration of neighbourhood effect and spatial heterogeneity."
+  },
+  {
+    "objectID": "slides-spatial-epi.html#conclusion",
+    "href": "slides-spatial-epi.html#conclusion",
+    "title": "How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission",
+    "section": "Conclusion",
+    "text": "Conclusion\n\nSpatial epidemiology provides insights into the spread and control of infectious diseases.\nFuture Directions: Enhancing GPS methods, optimizing Bayesian estimations.\nKey Impact: Improved disease surveillance, hypothesis generation, and strategic control measures.\n\n Figure 8: The impact of spatial epidemiology on disease control."
+  },
+  {
+    "objectID": "slides-spatial-epi.html#references",
+    "href": "slides-spatial-epi.html#references",
+    "title": "How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission",
+    "section": "References",
+    "text": "References\n\nLin, C.-H., & Wen, T.-H. (2022). How spatial epidemiology helps understand infectious human disease transmission."
+  },
+  {
+    "objectID": "session1a-concepts-spatial-data-science.html",
+    "href": "session1a-concepts-spatial-data-science.html",
+    "title": "Concepts in Spatial Data Science",
+    "section": "",
+    "text": "Dr. Elisabetta Pietrostefani &\nDr. Carmen Cabrera-Arnau\n\nA course in Geographic Data Science"
+  },
+  {
+    "objectID": "session1a-concepts-spatial-data-science.html#acknowledge",
+    "href": "session1a-concepts-spatial-data-science.html#acknowledge",
+    "title": "Concepts in Spatial Data Science",
+    "section": "",
+    "text": "Dr. Elisabetta Pietrostefani &\nDr. Carmen Cabrera-Arnau\n\nA course in Geographic Data Science"
+  },
+  {
+    "objectID": "session1a-concepts-spatial-data-science.html#sctimst-trivandrum",
+    "href": "session1a-concepts-spatial-data-science.html#sctimst-trivandrum",
+    "title": "Concepts in Spatial Data Science",
+    "section": "SCTIMST, Trivandrum",
+    "text": "SCTIMST, Trivandrum\n\n\nSree Chitra Tirunal Institute for Medical Sciences & Technology, Trivandrum\nAn Institution of National Importance established by the Act of the Indian Parliament (Act No.52, 1980)\n\n\n\n\n\n\nDept. of Science & Technology\nThree major focus areas\n\nBio-Medical Technology Wing\nSuper specialty Hospital\nPublic Health (AMCHSS)\n\nHealthcare Technology development\ninter-disciplinary initiatives\nRunning MPH program since 1997, PhD programs since 2003"
+  },
+  {
+    "objectID": "session1a-concepts-spatial-data-science.html#introduction",
+    "href": "session1a-concepts-spatial-data-science.html#introduction",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Introduction",
+    "text": "Introduction\n\nPublic Health - Science vs. Advocacy\nThe need for participatory decision making in public health\nThe transparency of open data science approach\nThe beauty of computational reports, presentations, etc."
+  },
+  {
+    "objectID": "session1a-concepts-spatial-data-science.html#work-plan",
+    "href": "session1a-concepts-spatial-data-science.html#work-plan",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Work plan",
+    "text": "Work plan"
+  },
+  {
+    "objectID": "session1a-concepts-spatial-data-science.html#lectures",
+    "href": "session1a-concepts-spatial-data-science.html#lectures",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Lectures",
+    "text": "Lectures\n\nEssential concepts\nMainly to get the big picture\nEnthusing interest rather than teaching\nWelcome to the open data science initiative!"
+  },
+  {
+    "objectID": "session1a-concepts-spatial-data-science.html#lab-work",
+    "href": "session1a-concepts-spatial-data-science.html#lab-work",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Lab work",
+    "text": "Lab work\n\nDo it yourself\nGet skilled in the process\nCome out of your comfort zones and collaborate!\nUse data for dialogue!"
+  },
+  {
+    "objectID": "session1a-concepts-spatial-data-science.html#what-information-does-gis-use",
+    "href": "session1a-concepts-spatial-data-science.html#what-information-does-gis-use",
+    "title": "Concepts in Spatial Data Science",
+    "section": "What information does GIS use?",
+    "text": "What information does GIS use?\n\nData that defines geographical features like roads, rivers\nSoil types, land use, elevation\nDemographics, socioeconomic attributes\nEnvironmental, climate, air-quality\nAnnotations that label features and places"
+  },
+  {
+    "objectID": "session1a-concepts-spatial-data-science.html#what-is-spatial-data-science",
+    "href": "session1a-concepts-spatial-data-science.html#what-is-spatial-data-science",
+    "title": "Concepts in Spatial Data Science",
+    "section": "What is Spatial Data Science?",
+    "text": "What is Spatial Data Science?"
+  },
+  {
+    "objectID": "session1a-concepts-spatial-data-science.html#spatial-data-science",
+    "href": "session1a-concepts-spatial-data-science.html#spatial-data-science",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Spatial Data Science",
+    "text": "Spatial Data Science\n\nAnalyse and extract insights from geospatial data\nWork with real-world data on a number of domains and problems\nAcquire key data science skills and important tools to answer spatial questions\n\n\nIt is especially true in public health"
+  },
+  {
+    "objectID": "session1a-concepts-spatial-data-science.html#gis",
+    "href": "session1a-concepts-spatial-data-science.html#gis",
+    "title": "Concepts in Spatial Data Science",
+    "section": "GIS",
+    "text": "GIS"
+  },
+  {
+    "objectID": "session1a-concepts-spatial-data-science.html#layers---image---data",
+    "href": "session1a-concepts-spatial-data-science.html#layers---image---data",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Layers - Image - Data",
+    "text": "Layers - Image - Data"
+  },
+  {
+    "objectID": "session1a-concepts-spatial-data-science.html#gis-world-vs.-real-world",
+    "href": "session1a-concepts-spatial-data-science.html#gis-world-vs.-real-world",
+    "title": "Concepts in Spatial Data Science",
+    "section": "GIS world vs. Real World",
+    "text": "GIS world vs. Real World"
+  },
+  {
+    "objectID": "session1a-concepts-spatial-data-science.html#skills-for-public-health-data-science",
+    "href": "session1a-concepts-spatial-data-science.html#skills-for-public-health-data-science",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Skills for public health data science",
+    "text": "Skills for public health data science\nHard Skills - Programming Language - Transparency and Reproducibility - Version control\nSoft Skills - Communication - Storytelling - Geospatial analytics acumen - Ethical skills"
+  },
+  {
+    "objectID": "session1a-concepts-spatial-data-science.html#r-software-for-spatial-data-science-sds",
+    "href": "session1a-concepts-spatial-data-science.html#r-software-for-spatial-data-science-sds",
+    "title": "Concepts in Spatial Data Science",
+    "section": "R software for Spatial Data Science (SDS)",
+    "text": "R software for Spatial Data Science (SDS)\nGraphical User Interfaces (GUIs)\n\nQGIS and GRASS has revolutionized Open source Spatial Information Systems (GIS).\nHowever, the reproducibility aspect has many challenges\n\nCommand Line Interfaces (CLIs)\nCommand Line Interface (CLIs) of R software is a good way to bring in reproducible algorithms for GIS/SDS"
+  },
+  {
+    "objectID": "session1a-concepts-spatial-data-science.html#the-spatial-data-revolution",
+    "href": "session1a-concepts-spatial-data-science.html#the-spatial-data-revolution",
+    "title": "Concepts in Spatial Data Science",
+    "section": "The Spatial Data ‘Revolution’",
+    "text": "The Spatial Data ‘Revolution’\nAdvanced Hardware: High-performance computer hardware and efficient algorithms allow us to process vast data sets quickly.\nScalable Software: Scalable solutions with the R environment help us to sift through the data deluge, and extract valuable insights from the noise.\nSpatial Databases: The advent of spatial databases empowers us to store and manipulate manageable subsets within the vast ocean of spatial data."
+  },
+  {
+    "objectID": "session1a-concepts-spatial-data-science.html#sds-in-public-health",
+    "href": "session1a-concepts-spatial-data-science.html#sds-in-public-health",
+    "title": "Concepts in Spatial Data Science",
+    "section": "SDS in Public Health",
+    "text": "SDS in Public Health\n\nData Science:“gathering data messaging it into a tractable form, making it tell its story and presenting that story to others”\n\n\nLoukides (2011) What is Data Science?"
+  },
+  {
+    "objectID": "session1a-concepts-spatial-data-science.html#traditional-datasets-in-healthcare",
+    "href": "session1a-concepts-spatial-data-science.html#traditional-datasets-in-healthcare",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Traditional datasets in healthcare",
+    "text": "Traditional datasets in healthcare\n\nCollected for the purpose (carefully designed)\nDetailed and informative (“rich profile and portraits of the country”)\nHigh quality"
+  },
+  {
+    "objectID": "session1a-concepts-spatial-data-science.html#traditional-health-and-allied-sector-data",
+    "href": "session1a-concepts-spatial-data-science.html#traditional-health-and-allied-sector-data",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Traditional health and allied sector data",
+    "text": "Traditional health and allied sector data\n\nMassive enterprises (very costly)\nCoarse in resolution (to preserve privacy they need to be aggregated)\nSlow - the more detailed, the less frequent they are available"
+  },
+  {
+    "objectID": "session1a-concepts-spatial-data-science.html#examples",
+    "href": "session1a-concepts-spatial-data-science.html#examples",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Examples",
+    "text": "Examples\n\nDecennial census (census geographies)\nLongitudinal surveys\nCustom collected surveys, interviews etc.\nEconomic or well-being indicators"
+  },
+  {
+    "objectID": "session1a-concepts-spatial-data-science.html#new-forms-of-spatial-data",
+    "href": "session1a-concepts-spatial-data-science.html#new-forms-of-spatial-data",
+    "title": "Concepts in Spatial Data Science",
+    "section": "New Forms of spatial data",
+    "text": "New Forms of spatial data\nTied into the geo-data revolution\n\nAccidental : created for different purposes but available for analysis as a side effect\nVery diverse in nature: resolution and quality but, potentially much more detailed in both space and time"
+  },
+  {
+    "objectID": "session1a-concepts-spatial-data-science.html#challenges-arribas-bel-2014",
+    "href": "session1a-concepts-spatial-data-science.html#challenges-arribas-bel-2014",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Challenges (Arribas-Bel, 2014)",
+    "text": "Challenges (Arribas-Bel, 2014)\n\nBias\nTechnical barriers\nMethodological “mismatch”"
+  },
+  {
+    "objectID": "session1a-concepts-spatial-data-science.html#part-2",
+    "href": "session1a-concepts-spatial-data-science.html#part-2",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Part 2",
+    "text": "Part 2"
+  },
+  {
+    "objectID": "session1a-concepts-spatial-data-science.html#geovisualisation",
+    "href": "session1a-concepts-spatial-data-science.html#geovisualisation",
+    "title": "Concepts in Spatial Data Science",
+    "section": "(Geo)visualisation",
+    "text": "(Geo)visualisation\n\n\n\n\n\n\n\n\n\n\nBy encoding information visually, they allow to present large amounts of numbers in a meaningful way."
+  },
+  {
+    "objectID": "session1a-concepts-spatial-data-science.html#a-map-for-everyone",
+    "href": "session1a-concepts-spatial-data-science.html#a-map-for-everyone",
+    "title": "Concepts in Spatial Data Science",
+    "section": "A map for everyone",
+    "text": "A map for everyone\nA real public health tool\nMaps can fulfill several needs, looking very different depending on the end-goal.\nMacEachren & Kraak (1997) identify three main dimensions:\n\nKnowledge of what is being plotted\nTarget audience\nDegree of interactivity"
+  },
+  {
+    "objectID": "session1a-concepts-spatial-data-science.html#maceachren-kraak-1997",
+    "href": "session1a-concepts-spatial-data-science.html#maceachren-kraak-1997",
+    "title": "Concepts in Spatial Data Science",
+    "section": "MacEachren & Kraak (1997)",
+    "text": "MacEachren & Kraak (1997)"
+  },
+  {
+    "objectID": "session1a-concepts-spatial-data-science.html#dibiases-1990-swoopy",
+    "href": "session1a-concepts-spatial-data-science.html#dibiases-1990-swoopy",
+    "title": "Concepts in Spatial Data Science",
+    "section": "DiBiase’s (1990) “Swoopy”",
+    "text": "DiBiase’s (1990) “Swoopy”\nTranslating numbers into a (visual) language that the human brain “speaks better”"
+  },
+  {
+    "objectID": "session1a-concepts-spatial-data-science.html#exploratory-visualization",
+    "href": "session1a-concepts-spatial-data-science.html#exploratory-visualization",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Exploratory Visualization",
+    "text": "Exploratory Visualization\n\n“forces us to notice what we never expected to see” (Tukey 1977: vi)\n\n\nMostly for ourselves in the course of the research process.\nMany, quick and dirty, and rather unattractive graphs."
+  },
+  {
+    "objectID": "session1a-concepts-spatial-data-science.html#explanatory-visualization",
+    "href": "session1a-concepts-spatial-data-science.html#explanatory-visualization",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Explanatory Visualization",
+    "text": "Explanatory Visualization\n\n“forces readers to see the information the designer wanted to convey” (Kosslyn 1994: 271)\n\n\nMostly for others after the research is completed.\nFew, carefully crafted, and attractive graphs."
+  },
+  {
+    "objectID": "session1a-concepts-spatial-data-science.html#choropleths",
+    "href": "session1a-concepts-spatial-data-science.html#choropleths",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Choropleths",
+    "text": "Choropleths\nThematic map in which values of a variable are encoded using a color gradient of some sort\n\nCounterpart of the histogram\nBoth allows us to gage the distribution of a variable"
+  },
+  {
+    "objectID": "session1a-concepts-spatial-data-science.html#part-3",
+    "href": "session1a-concepts-spatial-data-science.html#part-3",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Part 3",
+    "text": "Part 3"
+  },
+  {
+    "objectID": "session1a-concepts-spatial-data-science.html#spatial-weights",
+    "href": "session1a-concepts-spatial-data-science.html#spatial-weights",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Spatial Weights",
+    "text": "Spatial Weights\nFor a statistical method to be explicitly spatial, it needs to contain some representation of the geography, or spatial context. One of the most common ways is through Spatial Weights Matrices\n\n(Geo)Visualization: translating numbers into a (visual) language (colors) that the human brain can interpret.\nSpatial Weights Matrices: translating geography into a (numerical) language that a computer can interpret."
+  },
+  {
+    "objectID": "session1a-concepts-spatial-data-science.html#spatial-weight-matrices",
+    "href": "session1a-concepts-spatial-data-science.html#spatial-weight-matrices",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Spatial Weight Matrices",
+    "text": "Spatial Weight Matrices\nSpatial Weights Matrices are building block for spatial analysis and statistics.\nThey are used to assign a weighted average or sum of neighbouring data values to an observation, or other point in space.\n\nRelates to concepts of spatial ‘smoothing’ and interpolating data\nThey can be used to see how one’s characteristics or outcomes is correlated with their neighbours: e.g. education, criminality, disease risk factors,…"
+  },
+  {
+    "objectID": "session1a-concepts-spatial-data-science.html#core-element-in-several-spatial-analysis-techniques",
+    "href": "session1a-concepts-spatial-data-science.html#core-element-in-several-spatial-analysis-techniques",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Core element in several spatial analysis techniques",
+    "text": "Core element in several spatial analysis techniques\n\nSpatial autocorrelation\nSpatial clustering/geo-demographics\nSpatial regression"
+  },
+  {
+    "objectID": "session1a-concepts-spatial-data-science.html#spatial-weights-1",
+    "href": "session1a-concepts-spatial-data-science.html#spatial-weights-1",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Spatial Weights",
+    "text": "Spatial Weights\nSpatial Weights represented by \\[W\\] N x N positive matrix that contains spatial relations that are translated into values\n\nIf you are not a neighbour, \\(value = 0\\)\nIf you are a neighbour, \\(value&lt;0\\)"
+  },
+  {
+    "objectID": "session1a-concepts-spatial-data-science.html#website",
+    "href": "session1a-concepts-spatial-data-science.html#website",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Website",
+    "text": "Website\n\n\nhttps://drarunmitra.github.io/GIS4Epidemiology/"
+  },
+  {
+    "objectID": "slides-concepts-sds.html#acknowledge",
+    "href": "slides-concepts-sds.html#acknowledge",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Acknowledge",
+    "text": "Acknowledge\n\nDr. Elisabetta Pietrostefani &\nDr. Carmen Cabrera-Arnau\n\nA course in Geographic Data Science"
+  },
+  {
+    "objectID": "slides-concepts-sds.html#sctimst-trivandrum",
+    "href": "slides-concepts-sds.html#sctimst-trivandrum",
+    "title": "Concepts in Spatial Data Science",
+    "section": "SCTIMST, Trivandrum",
+    "text": "SCTIMST, Trivandrum\n\n\nSree Chitra Tirunal Institute for Medical Sciences & Technology, Trivandrum\nAn Institution of National Importance established by the Act of the Indian Parliament (Act No.52, 1980)\n\n\n\n\n\n\nDept. of Science & Technology\nThree major focus areas\n\nBio-Medical Technology Wing\nSuper specialty Hospital\nPublic Health (AMCHSS)\n\nHealthcare Technology development\ninter-disciplinary initiatives\nRunning MPH program since 1997, PhD programs since 2003"
+  },
+  {
+    "objectID": "slides-concepts-sds.html#introduction",
+    "href": "slides-concepts-sds.html#introduction",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Introduction",
+    "text": "Introduction\n\nPublic Health - Science vs. Advocacy\nThe need for participatory decision making in public health\nThe transparency of open data science approach\nThe beauty of computational reports, presentations, etc."
+  },
+  {
+    "objectID": "slides-concepts-sds.html#work-plan",
+    "href": "slides-concepts-sds.html#work-plan",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Work plan",
+    "text": "Work plan"
+  },
+  {
+    "objectID": "slides-concepts-sds.html#lectures",
+    "href": "slides-concepts-sds.html#lectures",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Lectures",
+    "text": "Lectures\n\nEssential concepts\nMainly to get the big picture\nEnthusing interest rather than teaching\nWelcome to the open data science initiative!"
+  },
+  {
+    "objectID": "slides-concepts-sds.html#lab-work",
+    "href": "slides-concepts-sds.html#lab-work",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Lab work",
+    "text": "Lab work\n\nDo it yourself\nGet skilled in the process\nCome out of your comfort zones and collaborate!\nUse data for dialogue!"
+  },
+  {
+    "objectID": "slides-concepts-sds.html#what-information-does-gis-use",
+    "href": "slides-concepts-sds.html#what-information-does-gis-use",
+    "title": "Concepts in Spatial Data Science",
+    "section": "What information does GIS use?",
+    "text": "What information does GIS use?\n\nData that defines geographical features like roads, rivers\nSoil types, land use, elevation\nDemographics, socioeconomic attributes\nEnvironmental, climate, air-quality\nAnnotations that label features and places"
+  },
+  {
+    "objectID": "slides-concepts-sds.html#what-is-spatial-data-science",
+    "href": "slides-concepts-sds.html#what-is-spatial-data-science",
+    "title": "Concepts in Spatial Data Science",
+    "section": "What is Spatial Data Science?",
+    "text": "What is Spatial Data Science?"
+  },
+  {
+    "objectID": "slides-concepts-sds.html#spatial-data-science",
+    "href": "slides-concepts-sds.html#spatial-data-science",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Spatial Data Science",
+    "text": "Spatial Data Science\n\nAnalyse and extract insights from geospatial data\nWork with real-world data on a number of domains and problems\nAcquire key data science skills and important tools to answer spatial questions\n\n\nIt is especially true in public health"
+  },
+  {
+    "objectID": "slides-concepts-sds.html#gis",
+    "href": "slides-concepts-sds.html#gis",
+    "title": "Concepts in Spatial Data Science",
+    "section": "GIS",
+    "text": "GIS"
+  },
+  {
+    "objectID": "slides-concepts-sds.html#layers---image---data",
+    "href": "slides-concepts-sds.html#layers---image---data",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Layers - Image - Data",
+    "text": "Layers - Image - Data"
+  },
+  {
+    "objectID": "slides-concepts-sds.html#gis-world-vs.-real-world",
+    "href": "slides-concepts-sds.html#gis-world-vs.-real-world",
+    "title": "Concepts in Spatial Data Science",
+    "section": "GIS world vs. Real World",
+    "text": "GIS world vs. Real World"
+  },
+  {
+    "objectID": "slides-concepts-sds.html#skills-for-public-health-data-science",
+    "href": "slides-concepts-sds.html#skills-for-public-health-data-science",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Skills for public health data science",
+    "text": "Skills for public health data science\nHard Skills - Programming Language - Transparency and Reproducibility - Version control\nSoft Skills - Communication - Storytelling - Geospatial analytics acumen - Ethical skills"
+  },
+  {
+    "objectID": "slides-concepts-sds.html#r-software-for-spatial-data-science-sds",
+    "href": "slides-concepts-sds.html#r-software-for-spatial-data-science-sds",
+    "title": "Concepts in Spatial Data Science",
+    "section": "R software for Spatial Data Science (SDS)",
+    "text": "R software for Spatial Data Science (SDS)\nGraphical User Interfaces (GUIs)\n\nQGIS and GRASS has revolutionized Open source Spatial Information Systems (GIS).\nHowever, the reproducibility aspect has many challenges\n\nCommand Line Interfaces (CLIs)\nCommand Line Interface (CLIs) of R software is a good way to bring in reproducible algorithms for GIS/SDS"
+  },
+  {
+    "objectID": "slides-concepts-sds.html#the-spatial-data-revolution",
+    "href": "slides-concepts-sds.html#the-spatial-data-revolution",
+    "title": "Concepts in Spatial Data Science",
+    "section": "The Spatial Data ‘Revolution’",
+    "text": "The Spatial Data ‘Revolution’\nAdvanced Hardware: High-performance computer hardware and efficient algorithms allow us to process vast data sets quickly.\nScalable Software: Scalable solutions with the R environment help us to sift through the data deluge, and extract valuable insights from the noise.\nSpatial Databases: The advent of spatial databases empowers us to store and manipulate manageable subsets within the vast ocean of spatial data."
+  },
+  {
+    "objectID": "slides-concepts-sds.html#sds-in-public-health",
+    "href": "slides-concepts-sds.html#sds-in-public-health",
+    "title": "Concepts in Spatial Data Science",
+    "section": "SDS in Public Health",
+    "text": "SDS in Public Health\n\nData Science:“gathering data messaging it into a tractable form, making it tell its story and presenting that story to others”\n\n\nLoukides (2011) What is Data Science?"
+  },
+  {
+    "objectID": "slides-concepts-sds.html#traditional-datasets-in-healthcare",
+    "href": "slides-concepts-sds.html#traditional-datasets-in-healthcare",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Traditional datasets in healthcare",
+    "text": "Traditional datasets in healthcare\n\nCollected for the purpose (carefully designed)\nDetailed and informative (“rich profile and portraits of the country”)\nHigh quality"
+  },
+  {
+    "objectID": "slides-concepts-sds.html#traditional-health-and-allied-sector-data",
+    "href": "slides-concepts-sds.html#traditional-health-and-allied-sector-data",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Traditional health and allied sector data",
+    "text": "Traditional health and allied sector data\n\nMassive enterprises (very costly)\nCoarse in resolution (to preserve privacy they need to be aggregated)\nSlow - the more detailed, the less frequent they are available"
+  },
+  {
+    "objectID": "slides-concepts-sds.html#examples",
+    "href": "slides-concepts-sds.html#examples",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Examples",
+    "text": "Examples\n\nDecennial census (census geographies)\nLongitudinal surveys\nCustom collected surveys, interviews etc.\nEconomic or well-being indicators"
+  },
+  {
+    "objectID": "slides-concepts-sds.html#new-forms-of-spatial-data",
+    "href": "slides-concepts-sds.html#new-forms-of-spatial-data",
+    "title": "Concepts in Spatial Data Science",
+    "section": "New Forms of spatial data",
+    "text": "New Forms of spatial data\nTied into the geo-data revolution\n\nAccidental : created for different purposes but available for analysis as a side effect\nVery diverse in nature: resolution and quality but, potentially much more detailed in both space and time"
+  },
+  {
+    "objectID": "slides-concepts-sds.html#challenges-arribas-bel-2014",
+    "href": "slides-concepts-sds.html#challenges-arribas-bel-2014",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Challenges (Arribas-Bel, 2014)",
+    "text": "Challenges (Arribas-Bel, 2014)\n\nBias\nTechnical barriers\nMethodological “mismatch”"
+  },
+  {
+    "objectID": "slides-concepts-sds.html#part-2",
+    "href": "slides-concepts-sds.html#part-2",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Part 2",
+    "text": "Part 2"
+  },
+  {
+    "objectID": "slides-concepts-sds.html#geovisualisation",
+    "href": "slides-concepts-sds.html#geovisualisation",
+    "title": "Concepts in Spatial Data Science",
+    "section": "(Geo)visualisation",
+    "text": "(Geo)visualisation\n\n\n\n\n\n\n\n\n\n\nBy encoding information visually, they allow to present large amounts of numbers in a meaningful way."
+  },
+  {
+    "objectID": "slides-concepts-sds.html#a-map-for-everyone",
+    "href": "slides-concepts-sds.html#a-map-for-everyone",
+    "title": "Concepts in Spatial Data Science",
+    "section": "A map for everyone",
+    "text": "A map for everyone\nA real public health tool\nMaps can fulfill several needs, looking very different depending on the end-goal.\nMacEachren & Kraak (1997) identify three main dimensions:\n\nKnowledge of what is being plotted\nTarget audience\nDegree of interactivity"
+  },
+  {
+    "objectID": "slides-concepts-sds.html#maceachren-kraak-1997",
+    "href": "slides-concepts-sds.html#maceachren-kraak-1997",
+    "title": "Concepts in Spatial Data Science",
+    "section": "MacEachren & Kraak (1997)",
+    "text": "MacEachren & Kraak (1997)"
+  },
+  {
+    "objectID": "slides-concepts-sds.html#dibiases-1990-swoopy",
+    "href": "slides-concepts-sds.html#dibiases-1990-swoopy",
+    "title": "Concepts in Spatial Data Science",
+    "section": "DiBiase’s (1990) “Swoopy”",
+    "text": "DiBiase’s (1990) “Swoopy”\nTranslating numbers into a (visual) language that the human brain “speaks better”"
+  },
+  {
+    "objectID": "slides-concepts-sds.html#exploratory-visualization",
+    "href": "slides-concepts-sds.html#exploratory-visualization",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Exploratory Visualization",
+    "text": "Exploratory Visualization\n\n“forces us to notice what we never expected to see” (Tukey 1977: vi)\n\n\nMostly for ourselves in the course of the research process.\nMany, quick and dirty, and rather unattractive graphs."
+  },
+  {
+    "objectID": "slides-concepts-sds.html#explanatory-visualization",
+    "href": "slides-concepts-sds.html#explanatory-visualization",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Explanatory Visualization",
+    "text": "Explanatory Visualization\n\n“forces readers to see the information the designer wanted to convey” (Kosslyn 1994: 271)\n\n\nMostly for others after the research is completed.\nFew, carefully crafted, and attractive graphs."
+  },
+  {
+    "objectID": "slides-concepts-sds.html#choropleths",
+    "href": "slides-concepts-sds.html#choropleths",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Choropleths",
+    "text": "Choropleths\nThematic map in which values of a variable are encoded using a color gradient of some sort\n\nCounterpart of the histogram\nBoth allows us to gage the distribution of a variable"
+  },
+  {
+    "objectID": "slides-concepts-sds.html#part-3",
+    "href": "slides-concepts-sds.html#part-3",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Part 3",
+    "text": "Part 3"
+  },
+  {
+    "objectID": "slides-concepts-sds.html#spatial-weights",
+    "href": "slides-concepts-sds.html#spatial-weights",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Spatial Weights",
+    "text": "Spatial Weights\nFor a statistical method to be explicitly spatial, it needs to contain some representation of the geography, or spatial context. One of the most common ways is through Spatial Weights Matrices\n\n(Geo)Visualization: translating numbers into a (visual) language (colors) that the human brain can interpret.\nSpatial Weights Matrices: translating geography into a (numerical) language that a computer can interpret."
+  },
+  {
+    "objectID": "slides-concepts-sds.html#spatial-weight-matrices",
+    "href": "slides-concepts-sds.html#spatial-weight-matrices",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Spatial Weight Matrices",
+    "text": "Spatial Weight Matrices\nSpatial Weights Matrices are building block for spatial analysis and statistics.\nThey are used to assign a weighted average or sum of neighbouring data values to an observation, or other point in space.\n\nRelates to concepts of spatial ‘smoothing’ and interpolating data\nThey can be used to see how one’s characteristics or outcomes is correlated with their neighbours: e.g. education, criminality, disease risk factors,…"
+  },
+  {
+    "objectID": "slides-concepts-sds.html#core-element-in-several-spatial-analysis-techniques",
+    "href": "slides-concepts-sds.html#core-element-in-several-spatial-analysis-techniques",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Core element in several spatial analysis techniques",
+    "text": "Core element in several spatial analysis techniques\n\nSpatial autocorrelation\nSpatial clustering/geo-demographics\nSpatial regression"
+  },
+  {
+    "objectID": "slides-concepts-sds.html#spatial-weights-1",
+    "href": "slides-concepts-sds.html#spatial-weights-1",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Spatial Weights",
+    "text": "Spatial Weights\nSpatial Weights represented by \\[W\\] N x N positive matrix that contains spatial relations that are translated into values\n\nIf you are not a neighbour, \\(value = 0\\)\nIf you are a neighbour, \\(value&lt;0\\)"
+  },
+  {
+    "objectID": "slides-concepts-sds.html#website",
+    "href": "slides-concepts-sds.html#website",
+    "title": "Concepts in Spatial Data Science",
+    "section": "Website",
+    "text": "Website\n\n\nhttps://drarunmitra.github.io/GIS4Epidemiology/"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site This is the about page add news"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "GIS for Epidemiology",
+    "section": "",
+    "text": "Welcome to the Day 2 of Geospatial Technology for Public Health Policy Workshop!\nThe goal for today is to highlight the applications of GIS in Epidemiology while providing the foundational concepts in Spatial Epidemiology.\nThe workshop introduces the participants to the field of Spatial Data Science through the statistical programming language R.\nThe workshop is intended as an introductory window into the world of spatial data analysis and visualization for public health policy.\nWorkshop materials in the github repository GIS4EPI-Workshop\n\n\n\nAt the end of the day, participants will be able to:\n\nUnderstand and Apply Foundational Concepts in Spatial Epidemiology\nUtilize Tools and Techniques for Spatial Data Analysis and Spatial Data Science\nImplement Best Practices for Reproducible Spatial Data Research and Analysis\nAnalyze and Interpret Spatial Data for Public Health Applications\nExplore the applications of spatial epidemiology in public health research and practice\nGain hands-on experience with spatial data analysis and visualization"
+  },
+  {
+    "objectID": "index.html#learning-objectives-for-the-workshop",
+    "href": "index.html#learning-objectives-for-the-workshop",
+    "title": "GIS for Epidemiology",
+    "section": "",
+    "text": "At the end of the day, participants will be able to:\n\nUnderstand and Apply Foundational Concepts in Spatial Epidemiology\nUtilize Tools and Techniques for Spatial Data Analysis and Spatial Data Science\nImplement Best Practices for Reproducible Spatial Data Research and Analysis\nAnalyze and Interpret Spatial Data for Public Health Applications\nExplore the applications of spatial epidemiology in public health research and practice\nGain hands-on experience with spatial data analysis and visualization"
+  },
+  {
+    "objectID": "slides-concepts.html#definition-and-scope",
+    "href": "slides-concepts.html#definition-and-scope",
+    "title": "Foundational concetps in Spatial Epidemiology",
+    "section": "Definition and Scope",
+    "text": "Definition and Scope\nSpatial epidemiology involves the study of spatial variation in disease risk and the identification of factors contributing to this variation. It encompasses a wide range of methods to collect, analyze, and interpret data on the geographical distribution of diseases. The primary aim is to understand how environmental, social, and demographic factors interact within specific locations to influence health."
+  },
+  {
+    "objectID": "slides-concepts.html#importance-of-spatial-data",
+    "href": "slides-concepts.html#importance-of-spatial-data",
+    "title": "Foundational concetps in Spatial Epidemiology",
+    "section": "Importance of Spatial Data",
+    "text": "Importance of Spatial Data\nSpatial data, which includes any data with a geographic component, is the cornerstone of spatial epidemiology. This can range from addresses and ZIP codes to more complex geo-statistical data such as from remote-sensing satellites. The quality and granularity of spatial data are critical, as they directly impact the accuracy and reliability of the findings, and influence predictions. High-quality spatial data allows for detailed mapping and analysis, leading to better understanding and decision-making in public health."
+  },
+  {
+    "objectID": "slides-concepts.html#variations-related-to-disease",
+    "href": "slides-concepts.html#variations-related-to-disease",
+    "title": "Foundational concetps in Spatial Epidemiology",
+    "section": "Variations related to Disease",
+    "text": "Variations related to Disease\n\nDemographic\nSocioeconomic\nEnvironmental\nBehavioral\nGenetic\nDisease Risk Factors"
+  },
+  {
+    "objectID": "slides-concepts.html#key-concepts-and-methods",
+    "href": "slides-concepts.html#key-concepts-and-methods",
+    "title": "Foundational concetps in Spatial Epidemiology",
+    "section": "Key Concepts and Methods",
+    "text": "Key Concepts and Methods\nGeographic Information Systems (GIS)\nGeographic Information Systems (GIS) are powerful tools used in spatial epidemiology to capture, store, manipulate, analyze, manage, and present spatial or geographic data. GIS technology enables researchers to visualize disease patterns through maps and spatial models, facilitating the identification of disease clusters and hotspots. By overlaying various data layers, such as population density, environmental exposures, and healthcare access, GIS helps in understanding the complex interplay between location and health.\nSpatial Analysis Techniques\nSeveral spatial analysis techniques are employed to examine the distribution of health outcomes and their determinants. These techniques can be broadly categorized into two groups: spatial descriptive analysis and spatial inferential analysis.\nSpatial Descriptive Analysis\nThis involves summarizing and visualizing spatial data to identify patterns and anomalies. Common methods include:\nChoropleth Maps: These maps use varying shades or colors to represent different levels of a variable, such as disease incidence rates, across geographic areas.\nKernel Density Estimation: This technique smooths point data (e.g., locations of disease cases) to create a continuous surface, highlighting areas of higher concentration.\nSpatial Autocorrelation: Measures like Moran’s I and Geary’s C are used to assess the degree to which similar values cluster together in space. Positive spatial autocorrelation indicates clustering, while negative autocorrelation suggests dispersion.\nSpatial Inferential Analysis\nThis involves statistical modeling to infer relationships between spatial variables. Key methods include:\nSpatial Regression Models: These models account for spatial dependence in the data, improving the accuracy of estimates and predictions. Examples include spatial lag models and spatial error models.\nGeostatistics: Techniques like kriging are used to predict values at unsampled locations based on the spatial correlation of sampled data points.\nBayesian Spatial Models: These models incorporate prior knowledge and spatial structure into the analysis, often providing more robust estimates in the presence of complex spatial patterns.\nDisease Mapping and Cluster Detection\nMapping disease incidence and identifying clusters are central to spatial epidemiology. Disease mapping involves creating visual representations of disease data to explore spatial patterns. Cluster detection methods, such as the Kulldorff’s spatial scan statistic, help identify areas with significantly higher or lower disease rates than expected. These clusters can indicate areas requiring further investigation or intervention."
+  },
+  {
+    "objectID": "slides-concepts.html#applications-of-spatial-epidemiology",
+    "href": "slides-concepts.html#applications-of-spatial-epidemiology",
+    "title": "Foundational concetps in Spatial Epidemiology",
+    "section": "Applications of Spatial Epidemiology",
+    "text": "Applications of Spatial Epidemiology\nSpatial epidemiology has diverse applications across public health research and practice. Some key areas include:\nEnvironmental Health\nSpatial epidemiology plays a crucial role in environmental health by examining how environmental exposures, such as air pollution, water quality, and proximity to industrial sites, affect health outcomes. For example, GIS can be used to map areas with high levels of pollutants and correlate these with respiratory diseases or cancer incidence.\nInfectious Disease Control\nIn the context of infectious diseases, spatial epidemiology is vital for tracking disease spread and identifying hotspots of transmission. During outbreaks, spatial analysis helps public health officials allocate resources efficiently and implement targeted interventions. For instance, mapping the spread of COVID-19 has been essential in managing the pandemic response.\nChronic Disease Surveillance\nSpatial epidemiology also contributes to understanding the distribution and determinants of chronic diseases like diabetes, heart disease, and cancer. By analyzing spatial patterns and identifying high-risk areas, health authorities can develop targeted prevention and intervention strategies.\nHealth Disparities\nInvestigating health disparities is another important application. Spatial epidemiology can reveal how socioeconomic factors, healthcare access, and other social determinants of health vary across different regions, highlighting areas of inequity that require policy attention."
+  },
+  {
+    "objectID": "slides-concepts.html#challenges-and-future-directions",
+    "href": "slides-concepts.html#challenges-and-future-directions",
+    "title": "Foundational concetps in Spatial Epidemiology",
+    "section": "Challenges and Future Directions",
+    "text": "Challenges and Future Directions\nData Quality and Availability\nOne of the main challenges in spatial epidemiology is the availability and quality of spatial data. Incomplete or inaccurate data can lead to misleading results. Ensuring high-quality data collection and integration from various sources is essential for reliable analysis.\nPrivacy Concerns\nThe use of detailed spatial data raises privacy concerns, especially when dealing with sensitive health information. It is crucial to implement robust data protection measures to maintain confidentiality and comply with legal and ethical standards.\nAdvancements in Technology\nAdvancements in technology, such as the increasing availability of high-resolution satellite imagery and the development of more sophisticated spatial analysis software, are continually enhancing the capabilities of spatial epidemiology. These innovations enable more precise and comprehensive analyses, leading to better public health outcomes.\nInterdisciplinary Collaboration\nSpatial epidemiology benefits from interdisciplinary collaboration, bringing together expertise from epidemiology, geography, statistics, environmental science, and computer science. Such collaboration fosters the development of innovative methods and applications, driving the field forward."
+  },
+  {
     "objectID": "session1a-foundational-concepts.html",
     "href": "session1a-foundational-concepts.html",
     "title": "Foundational concetps in Spatial Epidemiology",
@@ -49,66 +1218,500 @@
     "text": "Challenges and Future Directions\n\nData Quality and Availability\nOne of the main challenges in spatial epidemiology is the availability and quality of spatial data. Incomplete or inaccurate data can lead to misleading results. Ensuring high-quality data collection and integration from various sources is essential for reliable analysis.\n\n\nPrivacy Concerns\nThe use of detailed spatial data raises privacy concerns, especially when dealing with sensitive health information. It is crucial to implement robust data protection measures to maintain confidentiality and comply with legal and ethical standards.\n\n\nAdvancements in Technology\nAdvancements in technology, such as the increasing availability of high-resolution satellite imagery and the development of more sophisticated spatial analysis software, are continually enhancing the capabilities of spatial epidemiology. These innovations enable more precise and comprehensive analyses, leading to better public health outcomes.\n\n\nInterdisciplinary Collaboration\nSpatial epidemiology benefits from interdisciplinary collaboration, bringing together expertise from epidemiology, geography, statistics, environmental science, and computer science. Such collaboration fosters the development of innovative methods and applications, driving the field forward."
   },
   {
-    "objectID": "slides-index.html#definition-and-scope",
-    "href": "slides-index.html#definition-and-scope",
-    "title": "Foundational concetps in Spatial Epidemiology",
-    "section": "Definition and Scope",
-    "text": "Definition and Scope\nSpatial epidemiology involves the study of spatial variation in disease risk and the identification of factors contributing to this variation. It encompasses a wide range of methods to collect, analyze, and interpret data on the geographical distribution of diseases. The primary aim is to understand how environmental, social, and demographic factors interact within specific locations to influence health."
+    "objectID": "slides-intro-sds.html#acknowledge",
+    "href": "slides-intro-sds.html#acknowledge",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Acknowledge",
+    "text": "Acknowledge\n\nDr. Elisabetta Pietrostefani &\nDr. Carmen Cabrera-Arnau\n\nA course in Geographic Data Science"
   },
   {
-    "objectID": "slides-index.html#importance-of-spatial-data",
-    "href": "slides-index.html#importance-of-spatial-data",
-    "title": "Foundational concetps in Spatial Epidemiology",
-    "section": "Importance of Spatial Data",
-    "text": "Importance of Spatial Data\nSpatial data, which includes any data with a geographic component, is the cornerstone of spatial epidemiology. This can range from addresses and ZIP codes to more complex geo-statistical data such as from remote-sensing satellites. The quality and granularity of spatial data are critical, as they directly impact the accuracy and reliability of the findings, and influence predictions. High-quality spatial data allows for detailed mapping and analysis, leading to better understanding and decision-making in public health."
+    "objectID": "slides-intro-sds.html#sctimst-trivandrum",
+    "href": "slides-intro-sds.html#sctimst-trivandrum",
+    "title": "Introduction to Spatial Data Science",
+    "section": "SCTIMST, Trivandrum",
+    "text": "SCTIMST, Trivandrum\n\n\nSree Chitra Tirunal Institute for Medical Sciences & Technology, Trivandrum\nAn Institution of National Importance established by the Act of the Indian Parliament (Act No.52, 1980)\n\n\n\n\n\n\nDept. of Science & Technology\nThree major focus areas\n\nBio-Medical Technology Wing\nSuper specialty Hospital\nPublic Health (AMCHSS)\n\nHealthcare Technology development\ninter-disciplinary initiatives\nRunning MPH program since 1997, PhD programs since 2003"
   },
   {
-    "objectID": "slides-index.html#variations-related-to-disease",
-    "href": "slides-index.html#variations-related-to-disease",
-    "title": "Foundational concetps in Spatial Epidemiology",
-    "section": "Variations related to Disease",
-    "text": "Variations related to Disease\n\nDemographic\nSocioeconomic\nEnvironmental\nBehavioral\nGenetic\nDisease Risk Factors"
+    "objectID": "slides-intro-sds.html#introduction",
+    "href": "slides-intro-sds.html#introduction",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Introduction",
+    "text": "Introduction\n\nPublic Health - Science vs. Advocacy\nThe need for participatory decision making in public health\nThe transparency of open data science approach\nThe beauty of computational reports, presentations, etc."
   },
   {
-    "objectID": "slides-index.html#key-concepts-and-methods",
-    "href": "slides-index.html#key-concepts-and-methods",
-    "title": "Foundational concetps in Spatial Epidemiology",
-    "section": "Key Concepts and Methods",
-    "text": "Key Concepts and Methods\nGeographic Information Systems (GIS)\nGeographic Information Systems (GIS) are powerful tools used in spatial epidemiology to capture, store, manipulate, analyze, manage, and present spatial or geographic data. GIS technology enables researchers to visualize disease patterns through maps and spatial models, facilitating the identification of disease clusters and hotspots. By overlaying various data layers, such as population density, environmental exposures, and healthcare access, GIS helps in understanding the complex interplay between location and health.\nSpatial Analysis Techniques\nSeveral spatial analysis techniques are employed to examine the distribution of health outcomes and their determinants. These techniques can be broadly categorized into two groups: spatial descriptive analysis and spatial inferential analysis.\nSpatial Descriptive Analysis\nThis involves summarizing and visualizing spatial data to identify patterns and anomalies. Common methods include:\nChoropleth Maps: These maps use varying shades or colors to represent different levels of a variable, such as disease incidence rates, across geographic areas.\nKernel Density Estimation: This technique smooths point data (e.g., locations of disease cases) to create a continuous surface, highlighting areas of higher concentration.\nSpatial Autocorrelation: Measures like Moran’s I and Geary’s C are used to assess the degree to which similar values cluster together in space. Positive spatial autocorrelation indicates clustering, while negative autocorrelation suggests dispersion.\nSpatial Inferential Analysis\nThis involves statistical modeling to infer relationships between spatial variables. Key methods include:\nSpatial Regression Models: These models account for spatial dependence in the data, improving the accuracy of estimates and predictions. Examples include spatial lag models and spatial error models.\nGeostatistics: Techniques like kriging are used to predict values at unsampled locations based on the spatial correlation of sampled data points.\nBayesian Spatial Models: These models incorporate prior knowledge and spatial structure into the analysis, often providing more robust estimates in the presence of complex spatial patterns.\nDisease Mapping and Cluster Detection\nMapping disease incidence and identifying clusters are central to spatial epidemiology. Disease mapping involves creating visual representations of disease data to explore spatial patterns. Cluster detection methods, such as the Kulldorff’s spatial scan statistic, help identify areas with significantly higher or lower disease rates than expected. These clusters can indicate areas requiring further investigation or intervention."
+    "objectID": "slides-intro-sds.html#work-plan",
+    "href": "slides-intro-sds.html#work-plan",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Work plan",
+    "text": "Work plan"
   },
   {
-    "objectID": "slides-index.html#applications-of-spatial-epidemiology",
-    "href": "slides-index.html#applications-of-spatial-epidemiology",
-    "title": "Foundational concetps in Spatial Epidemiology",
-    "section": "Applications of Spatial Epidemiology",
-    "text": "Applications of Spatial Epidemiology\nSpatial epidemiology has diverse applications across public health research and practice. Some key areas include:\nEnvironmental Health\nSpatial epidemiology plays a crucial role in environmental health by examining how environmental exposures, such as air pollution, water quality, and proximity to industrial sites, affect health outcomes. For example, GIS can be used to map areas with high levels of pollutants and correlate these with respiratory diseases or cancer incidence.\nInfectious Disease Control\nIn the context of infectious diseases, spatial epidemiology is vital for tracking disease spread and identifying hotspots of transmission. During outbreaks, spatial analysis helps public health officials allocate resources efficiently and implement targeted interventions. For instance, mapping the spread of COVID-19 has been essential in managing the pandemic response.\nChronic Disease Surveillance\nSpatial epidemiology also contributes to understanding the distribution and determinants of chronic diseases like diabetes, heart disease, and cancer. By analyzing spatial patterns and identifying high-risk areas, health authorities can develop targeted prevention and intervention strategies.\nHealth Disparities\nInvestigating health disparities is another important application. Spatial epidemiology can reveal how socioeconomic factors, healthcare access, and other social determinants of health vary across different regions, highlighting areas of inequity that require policy attention."
+    "objectID": "slides-intro-sds.html#lectures",
+    "href": "slides-intro-sds.html#lectures",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Lectures",
+    "text": "Lectures\n\nEssential concepts\nMainly to get the big picture\nEnthusing interest rather than teaching\nWelcome to the open data science initiative!"
   },
   {
-    "objectID": "slides-index.html#challenges-and-future-directions",
-    "href": "slides-index.html#challenges-and-future-directions",
-    "title": "Foundational concetps in Spatial Epidemiology",
-    "section": "Challenges and Future Directions",
-    "text": "Challenges and Future Directions\nData Quality and Availability\nOne of the main challenges in spatial epidemiology is the availability and quality of spatial data. Incomplete or inaccurate data can lead to misleading results. Ensuring high-quality data collection and integration from various sources is essential for reliable analysis.\nPrivacy Concerns\nThe use of detailed spatial data raises privacy concerns, especially when dealing with sensitive health information. It is crucial to implement robust data protection measures to maintain confidentiality and comply with legal and ethical standards.\nAdvancements in Technology\nAdvancements in technology, such as the increasing availability of high-resolution satellite imagery and the development of more sophisticated spatial analysis software, are continually enhancing the capabilities of spatial epidemiology. These innovations enable more precise and comprehensive analyses, leading to better public health outcomes.\nInterdisciplinary Collaboration\nSpatial epidemiology benefits from interdisciplinary collaboration, bringing together expertise from epidemiology, geography, statistics, environmental science, and computer science. Such collaboration fosters the development of innovative methods and applications, driving the field forward."
+    "objectID": "slides-intro-sds.html#lab-work",
+    "href": "slides-intro-sds.html#lab-work",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Lab work",
+    "text": "Lab work\n\nDo it yourself\nGet skilled in the process\nCome out of your comfort zones and collaborate!\nUse data for dialogue!"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "slides-intro-sds.html#what-information-does-gis-use",
+    "href": "slides-intro-sds.html#what-information-does-gis-use",
+    "title": "Introduction to Spatial Data Science",
+    "section": "What information does GIS use?",
+    "text": "What information does GIS use?\n\nData that defines geographical features like roads, rivers\nSoil types, land use, elevation\nDemographics, socioeconomic attributes\nEnvironmental, climate, air-quality\nAnnotations that label features and places"
+  },
+  {
+    "objectID": "slides-intro-sds.html#what-is-spatial-data-science",
+    "href": "slides-intro-sds.html#what-is-spatial-data-science",
+    "title": "Introduction to Spatial Data Science",
+    "section": "What is Spatial Data Science?",
+    "text": "What is Spatial Data Science?"
+  },
+  {
+    "objectID": "slides-intro-sds.html#spatial-data-science",
+    "href": "slides-intro-sds.html#spatial-data-science",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Spatial Data Science",
+    "text": "Spatial Data Science\n\nAnalyse and extract insights from geospatial data\nWork with real-world data on a number of domains and problems\nAcquire key data science skills and important tools to answer spatial questions\n\n\nIt is especially true in public health"
+  },
+  {
+    "objectID": "slides-intro-sds.html#gis",
+    "href": "slides-intro-sds.html#gis",
+    "title": "Introduction to Spatial Data Science",
+    "section": "GIS",
+    "text": "GIS"
+  },
+  {
+    "objectID": "slides-intro-sds.html#layers---image---data",
+    "href": "slides-intro-sds.html#layers---image---data",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Layers - Image - Data",
+    "text": "Layers - Image - Data"
+  },
+  {
+    "objectID": "slides-intro-sds.html#gis-world-vs.-real-world",
+    "href": "slides-intro-sds.html#gis-world-vs.-real-world",
+    "title": "Introduction to Spatial Data Science",
+    "section": "GIS world vs. Real World",
+    "text": "GIS world vs. Real World"
+  },
+  {
+    "objectID": "slides-intro-sds.html#skills-for-public-health-data-science",
+    "href": "slides-intro-sds.html#skills-for-public-health-data-science",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Skills for public health data science",
+    "text": "Skills for public health data science\nHard Skills - Programming Language - Transparency and Reproducibility - Version control\nSoft Skills - Communication - Storytelling - Geospatial analytics acumen - Ethical skills"
+  },
+  {
+    "objectID": "slides-intro-sds.html#r-software-for-spatial-data-science-sds",
+    "href": "slides-intro-sds.html#r-software-for-spatial-data-science-sds",
+    "title": "Introduction to Spatial Data Science",
+    "section": "R software for Spatial Data Science (SDS)",
+    "text": "R software for Spatial Data Science (SDS)\nGraphical User Interfaces (GUIs)\n\nQGIS and GRASS has revolutionized Open source Spatial Information Systems (GIS).\nHowever, the reproducibility aspect has many challenges\n\nCommand Line Interfaces (CLIs)\nCommand Line Interface (CLIs) of R software is a good way to bring in reproducible algorithms for GIS/SDS"
+  },
+  {
+    "objectID": "slides-intro-sds.html#the-spatial-data-revolution",
+    "href": "slides-intro-sds.html#the-spatial-data-revolution",
+    "title": "Introduction to Spatial Data Science",
+    "section": "The Spatial Data ‘Revolution’",
+    "text": "The Spatial Data ‘Revolution’\nAdvanced Hardware: High-performance computer hardware and efficient algorithms allow us to process vast data sets quickly.\nScalable Software: Scalable solutions with the R environment help us to sift through the data deluge, and extract valuable insights from the noise.\nSpatial Databases: The advent of spatial databases empowers us to store and manipulate manageable subsets within the vast ocean of spatial data."
+  },
+  {
+    "objectID": "slides-intro-sds.html#sds-in-public-health",
+    "href": "slides-intro-sds.html#sds-in-public-health",
+    "title": "Introduction to Spatial Data Science",
+    "section": "SDS in Public Health",
+    "text": "SDS in Public Health\n\nData Science:“gathering data messaging it into a tractable form, making it tell its story and presenting that story to others”\n\n\nLoukides (2011) What is Data Science?"
+  },
+  {
+    "objectID": "slides-intro-sds.html#traditional-datasets-in-healthcare",
+    "href": "slides-intro-sds.html#traditional-datasets-in-healthcare",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Traditional datasets in healthcare",
+    "text": "Traditional datasets in healthcare\n\nCollected for the purpose (carefully designed)\nDetailed and informative (“rich profile and portraits of the country”)\nHigh quality"
+  },
+  {
+    "objectID": "slides-intro-sds.html#traditional-health-and-allied-sector-data",
+    "href": "slides-intro-sds.html#traditional-health-and-allied-sector-data",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Traditional health and allied sector data",
+    "text": "Traditional health and allied sector data\n\nMassive enterprises (very costly)\nCoarse in resolution (to preserve privacy they need to be aggregated)\nSlow - the more detailed, the less frequent they are available"
+  },
+  {
+    "objectID": "slides-intro-sds.html#examples",
+    "href": "slides-intro-sds.html#examples",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Examples",
+    "text": "Examples\n\nDecennial census (census geographies)\nLongitudinal surveys\nCustom collected surveys, interviews etc.\nEconomic or well-being indicators"
+  },
+  {
+    "objectID": "slides-intro-sds.html#new-forms-of-spatial-data",
+    "href": "slides-intro-sds.html#new-forms-of-spatial-data",
+    "title": "Introduction to Spatial Data Science",
+    "section": "New Forms of spatial data",
+    "text": "New Forms of spatial data\nTied into the geo-data revolution\n\nAccidental : created for different purposes but available for analysis as a side effect\nVery diverse in nature: resolution and quality but, potentially much more detailed in both space and time"
+  },
+  {
+    "objectID": "slides-intro-sds.html#challenges-arribas-bel-2014",
+    "href": "slides-intro-sds.html#challenges-arribas-bel-2014",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Challenges (Arribas-Bel, 2014)",
+    "text": "Challenges (Arribas-Bel, 2014)\n\nBias\nTechnical barriers\nMethodological “mismatch”"
+  },
+  {
+    "objectID": "slides-intro-sds.html#part-2",
+    "href": "slides-intro-sds.html#part-2",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Part 2",
+    "text": "Part 2"
+  },
+  {
+    "objectID": "slides-intro-sds.html#geovisualisation",
+    "href": "slides-intro-sds.html#geovisualisation",
+    "title": "Introduction to Spatial Data Science",
+    "section": "(Geo)visualisation",
+    "text": "(Geo)visualisation\n\n\n\n\n\n\n\n\n\n\nBy encoding information visually, they allow to present large amounts of numbers in a meaningful way."
+  },
+  {
+    "objectID": "slides-intro-sds.html#a-map-for-everyone",
+    "href": "slides-intro-sds.html#a-map-for-everyone",
+    "title": "Introduction to Spatial Data Science",
+    "section": "A map for everyone",
+    "text": "A map for everyone\nA real public health tool\nMaps can fulfill several needs, looking very different depending on the end-goal.\nMacEachren & Kraak (1997) identify three main dimensions:\n\nKnowledge of what is being plotted\nTarget audience\nDegree of interactivity"
+  },
+  {
+    "objectID": "slides-intro-sds.html#maceachren-kraak-1997",
+    "href": "slides-intro-sds.html#maceachren-kraak-1997",
+    "title": "Introduction to Spatial Data Science",
+    "section": "MacEachren & Kraak (1997)",
+    "text": "MacEachren & Kraak (1997)"
+  },
+  {
+    "objectID": "slides-intro-sds.html#dibiases-1990-swoopy",
+    "href": "slides-intro-sds.html#dibiases-1990-swoopy",
+    "title": "Introduction to Spatial Data Science",
+    "section": "DiBiase’s (1990) “Swoopy”",
+    "text": "DiBiase’s (1990) “Swoopy”\nTranslating numbers into a (visual) language that the human brain “speaks better”"
+  },
+  {
+    "objectID": "slides-intro-sds.html#exploratory-visualization",
+    "href": "slides-intro-sds.html#exploratory-visualization",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Exploratory Visualization",
+    "text": "Exploratory Visualization\n\n“forces us to notice what we never expected to see” (Tukey 1977: vi)\n\n\nMostly for ourselves in the course of the research process.\nMany, quick and dirty, and rather unattractive graphs."
+  },
+  {
+    "objectID": "slides-intro-sds.html#explanatory-visualization",
+    "href": "slides-intro-sds.html#explanatory-visualization",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Explanatory Visualization",
+    "text": "Explanatory Visualization\n\n“forces readers to see the information the designer wanted to convey” (Kosslyn 1994: 271)\n\n\nMostly for others after the research is completed.\nFew, carefully crafted, and attractive graphs."
+  },
+  {
+    "objectID": "slides-intro-sds.html#choropleths",
+    "href": "slides-intro-sds.html#choropleths",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Choropleths",
+    "text": "Choropleths\nThematic map in which values of a variable are encoded using a color gradient of some sort\n\nCounterpart of the histogram\nBoth allows us to gage the distribution of a variable"
+  },
+  {
+    "objectID": "slides-intro-sds.html#part-3",
+    "href": "slides-intro-sds.html#part-3",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Part 3",
+    "text": "Part 3"
+  },
+  {
+    "objectID": "slides-intro-sds.html#spatial-weights",
+    "href": "slides-intro-sds.html#spatial-weights",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Spatial Weights",
+    "text": "Spatial Weights\nFor a statistical method to be explicitly spatial, it needs to contain some representation of the geography, or spatial context. One of the most common ways is through Spatial Weights Matrices\n\n(Geo)Visualization: translating numbers into a (visual) language (colors) that the human brain can interpret.\nSpatial Weights Matrices: translating geography into a (numerical) language that a computer can interpret."
+  },
+  {
+    "objectID": "slides-intro-sds.html#spatial-weight-matrices",
+    "href": "slides-intro-sds.html#spatial-weight-matrices",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Spatial Weight Matrices",
+    "text": "Spatial Weight Matrices\nSpatial Weights Matrices are building block for spatial analysis and statistics.\nThey are used to assign a weighted average or sum of neighbouring data values to an observation, or other point in space.\n\nRelates to concepts of spatial ‘smoothing’ and interpolating data\nThey can be used to see how one’s characteristics or outcomes is correlated with their neighbours: e.g. education, criminality, disease risk factors,…"
+  },
+  {
+    "objectID": "slides-intro-sds.html#core-element-in-several-spatial-analysis-techniques",
+    "href": "slides-intro-sds.html#core-element-in-several-spatial-analysis-techniques",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Core element in several spatial analysis techniques",
+    "text": "Core element in several spatial analysis techniques\n\nSpatial autocorrelation\nSpatial clustering/geo-demographics\nSpatial regression"
+  },
+  {
+    "objectID": "slides-intro-sds.html#spatial-weights-1",
+    "href": "slides-intro-sds.html#spatial-weights-1",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Spatial Weights",
+    "text": "Spatial Weights\nSpatial Weights represented by \\[W\\] N x N positive matrix that contains spatial relations that are translated into values\n\nIf you are not a neighbour, \\(value = 0\\)\nIf you are a neighbour, \\(value&lt;0\\)"
+  },
+  {
+    "objectID": "slides-intro-sds.html#website",
+    "href": "slides-intro-sds.html#website",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Website",
+    "text": "Website\n\n\nhttps://drarunmitra.github.io/GIS4Epidemiology/"
+  },
+  {
+    "objectID": "session1b-intro-sds.html",
+    "href": "session1b-intro-sds.html",
+    "title": "Introduction to Spatial Data Science",
     "section": "",
-    "text": "About this site This is the about page add news"
+    "text": "Dr. Elisabetta Pietrostefani &\nDr. Carmen Cabrera-Arnau\n\nA course in Geographic Data Science"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "GIS for Epidemiology",
+    "objectID": "session1b-intro-sds.html#acknowledge",
+    "href": "session1b-intro-sds.html#acknowledge",
+    "title": "Introduction to Spatial Data Science",
     "section": "",
-    "text": "Welcome to the Day 2 of Geospatial Technology for Public Health Policy Workshop!\nThe goal for today is to highlight the applications of GIS in Epidemiology while providing the foundational concepts in Spatial Epidemiology.\nThe workshop introduces the participants to the field of Spatial Data Science through the statistical programming language R.\nThe workshop is intended as an introductory window into the world of spatial data analysis and visualization for public health policy.\nWorkshop materials in the github repository GIS4EPI-Workshop\n\n\n\nAt the end of the day, participants will be able to:\n\nUnderstand and Apply Foundational Concepts in Spatial Epidemiology\nUtilize Tools and Techniques for Spatial Data Analysis and Spatial Data Science\nImplement Best Practices for Reproducible Spatial Data Research and Analysis\nAnalyze and Interpret Spatial Data for Public Health Applications\nExplore the applications of spatial epidemiology in public health research and practice\nGain hands-on experience with spatial data analysis and visualization"
+    "text": "Dr. Elisabetta Pietrostefani &\nDr. Carmen Cabrera-Arnau\n\nA course in Geographic Data Science"
   },
   {
-    "objectID": "index.html#learning-objectives-for-the-workshop",
-    "href": "index.html#learning-objectives-for-the-workshop",
-    "title": "GIS for Epidemiology",
-    "section": "",
-    "text": "At the end of the day, participants will be able to:\n\nUnderstand and Apply Foundational Concepts in Spatial Epidemiology\nUtilize Tools and Techniques for Spatial Data Analysis and Spatial Data Science\nImplement Best Practices for Reproducible Spatial Data Research and Analysis\nAnalyze and Interpret Spatial Data for Public Health Applications\nExplore the applications of spatial epidemiology in public health research and practice\nGain hands-on experience with spatial data analysis and visualization"
+    "objectID": "session1b-intro-sds.html#sctimst-trivandrum",
+    "href": "session1b-intro-sds.html#sctimst-trivandrum",
+    "title": "Introduction to Spatial Data Science",
+    "section": "SCTIMST, Trivandrum",
+    "text": "SCTIMST, Trivandrum\n\n\nSree Chitra Tirunal Institute for Medical Sciences & Technology, Trivandrum\nAn Institution of National Importance established by the Act of the Indian Parliament (Act No.52, 1980)\n\n\n\n\n\n\nDept. of Science & Technology\nThree major focus areas\n\nBio-Medical Technology Wing\nSuper specialty Hospital\nPublic Health (AMCHSS)\n\nHealthcare Technology development\ninter-disciplinary initiatives\nRunning MPH program since 1997, PhD programs since 2003"
+  },
+  {
+    "objectID": "session1b-intro-sds.html#introduction",
+    "href": "session1b-intro-sds.html#introduction",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Introduction",
+    "text": "Introduction\n\nPublic Health - Science vs. Advocacy\nThe need for participatory decision making in public health\nThe transparency of open data science approach\nThe beauty of computational reports, presentations, etc."
+  },
+  {
+    "objectID": "session1b-intro-sds.html#work-plan",
+    "href": "session1b-intro-sds.html#work-plan",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Work plan",
+    "text": "Work plan"
+  },
+  {
+    "objectID": "session1b-intro-sds.html#lectures",
+    "href": "session1b-intro-sds.html#lectures",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Lectures",
+    "text": "Lectures\n\nEssential concepts\nMainly to get the big picture\nEnthusing interest rather than teaching\nWelcome to the open data science initiative!"
+  },
+  {
+    "objectID": "session1b-intro-sds.html#lab-work",
+    "href": "session1b-intro-sds.html#lab-work",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Lab work",
+    "text": "Lab work\n\nDo it yourself\nGet skilled in the process\nCome out of your comfort zones and collaborate!\nUse data for dialogue!"
+  },
+  {
+    "objectID": "session1b-intro-sds.html#what-information-does-gis-use",
+    "href": "session1b-intro-sds.html#what-information-does-gis-use",
+    "title": "Introduction to Spatial Data Science",
+    "section": "What information does GIS use?",
+    "text": "What information does GIS use?\n\nData that defines geographical features like roads, rivers\nSoil types, land use, elevation\nDemographics, socioeconomic attributes\nEnvironmental, climate, air-quality\nAnnotations that label features and places"
+  },
+  {
+    "objectID": "session1b-intro-sds.html#what-is-spatial-data-science",
+    "href": "session1b-intro-sds.html#what-is-spatial-data-science",
+    "title": "Introduction to Spatial Data Science",
+    "section": "What is Spatial Data Science?",
+    "text": "What is Spatial Data Science?"
+  },
+  {
+    "objectID": "session1b-intro-sds.html#spatial-data-science",
+    "href": "session1b-intro-sds.html#spatial-data-science",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Spatial Data Science",
+    "text": "Spatial Data Science\n\nAnalyse and extract insights from geospatial data\nWork with real-world data on a number of domains and problems\nAcquire key data science skills and important tools to answer spatial questions\n\n\nIt is especially true in public health"
+  },
+  {
+    "objectID": "session1b-intro-sds.html#gis",
+    "href": "session1b-intro-sds.html#gis",
+    "title": "Introduction to Spatial Data Science",
+    "section": "GIS",
+    "text": "GIS"
+  },
+  {
+    "objectID": "session1b-intro-sds.html#layers---image---data",
+    "href": "session1b-intro-sds.html#layers---image---data",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Layers - Image - Data",
+    "text": "Layers - Image - Data"
+  },
+  {
+    "objectID": "session1b-intro-sds.html#gis-world-vs.-real-world",
+    "href": "session1b-intro-sds.html#gis-world-vs.-real-world",
+    "title": "Introduction to Spatial Data Science",
+    "section": "GIS world vs. Real World",
+    "text": "GIS world vs. Real World"
+  },
+  {
+    "objectID": "session1b-intro-sds.html#skills-for-public-health-data-science",
+    "href": "session1b-intro-sds.html#skills-for-public-health-data-science",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Skills for public health data science",
+    "text": "Skills for public health data science\nHard Skills - Programming Language - Transparency and Reproducibility - Version control\nSoft Skills - Communication - Storytelling - Geospatial analytics acumen - Ethical skills"
+  },
+  {
+    "objectID": "session1b-intro-sds.html#r-software-for-spatial-data-science-sds",
+    "href": "session1b-intro-sds.html#r-software-for-spatial-data-science-sds",
+    "title": "Introduction to Spatial Data Science",
+    "section": "R software for Spatial Data Science (SDS)",
+    "text": "R software for Spatial Data Science (SDS)\nGraphical User Interfaces (GUIs)\n\nQGIS and GRASS has revolutionized Open source Spatial Information Systems (GIS).\nHowever, the reproducibility aspect has many challenges\n\nCommand Line Interfaces (CLIs)\nCommand Line Interface (CLIs) of R software is a good way to bring in reproducible algorithms for GIS/SDS"
+  },
+  {
+    "objectID": "session1b-intro-sds.html#the-spatial-data-revolution",
+    "href": "session1b-intro-sds.html#the-spatial-data-revolution",
+    "title": "Introduction to Spatial Data Science",
+    "section": "The Spatial Data ‘Revolution’",
+    "text": "The Spatial Data ‘Revolution’\nAdvanced Hardware: High-performance computer hardware and efficient algorithms allow us to process vast data sets quickly.\nScalable Software: Scalable solutions with the R environment help us to sift through the data deluge, and extract valuable insights from the noise.\nSpatial Databases: The advent of spatial databases empowers us to store and manipulate manageable subsets within the vast ocean of spatial data."
+  },
+  {
+    "objectID": "session1b-intro-sds.html#sds-in-public-health",
+    "href": "session1b-intro-sds.html#sds-in-public-health",
+    "title": "Introduction to Spatial Data Science",
+    "section": "SDS in Public Health",
+    "text": "SDS in Public Health\n\nData Science:“gathering data messaging it into a tractable form, making it tell its story and presenting that story to others”\n\n\nLoukides (2011) What is Data Science?"
+  },
+  {
+    "objectID": "session1b-intro-sds.html#traditional-datasets-in-healthcare",
+    "href": "session1b-intro-sds.html#traditional-datasets-in-healthcare",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Traditional datasets in healthcare",
+    "text": "Traditional datasets in healthcare\n\nCollected for the purpose (carefully designed)\nDetailed and informative (“rich profile and portraits of the country”)\nHigh quality"
+  },
+  {
+    "objectID": "session1b-intro-sds.html#traditional-health-and-allied-sector-data",
+    "href": "session1b-intro-sds.html#traditional-health-and-allied-sector-data",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Traditional health and allied sector data",
+    "text": "Traditional health and allied sector data\n\nMassive enterprises (very costly)\nCoarse in resolution (to preserve privacy they need to be aggregated)\nSlow - the more detailed, the less frequent they are available"
+  },
+  {
+    "objectID": "session1b-intro-sds.html#examples",
+    "href": "session1b-intro-sds.html#examples",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Examples",
+    "text": "Examples\n\nDecennial census (census geographies)\nLongitudinal surveys\nCustom collected surveys, interviews etc.\nEconomic or well-being indicators"
+  },
+  {
+    "objectID": "session1b-intro-sds.html#new-forms-of-spatial-data",
+    "href": "session1b-intro-sds.html#new-forms-of-spatial-data",
+    "title": "Introduction to Spatial Data Science",
+    "section": "New Forms of spatial data",
+    "text": "New Forms of spatial data\nTied into the geo-data revolution\n\nAccidental : created for different purposes but available for analysis as a side effect\nVery diverse in nature: resolution and quality but, potentially much more detailed in both space and time"
+  },
+  {
+    "objectID": "session1b-intro-sds.html#challenges-arribas-bel-2014",
+    "href": "session1b-intro-sds.html#challenges-arribas-bel-2014",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Challenges (Arribas-Bel, 2014)",
+    "text": "Challenges (Arribas-Bel, 2014)\n\nBias\nTechnical barriers\nMethodological “mismatch”"
+  },
+  {
+    "objectID": "session1b-intro-sds.html#part-2",
+    "href": "session1b-intro-sds.html#part-2",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Part 2",
+    "text": "Part 2"
+  },
+  {
+    "objectID": "session1b-intro-sds.html#geovisualisation",
+    "href": "session1b-intro-sds.html#geovisualisation",
+    "title": "Introduction to Spatial Data Science",
+    "section": "(Geo)visualisation",
+    "text": "(Geo)visualisation\n\n\n\n\n\n\n\n\n\n\nBy encoding information visually, they allow to present large amounts of numbers in a meaningful way."
+  },
+  {
+    "objectID": "session1b-intro-sds.html#a-map-for-everyone",
+    "href": "session1b-intro-sds.html#a-map-for-everyone",
+    "title": "Introduction to Spatial Data Science",
+    "section": "A map for everyone",
+    "text": "A map for everyone\nA real public health tool\nMaps can fulfill several needs, looking very different depending on the end-goal.\nMacEachren & Kraak (1997) identify three main dimensions:\n\nKnowledge of what is being plotted\nTarget audience\nDegree of interactivity"
+  },
+  {
+    "objectID": "session1b-intro-sds.html#maceachren-kraak-1997",
+    "href": "session1b-intro-sds.html#maceachren-kraak-1997",
+    "title": "Introduction to Spatial Data Science",
+    "section": "MacEachren & Kraak (1997)",
+    "text": "MacEachren & Kraak (1997)"
+  },
+  {
+    "objectID": "session1b-intro-sds.html#dibiases-1990-swoopy",
+    "href": "session1b-intro-sds.html#dibiases-1990-swoopy",
+    "title": "Introduction to Spatial Data Science",
+    "section": "DiBiase’s (1990) “Swoopy”",
+    "text": "DiBiase’s (1990) “Swoopy”\nTranslating numbers into a (visual) language that the human brain “speaks better”"
+  },
+  {
+    "objectID": "session1b-intro-sds.html#exploratory-visualization",
+    "href": "session1b-intro-sds.html#exploratory-visualization",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Exploratory Visualization",
+    "text": "Exploratory Visualization\n\n“forces us to notice what we never expected to see” (Tukey 1977: vi)\n\n\nMostly for ourselves in the course of the research process.\nMany, quick and dirty, and rather unattractive graphs."
+  },
+  {
+    "objectID": "session1b-intro-sds.html#explanatory-visualization",
+    "href": "session1b-intro-sds.html#explanatory-visualization",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Explanatory Visualization",
+    "text": "Explanatory Visualization\n\n“forces readers to see the information the designer wanted to convey” (Kosslyn 1994: 271)\n\n\nMostly for others after the research is completed.\nFew, carefully crafted, and attractive graphs."
+  },
+  {
+    "objectID": "session1b-intro-sds.html#choropleths",
+    "href": "session1b-intro-sds.html#choropleths",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Choropleths",
+    "text": "Choropleths\nThematic map in which values of a variable are encoded using a color gradient of some sort\n\nCounterpart of the histogram\nBoth allows us to gage the distribution of a variable"
+  },
+  {
+    "objectID": "session1b-intro-sds.html#part-3",
+    "href": "session1b-intro-sds.html#part-3",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Part 3",
+    "text": "Part 3"
+  },
+  {
+    "objectID": "session1b-intro-sds.html#spatial-weights",
+    "href": "session1b-intro-sds.html#spatial-weights",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Spatial Weights",
+    "text": "Spatial Weights\nFor a statistical method to be explicitly spatial, it needs to contain some representation of the geography, or spatial context. One of the most common ways is through Spatial Weights Matrices\n\n(Geo)Visualization: translating numbers into a (visual) language (colors) that the human brain can interpret.\nSpatial Weights Matrices: translating geography into a (numerical) language that a computer can interpret."
+  },
+  {
+    "objectID": "session1b-intro-sds.html#spatial-weight-matrices",
+    "href": "session1b-intro-sds.html#spatial-weight-matrices",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Spatial Weight Matrices",
+    "text": "Spatial Weight Matrices\nSpatial Weights Matrices are building block for spatial analysis and statistics.\nThey are used to assign a weighted average or sum of neighbouring data values to an observation, or other point in space.\n\nRelates to concepts of spatial ‘smoothing’ and interpolating data\nThey can be used to see how one’s characteristics or outcomes is correlated with their neighbours: e.g. education, criminality, disease risk factors,…"
+  },
+  {
+    "objectID": "session1b-intro-sds.html#core-element-in-several-spatial-analysis-techniques",
+    "href": "session1b-intro-sds.html#core-element-in-several-spatial-analysis-techniques",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Core element in several spatial analysis techniques",
+    "text": "Core element in several spatial analysis techniques\n\nSpatial autocorrelation\nSpatial clustering/geo-demographics\nSpatial regression"
+  },
+  {
+    "objectID": "session1b-intro-sds.html#spatial-weights-1",
+    "href": "session1b-intro-sds.html#spatial-weights-1",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Spatial Weights",
+    "text": "Spatial Weights\nSpatial Weights represented by \\[W\\] N x N positive matrix that contains spatial relations that are translated into values\n\nIf you are not a neighbour, \\(value = 0\\)\nIf you are a neighbour, \\(value&lt;0\\)"
+  },
+  {
+    "objectID": "session1b-intro-sds.html#website",
+    "href": "session1b-intro-sds.html#website",
+    "title": "Introduction to Spatial Data Science",
+    "section": "Website",
+    "text": "Website\n\n\nhttps://drarunmitra.github.io/GIS4Epidemiology/"
   }
 ]

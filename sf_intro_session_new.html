@@ -6,11 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Prof.&nbsp;(Dr.) Biju Soman">
 <meta name="author" content="Dr.&nbsp;Arun Mitra">
-<meta name="dcterms.date" content="2024-05-28">
 
-<title>GIS4Epidemiology - GIS for Epidemiology</title>
+<title>GIS4Epidemiology - Introduction to the  sf Package</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -93,7 +125,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -166,56 +198,47 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a>
-  <ul class="collapse">
-  <li><a href="#learning-objectives-for-the-workshop" id="toc-learning-objectives-for-the-workshop" class="nav-link" data-scroll-target="#learning-objectives-for-the-workshop">Learning Objectives for the Workshop</a></li>
-  </ul></li>
-  <li><a href="#schedule" id="toc-schedule" class="nav-link" data-scroll-target="#schedule">Schedule</a></li>
-  <li><a href="#in-preparation-for-the-workshop" id="toc-in-preparation-for-the-workshop" class="nav-link" data-scroll-target="#in-preparation-for-the-workshop">In preparation for the workshop</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#overview-of-spatial-data-in-r" id="toc-overview-of-spatial-data-in-r" class="nav-link" data-scroll-target="#overview-of-spatial-data-in-r">Overview of Spatial Data in R</a></li>
+  <li><a href="#the-sf-package" id="toc-the-sf-package" class="nav-link" data-scroll-target="#the-sf-package">The <code>sf</code> Package</a></li>
+  <li><a href="#why-the-sf-package" id="toc-why-the-sf-package" class="nav-link" data-scroll-target="#why-the-sf-package">Why the <code>sf</code> Package?</a></li>
+  <li><a href="#geometry-types-in-sf" id="toc-geometry-types-in-sf" class="nav-link" data-scroll-target="#geometry-types-in-sf">Geometry Types in <code>sf</code></a></li>
+  <li><a href="#loading-spatial-data-into-r-using-sf" id="toc-loading-spatial-data-into-r-using-sf" class="nav-link" data-scroll-target="#loading-spatial-data-into-r-using-sf">Loading Spatial Data into R using <code>sf</code></a></li>
+  <li><a href="#viewing-the-sf-object" id="toc-viewing-the-sf-object" class="nav-link" data-scroll-target="#viewing-the-sf-object">Viewing the <code>sf</code> Object</a></li>
+  <li><a href="#plotting-the-sf-object" id="toc-plotting-the-sf-object" class="nav-link" data-scroll-target="#plotting-the-sf-object">Plotting the <code>sf</code> Object</a></li>
+  <li><a href="#concept-of-the-sf-package" id="toc-concept-of-the-sf-package" class="nav-link" data-scroll-target="#concept-of-the-sf-package">Concept of the <code>sf</code> Package</a></li>
+  <li><a href="#dependencies-of-the-sf-package" id="toc-dependencies-of-the-sf-package" class="nav-link" data-scroll-target="#dependencies-of-the-sf-package">Dependencies of the <code>sf</code> Package</a></li>
+  <li><a href="#methods-in-sf" id="toc-methods-in-sf" class="nav-link" data-scroll-target="#methods-in-sf">Methods in <code>sf</code></a></li>
+  <li><a href="#interactive-mapping-with-sf" id="toc-interactive-mapping-with-sf" class="nav-link" data-scroll-target="#interactive-mapping-with-sf">Interactive Mapping with <code>sf</code></a></li>
+  <li><a href="#practical-exercise-loading-and-plotting-data" id="toc-practical-exercise-loading-and-plotting-data" class="nav-link" data-scroll-target="#practical-exercise-loading-and-plotting-data">Practical Exercise: Loading and Plotting Data</a></li>
+  <li><a href="#practical-exercise-advanced-plotting" id="toc-practical-exercise-advanced-plotting" class="nav-link" data-scroll-target="#practical-exercise-advanced-plotting">Practical Exercise: Advanced Plotting</a></li>
+  <li><a href="#spatial-operations-with-sf" id="toc-spatial-operations-with-sf" class="nav-link" data-scroll-target="#spatial-operations-with-sf">Spatial Operations with <code>sf</code></a></li>
+  <li><a href="#spatial-joins-with-sf" id="toc-spatial-joins-with-sf" class="nav-link" data-scroll-target="#spatial-joins-with-sf">Spatial Joins with <code>sf</code></a></li>
+  <li><a href="#coordinate-transformations-with-sf" id="toc-coordinate-transformations-with-sf" class="nav-link" data-scroll-target="#coordinate-transformations-with-sf">Coordinate Transformations with <code>sf</code></a></li>
+  <li><a href="#where-to-look-for-help" id="toc-where-to-look-for-help" class="nav-link" data-scroll-target="#where-to-look-for-help">Where to Look for Help?</a></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="slides-intro-sf.html"><i class="bi bi-file-slides"></i>RevealJS</a></li><li><a href="sf_intro_session_new.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">GIS for Epidemiology</h1>
-<p class="subtitle lead">Day 2 of <strong>Geospatial Technology for Public Health Policy</strong> Workshop <br><em>May 27–29, 2024 — GISE Hub, IIT Bombay<br>@Central University Gujarat (CUG), Gandhinagar</em></p>
+<h1 class="title">Introduction to the <br> <code>sf</code> Package</h1>
 </div>
 
 
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Authors</div>
-  <div class="quarto-title-meta-heading">Affiliations</div>
-  
-    <div class="quarto-title-meta-contents">
-    <p class="author">Prof.&nbsp;(Dr.) Biju Soman </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Sree Chitra Tirunal Institute for Medical Sciences and Technology (SCTIMST), Trivandrum
-          </p>
-      </div>
-    <div class="quarto-title-meta-contents">
-    <p class="author">Dr.&nbsp;Arun Mitra </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            All India Intstitute of Medical Sciences (AIIMS), Bibinagar, Hyderabad
-          </p>
-      </div>
-  </div>
 
 <div class="quarto-title-meta">
 
-      
     <div>
-    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 28, 2024</p>
-    </div>
+             <p>Dr.&nbsp;Arun Mitra </p>
+          </div>
   </div>
+    
   
     
   </div>
@@ -225,105 +248,247 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="welcome" class="level1">
-<h1>Welcome</h1>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <ul>
-<li>Welcome to the Day 2 of <strong>Geospatial Technology for Public Health Policy</strong> Workshop!</li>
-<li>The goal for today is to highlight the applications of GIS in Epidemiology while providing the foundational concepts in Spatial Epidemiology.</li>
-<li>The workshop introduces the participants to the field of Spatial Data Science through the statistical programming language R.</li>
-<li>The workshop is intended as an introductory window into the world of spatial data analysis and visualization for public health policy.</li>
-<li>Workshop materials in the github repository <a href="https://github.com/drarunmitra/GIS4Epidemiology">GIS4EPI-Workshop</a></li>
-</ul>
-<section id="learning-objectives-for-the-workshop" class="level2">
-<h2 class="anchored" data-anchor-id="learning-objectives-for-the-workshop">Learning Objectives for the Workshop</h2>
-<p>At the end of the day, participants will be able to:</p>
-<ul>
-<li>Understand and Apply Foundational Concepts in Spatial Epidemiology</li>
-<li>Utilize Tools and Techniques for Spatial Data Analysis and Spatial Data Science</li>
-<li>Implement Best Practices for Reproducible Spatial Data Research and Analysis</li>
-<li>Analyze and Interpret Spatial Data for Public Health Applications</li>
-<li>Explore the applications of spatial epidemiology in public health research and practice</li>
-<li>Gain hands-on experience with spatial data analysis and visualization</li>
+<li><strong>Objective</strong>: Learn the basics of the <code>sf</code> package in R for spatial data analysis.</li>
+<li><strong>Why <code>sf</code>?</strong>: Simplifies handling, analysis, and visualization of spatial data in R.</li>
 </ul>
 </section>
+<section id="overview-of-spatial-data-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="overview-of-spatial-data-in-r">Overview of Spatial Data in R</h2>
+<ul>
+<li><strong>Spatial Data</strong>: Data associated with locations in a geometric space.</li>
+<li><strong>Types</strong>:
+<ul>
+<li>Point data</li>
+<li>Line data</li>
+<li>Polygon data</li>
+</ul></li>
+<li><strong>Applications</strong>: Environmental monitoring, urban planning, epidemiology.</li>
+</ul>
 </section>
-<section id="schedule" class="level1">
-<h1>Schedule</h1>
-<table class="table">
-<thead>
-<tr class="header">
-<th style="text-align: center;">Time</th>
-<th style="text-align: center;">Session</th>
-<th style="text-align: left;">Topic</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">10:00 - 10:50</td>
-<td style="text-align: center;">Session1a</td>
-<td style="text-align: left;"><a href="./session1a-foundational-concepts.html">Concepts in Spatial Data Science</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"><em>Bio-Break</em></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">11:00 - 11:50</td>
-<td style="text-align: center;">Session 1b</td>
-<td style="text-align: left;"><a href="./session1b-intro-sds.html">Introduction to Spatial Data Science using R</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"><em>Bio-Break</em></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">12:00 - 12:50</td>
-<td style="text-align: center;">Session 1c</td>
-<td style="text-align: left;"><a href="./session1c-investigate-outbreak.html">Applications of Spatial Data Science</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"><em>Lunch</em></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">14:00 - 14:50</td>
-<td style="text-align: center;">Session 2a</td>
-<td style="text-align: left;"><a href="./session2a-spatial-data-vis.html">Spatial Data Visualization: Principles and Best Practices</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"><em>Bio-Break</em></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">15:00 - 15:50</td>
-<td style="text-align: center;">Session 2b</td>
-<td style="text-align: left;"><a href="./session2b-case-studies.html">Case Studies: Spatial Data Analysis and Visualization</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"><em>Bio-Break</em></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">16:00 - 16:50</td>
-<td style="text-align: center;">Session 2c</td>
-<td style="text-align: left;"><a href="./session2c-hands-on.html">Hands-on Exercises</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">16:50 - 17:00</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"><em>Q&amp;A Session</em></td>
-</tr>
-</tbody>
-</table>
+<section id="the-sf-package" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="the-sf-package">The <code>sf</code> Package</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>The <strong>sf</strong> package is an R implementation of <a href="https://en.wikipedia.org/wiki/Simple_Features">Simple Features</a>.</p>
+<p>This package incorporates:</p>
+<ul>
+<li>A new spatial data class system in R</li>
+<li>Functions for reading and writing data</li>
+<li>Tools for spatial operations on vectors</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/sf_hex.gif" class="img-fluid figure-img"></p>
+<figcaption><code>sf</code> package</figcaption>
+</figure>
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"sf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 </section>
-<section id="in-preparation-for-the-workshop" class="level1">
-<h1>In preparation for the workshop</h1>
-<p>Participants are required to go through the <a href="_materials/prerequisites_GIS4EPI.qmd">workshop pre-requisites</a> before the commencement of the workshop. This document provides a brief overview of the requisite concepts and provides a step-by-step tutorial on how to install the tools required for the workshop.</p>
+<section id="why-the-sf-package" class="level2">
+<h2 class="anchored" data-anchor-id="why-the-sf-package">Why the <code>sf</code> Package?</h2>
+<ul>
+<li><strong>Integration</strong>: Seamlessly integrates with the tidyverse.</li>
+<li><strong>Efficiency</strong>: More efficient and user-friendly than previous spatial packages.</li>
+<li><strong>Standards</strong>: Adheres to international standards for spatial data.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/sf_horst.jpg" class="img-fluid figure-img"></p>
+<figcaption>sf package usage</figcaption>
+</figure>
+</div>
+</section>
+<section id="geometry-types-in-sf" class="level2">
+<h2 class="anchored" data-anchor-id="geometry-types-in-sf">Geometry Types in <code>sf</code></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img src="./images/wkt_primitives.png" class="img-fluid" alt="WKT Primitives"> <img src="./images/wkt_multipart.png" class="img-fluid" alt="WKT Multipart"></p>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/sf-classes.png" class="img-fluid figure-img"></p>
+<figcaption>sf Classes</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="loading-spatial-data-into-r-using-sf" class="level2">
+<h2 class="anchored" data-anchor-id="loading-spatial-data-into-r-using-sf">Loading Spatial Data into R using <code>sf</code></h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>path_to_shape_file <span class="ot">&lt;-</span> <span class="st">"path/to/shapefile.shp"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>spatial_data <span class="ot">&lt;-</span> <span class="fu">st_read</span>(path_to_shape_file)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="viewing-the-sf-object" class="level2">
+<h2 class="anchored" data-anchor-id="viewing-the-sf-object">Viewing the <code>sf</code> Object</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(spatial_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="plotting-the-sf-object" class="level2">
+<h2 class="anchored" data-anchor-id="plotting-the-sf-object">Plotting the <code>sf</code> Object</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(spatial_data) <span class="sc">+</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(spatial_data) <span class="sc">+</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> some_attribute))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="concept-of-the-sf-package" class="level2">
+<h2 class="anchored" data-anchor-id="concept-of-the-sf-package">Concept of the <code>sf</code> Package</h2>
+<ul>
+<li><strong>Spatial Data Frame</strong>: Combines attributes and geometry.</li>
+<li><strong>Key Functions</strong>:
+<ul>
+<li><code>st_read()</code>: Read spatial data.</li>
+<li><code>st_write()</code>: Write spatial data.</li>
+<li><code>st_transform()</code>: Transform coordinate systems.</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/sf_concept_map.png" class="img-fluid figure-img"></p>
+<figcaption>sf Concept Map</figcaption>
+</figure>
+</div>
+</section>
+<section id="dependencies-of-the-sf-package" class="level2">
+<h2 class="anchored" data-anchor-id="dependencies-of-the-sf-package">Dependencies of the <code>sf</code> Package</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/sf_deps.png" class="img-fluid figure-img"></p>
+<figcaption>sf Dependencies</figcaption>
+</figure>
+</div>
+<ul>
+<li><strong>Key Dependencies</strong>:
+<ul>
+<li>GDAL: Geospatial Data Abstraction Library</li>
+<li>PROJ: Cartographic Projections Library</li>
+<li>GEOS: Geometry Engine</li>
+</ul></li>
+</ul>
+</section>
+<section id="methods-in-sf" class="level2">
+<h2 class="anchored" data-anchor-id="methods-in-sf">Methods in <code>sf</code></h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">methods</span>(<span class="at">class=</span><span class="st">"sf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><strong>Common Methods</strong>:
+<ul>
+<li><code>st_union()</code>: Union of geometries.</li>
+<li><code>st_intersection()</code>: Intersection of geometries.</li>
+<li><code>st_buffer()</code>: Buffer around geometries.</li>
+</ul></li>
+</ul>
+</section>
+<section id="interactive-mapping-with-sf" class="level2">
+<h2 class="anchored" data-anchor-id="interactive-mapping-with-sf">Interactive Mapping with <code>sf</code></h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mapview)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mapview</span>(spatial_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="practical-exercise-loading-and-plotting-data" class="level2">
+<h2 class="anchored" data-anchor-id="practical-exercise-loading-and-plotting-data">Practical Exercise: Loading and Plotting Data</h2>
+<ol type="1">
+<li><strong>Load Data</strong>:
+<ul>
+<li>Use <code>st_read()</code> to load spatial data.</li>
+<li>Example shapefile: <code>"path/to/shapefile.shp"</code></li>
+</ul></li>
+<li><strong>View Data</strong>:
+<ul>
+<li>Print the <code>sf</code> object.</li>
+</ul></li>
+<li><strong>Plot Data</strong>:
+<ul>
+<li>Use <code>ggplot2</code> to create a basic map.</li>
+</ul></li>
+</ol>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>spatial_data <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"path/to/shapefile.shp"</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(spatial_data)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(spatial_data) <span class="sc">+</span> <span class="fu">geom_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="practical-exercise-advanced-plotting" class="level2">
+<h2 class="anchored" data-anchor-id="practical-exercise-advanced-plotting">Practical Exercise: Advanced Plotting</h2>
+<ol type="1">
+<li><strong>Color by Attribute</strong>:
+<ul>
+<li>Use <code>aes()</code> to map colors to an attribute.</li>
+</ul></li>
+<li><strong>Interactive Map</strong>:
+<ul>
+<li>Use <code>mapview</code> for interactive mapping.</li>
+</ul></li>
+</ol>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(spatial_data) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> attribute))</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mapview)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mapview</span>(spatial_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="spatial-operations-with-sf" class="level2">
+<h2 class="anchored" data-anchor-id="spatial-operations-with-sf">Spatial Operations with <code>sf</code></h2>
+<ul>
+<li><strong>Buffering</strong>: Create buffer zones around geometries.</li>
+</ul>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>buffered <span class="ot">&lt;-</span> <span class="fu">st_buffer</span>(spatial_data, <span class="at">dist =</span> <span class="dv">100</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(buffered) <span class="sc">+</span> <span class="fu">geom_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><strong>Intersection</strong>: Find intersecting areas between geometries.</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>intersection <span class="ot">&lt;-</span> <span class="fu">st_intersection</span>(spatial_data, another_spatial_layer)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(intersection) <span class="sc">+</span> <span class="fu">geom_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="spatial-joins-with-sf" class="level2">
+<h2 class="anchored" data-anchor-id="spatial-joins-with-sf">Spatial Joins with <code>sf</code></h2>
+<ul>
+<li><strong>Spatial Join</strong>: Combine attributes from different spatial datasets based on their spatial relationship.</li>
+</ul>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>joined_data <span class="ot">&lt;-</span> <span class="fu">st_join</span>(spatial_data, another_spatial_layer)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(joined_data) <span class="sc">+</span> <span class="fu">geom_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="coordinate-transformations-with-sf" class="level2">
+<h2 class="anchored" data-anchor-id="coordinate-transformations-with-sf">Coordinate Transformations with <code>sf</code></h2>
+<ul>
+<li><strong>Transform Coordinates</strong>: Change the coordinate reference system (CRS) of spatial data.</li>
+</ul>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>transformed_data <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(spatial_data, <span class="at">crs =</span> <span class="dv">4326</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(transformed_data) <span class="sc">+</span> <span class="fu">geom_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="where-to-look-for-help" class="level2">
+<h2 class="anchored" data-anchor-id="where-to-look-for-help">Where to Look for Help?</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/sf_cheatsheet.png" class="img-fluid figure-img"></p>
+<figcaption>sf Cheatsheet 1</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/sf_cheatsheet2.png" class="img-fluid figure-img"></p>
+<figcaption>sf Cheatsheet 2</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>Resource</strong>: <a href="https://posit.co/wp-content/uploads/2022/10/sf.pdf">sf Cheatsheet</a></li>
+</ul>
+</section>
+<section id="questions" class="level2">
+<h2 class="anchored" data-anchor-id="questions">Questions</h2>
+<ul>
+<li><strong>Any doubts or questions?</strong></li>
+<li><strong>Hands-on practice time!</strong></li>
+</ul>
 
 
 </section>

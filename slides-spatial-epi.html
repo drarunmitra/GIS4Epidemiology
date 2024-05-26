@@ -9,9 +9,9 @@
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.529">
+  <meta name="generator" content="quarto-1.4.554">
 
-  <title>GIS4Epidemiology - Foundational concetps in Spatial Epidemiology</title>
+  <title>GIS4Epidemiology - How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -326,84 +326,210 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Foundational concetps in Spatial Epidemiology</h1>
+  <h1 class="title">How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section class="slide level2">
-
-<p>Spatial epidemiology is a crucial branch of epidemiology that focuses on the geographical distribution of health outcomes and the factors that influence them. By integrating spatial analysis into public health research, it provides valuable insights into how location and environment affect disease patterns and health outcomes.</p>
-</section>
-<section id="definition-and-scope" class="slide level2">
-<h2>Definition and Scope</h2>
-<p>Spatial epidemiology involves the study of spatial variation in disease risk and the identification of factors contributing to this variation. It encompasses a wide range of methods to collect, analyze, and interpret data on the geographical distribution of diseases. The primary aim is to understand how environmental, social, and demographic factors interact within specific locations to influence health.</p>
-</section>
-<section id="importance-of-spatial-data" class="slide level2">
-<h2>Importance of Spatial Data</h2>
-<p>Spatial data, which includes any data with a geographic component, is the cornerstone of spatial epidemiology. This can range from addresses and ZIP codes to more complex geo-statistical data such as from remote-sensing satellites. The quality and granularity of spatial data are critical, as they directly impact the accuracy and reliability of the findings, and influence predictions. High-quality spatial data allows for detailed mapping and analysis, leading to better understanding and decision-making in public health.</p>
-</section>
-<section id="variations-related-to-disease" class="slide level2">
-<h2>Variations related to Disease</h2>
+<section id="introduction" class="slide level2">
+<h2>Introduction</h2>
+<div class="columns">
+<div class="column">
 <ul>
-<li>Demographic</li>
-<li>Socioeconomic</li>
-<li>Environmental</li>
-<li>Behavioral</li>
-<li>Genetic</li>
-<li>Disease Risk Factors</li>
+<li><strong>Infectious diseases</strong> can be transmitted:
+<ul>
+<li><strong>Directly</strong> (e.g., influenza)</li>
+<li><strong>Indirectly</strong> (e.g., through water, soil)</li>
+</ul></li>
+<li><strong>Spatial dimensions</strong> are crucial for understanding and managing diseases.</li>
+<li>Advancements in <strong>computing and statistical methods</strong> enhance disease visualization and analysis.</li>
 </ul>
+</div><div class="column">
+<p><img data-src="./images/image1.jpg" alt="Introduction to Spatial Epidemiology"> <em>Figure 1: Visualization of spatial dimensions in disease spread.</em></p>
+</div>
+</div>
 </section>
-<section id="key-concepts-and-methods" class="slide level2">
-<h2>Key Concepts and Methods</h2>
-<h3 id="geographic-information-systems-gis">Geographic Information Systems (GIS)</h3>
-<p>Geographic Information Systems (GIS) are powerful tools used in spatial epidemiology to capture, store, manipulate, analyze, manage, and present spatial or geographic data. GIS technology enables researchers to visualize disease patterns through maps and spatial models, facilitating the identification of disease clusters and hotspots. By overlaying various data layers, such as population density, environmental exposures, and healthcare access, GIS helps in understanding the complex interplay between location and health.</p>
-<h3 id="spatial-analysis-techniques">Spatial Analysis Techniques</h3>
-<p>Several spatial analysis techniques are employed to examine the distribution of health outcomes and their determinants. These techniques can be broadly categorized into two groups: spatial descriptive analysis and spatial inferential analysis.</p>
-<h4 id="spatial-descriptive-analysis">Spatial Descriptive Analysis</h4>
-<p>This involves summarizing and visualizing spatial data to identify patterns and anomalies. Common methods include:</p>
-<p>Choropleth Maps: These maps use varying shades or colors to represent different levels of a variable, such as disease incidence rates, across geographic areas.</p>
-<p>Kernel Density Estimation: This technique smooths point data (e.g., locations of disease cases) to create a continuous surface, highlighting areas of higher concentration.</p>
-<p>Spatial Autocorrelation: Measures like Moran’s I and Geary’s C are used to assess the degree to which similar values cluster together in space. Positive spatial autocorrelation indicates clustering, while negative autocorrelation suggests dispersion.</p>
-<h4 id="spatial-inferential-analysis">Spatial Inferential Analysis</h4>
-<p>This involves statistical modeling to infer relationships between spatial variables. Key methods include:</p>
-<p>Spatial Regression Models: These models account for spatial dependence in the data, improving the accuracy of estimates and predictions. Examples include spatial lag models and spatial error models.</p>
-<p>Geostatistics: Techniques like kriging are used to predict values at unsampled locations based on the spatial correlation of sampled data points.</p>
-<p>Bayesian Spatial Models: These models incorporate prior knowledge and spatial structure into the analysis, often providing more robust estimates in the presence of complex spatial patterns.</p>
-<h3 id="disease-mapping-and-cluster-detection">Disease Mapping and Cluster Detection</h3>
-<p>Mapping disease incidence and identifying clusters are central to spatial epidemiology. Disease mapping involves creating visual representations of disease data to explore spatial patterns. Cluster detection methods, such as the Kulldorff’s spatial scan statistic, help identify areas with significantly higher or lower disease rates than expected. These clusters can indicate areas requiring further investigation or intervention.</p>
+<section id="spatial-data-types" class="slide level2">
+<h2>Spatial Data Types</h2>
+<ul>
+<li><strong>Point Data</strong>:
+<ul>
+<li>Raw data such as incidences, deaths, physical locations (e.g., hospitals)</li>
+</ul></li>
+<li><strong>Aggregate Data</strong>:
+<ul>
+<li>Summaries of individual points like incidence rates by area</li>
+</ul></li>
+</ul>
+<aside class="notes">
+<ul>
+<li><strong>Point Data</strong> provides detailed and precise information, allowing for pinpointing specific outbreak locations.</li>
+<li><strong>Aggregate Data</strong> helps in understanding broader trends but can obscure local variations.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="applications-of-spatial-epidemiology" class="slide level2">
-<h2>Applications of Spatial Epidemiology</h2>
-<p>Spatial epidemiology has diverse applications across public health research and practice. Some key areas include:</p>
-<h3 id="environmental-health">Environmental Health</h3>
-<p>Spatial epidemiology plays a crucial role in environmental health by examining how environmental exposures, such as air pollution, water quality, and proximity to industrial sites, affect health outcomes. For example, GIS can be used to map areas with high levels of pollutants and correlate these with respiratory diseases or cancer incidence.</p>
-<h3 id="infectious-disease-control">Infectious Disease Control</h3>
-<p>In the context of infectious diseases, spatial epidemiology is vital for tracking disease spread and identifying hotspots of transmission. During outbreaks, spatial analysis helps public health officials allocate resources efficiently and implement targeted interventions. For instance, mapping the spread of COVID-19 has been essential in managing the pandemic response.</p>
-<h3 id="chronic-disease-surveillance">Chronic Disease Surveillance</h3>
-<p>Spatial epidemiology also contributes to understanding the distribution and determinants of chronic diseases like diabetes, heart disease, and cancer. By analyzing spatial patterns and identifying high-risk areas, health authorities can develop targeted prevention and intervention strategies.</p>
-<h3 id="health-disparities">Health Disparities</h3>
-<p>Investigating health disparities is another important application. Spatial epidemiology can reveal how socioeconomic factors, healthcare access, and other social determinants of health vary across different regions, highlighting areas of inequity that require policy attention.</p>
+<section id="disease-mapping-techniques" class="slide level2">
+<h2>Disease Mapping Techniques</h2>
+<h3 id="location-mapping">Location Mapping</h3>
+<ul>
+<li>Historical examples:
+<ul>
+<li>Yellow fever in New York (1798)</li>
+<li>Cholera in London (1854)</li>
+</ul></li>
+<li><strong>Advantages</strong>: Quick observation of disease spread.</li>
+<li><strong>Limitations</strong>: Privacy issues, difficulty in reflecting population distributions.</li>
+</ul>
+<h3 id="surface-mapping">Surface Mapping</h3>
+<ul>
+<li><strong>Choropleth Maps</strong>:
+<ul>
+<li>Example: Filariasis in India, Q fever in the Netherlands.</li>
+</ul></li>
+<li><strong>Advantages</strong>: Visualize incidence rates clearly.</li>
+<li><strong>Limitations</strong>: May hide demographic factors, sensitive to spatial scales.</li>
+</ul>
+<p><img data-src="./images/image2.jpg" alt="Choropleth Map Example"> <em>Figure 2: Example of a choropleth map showing disease incidence.</em></p>
 </section>
-<section id="challenges-and-future-directions" class="slide level2">
-<h2>Challenges and Future Directions</h2>
-<h3 id="data-quality-and-availability">Data Quality and Availability</h3>
-<p>One of the main challenges in spatial epidemiology is the availability and quality of spatial data. Incomplete or inaccurate data can lead to misleading results. Ensuring high-quality data collection and integration from various sources is essential for reliable analysis.</p>
-<h3 id="privacy-concerns">Privacy Concerns</h3>
-<p>The use of detailed spatial data raises privacy concerns, especially when dealing with sensitive health information. It is crucial to implement robust data protection measures to maintain confidentiality and comply with legal and ethical standards.</p>
-<h3 id="advancements-in-technology">Advancements in Technology</h3>
-<p>Advancements in technology, such as the increasing availability of high-resolution satellite imagery and the development of more sophisticated spatial analysis software, are continually enhancing the capabilities of spatial epidemiology. These innovations enable more precise and comprehensive analyses, leading to better public health outcomes.</p>
-<h3 id="interdisciplinary-collaboration">Interdisciplinary Collaboration</h3>
-<p>Spatial epidemiology benefits from interdisciplinary collaboration, bringing together expertise from epidemiology, geography, statistics, environmental science, and computer science. Such collaboration fosters the development of innovative methods and applications, driving the field forward.</p>
+<section id="advanced-mapping-techniques" class="slide level2">
+<h2>Advanced Mapping Techniques</h2>
+<div class="columns">
+<div class="column">
+<h3 id="bayesian-smoothing">Bayesian Smoothing</h3>
+<ul>
+<li>Reduces bias in local risk estimation.</li>
+<li><strong>Example</strong>: Applied in studies of dengue, influenza, and tuberculosis.</li>
+</ul>
+<h3 id="kernel-density-estimation-kde">Kernel Density Estimation (KDE)</h3>
+<ul>
+<li>Identifies dense points and visualizes as smooth surfaces.</li>
+<li><strong>Example</strong>: Dengue cases in Delhi.</li>
+</ul>
+</div><div class="column">
+<p><img data-src="./images/image3.jpg" alt="Bayesian Smoothing"> <em>Figure 3: Illustration of Bayesian Smoothing applied to disease data.</em></p>
+<p><img data-src="./images/image4.jpg" alt="Kernel Density Estimation"> <em>Figure 4: KDE showing the density of dengue cases.</em></p>
+</div>
+</div>
+</section>
+<section id="overall-spatial-patterns" class="slide level2">
+<h2>Overall Spatial Patterns</h2>
+<h3 id="clustering-methods">Clustering Methods</h3>
+<ul>
+<li><strong>Nearest Neighbour Ratio</strong>:
+<ul>
+<li>Assesses clustering degree (e.g., rabies in China).</li>
+</ul></li>
+<li><strong>Ripley’s K Function</strong>:
+<ul>
+<li>Measures spatial clustering over distance (e.g., leishmaniasis in Brazil).</li>
+</ul></li>
+</ul>
+<p><img data-src="./images/image5.jpg" alt="Clustering Methods"> <em>Figure 5: Visualization of clustering methods.</em></p>
+<aside class="notes">
+<ul>
+<li>Clustering methods help identify hotspots and inform targeted interventions.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="statistical-tests-for-clustering" class="slide level2">
+<h2>Statistical Tests for Clustering</h2>
+<h3 id="point-data">Point Data</h3>
+<ul>
+<li><strong>Nearest Neighbour Ratio</strong></li>
+<li><strong>Cuzick and Edwards’ test</strong></li>
+<li><strong>Ripley’s K function</strong></li>
+</ul>
+<h3 id="aggregate-data">Aggregate Data</h3>
+<ul>
+<li><strong>Spatial autocorrelation statistics</strong> (e.g., Moran’s I)</li>
+</ul>
+<aside class="notes">
+<ul>
+<li>These tests are crucial for confirming whether observed patterns are statistically significant.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="hot-spot-detection" class="slide level2">
+<h2>Hot Spot Detection</h2>
+<h3 id="local-indicators-of-spatial-association-lisa">Local Indicators of Spatial Association (LISA)</h3>
+<ul>
+<li>Identifies clusters of high or low values.</li>
+</ul>
+<h3 id="spatial-scan-statistics">Spatial Scan Statistics</h3>
+<ul>
+<li>Detects clusters in space and time (e.g., leishmaniasis in Brazil).</li>
+</ul>
+<p><img data-src="./images/image6.jpg" alt="Hot Spot Detection"> <em>Figure 6: Example of hot spot detection using LISA and spatial scan statistics.</em></p>
+</section>
+<section id="identifying-risk-factors" class="slide level2">
+<h2>Identifying Risk Factors</h2>
+<h3 id="neighbourhood-effect">Neighbourhood Effect</h3>
+<ul>
+<li>Disease risk influenced by nearby cases.</li>
+</ul>
+<h3 id="spatial-heterogeneity">Spatial Heterogeneity</h3>
+<ul>
+<li>Variation in disease risk across different areas.</li>
+</ul>
+<h3 id="spatial-regression-methods">Spatial Regression Methods</h3>
+<ul>
+<li>Adjust for neighbourhood effects and spatial heterogeneity.</li>
+</ul>
+<p><img data-src="./images/image7.jpg" alt="Risk Factors"> <em>Figure 7: Illustration of neighbourhood effect and spatial heterogeneity.</em></p>
+</section>
+<section id="conclusion" class="slide level2">
+<h2>Conclusion</h2>
+<ul>
+<li><strong>Spatial epidemiology</strong> provides insights into the spread and control of infectious diseases.</li>
+<li><strong>Future Directions</strong>: Enhancing GPS methods, optimizing Bayesian estimations.</li>
+<li><strong>Key Impact</strong>: Improved disease surveillance, hypothesis generation, and strategic control measures.</li>
+</ul>
+<p><img data-src="./images/image8.jpg" alt="Conclusion"> <em>Figure 8: The impact of spatial epidemiology on disease control.</em></p>
+</section>
+<section id="references" class="slide level2">
+<h2>References</h2>
+<ul>
+<li>Lin, C.-H., &amp; Wen, T.-H. (2022). How spatial epidemiology helps understand infectious human disease transmission.</li>
+</ul>
 
-
-</section>
-    <div class="quarto-auto-generated-content">
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
-</div></div>
+</div>
+</section>
+    </div>
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
@@ -689,6 +815,24 @@
         // clear code selection
         e.clearSelection();
       });
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp("https:\/\/drarunmitra\.github\.io\/GIS4Epidemiology\/");
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
       function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
@@ -725,7 +869,11 @@
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>GIS4Epidemiology - Session One</title>
+<title>GIS4Epidemiology - Spatial Epidemiology and Public Health Practice</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -99,16 +99,28 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-session-one">    
         <li>
-    <a class="dropdown-item" href="./session1a-foundational-concepts.html">
- <span class="dropdown-text">Session 1A</span></a>
+    <a class="dropdown-item" href="./session1-spatial-epi-public-health.html">
+ <span class="dropdown-text">GIS and Public Health</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./session1b-intro-sds.html">
- <span class="dropdown-text">Session 1B</span></a>
+    <a class="dropdown-item" href="./session1a-concepts-spatial-data-science.html">
+ <span class="dropdown-text">Introduction to Spatial Data Science</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./session1a-foundational-concepts-spatial-epi.html">
+ <span class="dropdown-text">Concepts in Spatial Epidemiology</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./session1a-foundational-concepts.html">
+ <span class="dropdown-text">Concepts in Spatial Epidemilogy</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./sf_intro_session_new.html">
+ <span class="dropdown-text">Spatial Data Science in R</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./session1c-investigate-outbreak.html">
- <span class="dropdown-text">Session 1C</span></a>
+ <span class="dropdown-text">Spatial Data Analysis</span></a>
   </li>  
     </ul>
   </li>
@@ -119,15 +131,15 @@ ul.task-list li input[type="checkbox"] {
     <ul class="dropdown-menu" aria-labelledby="nav-menu-session-two">    
         <li>
     <a class="dropdown-item" href="./session2a-spatial-data-vis.html">
- <span class="dropdown-text">Session 2A</span></a>
+ <span class="dropdown-text">Spatial Data Visualization</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./session2b-case-studies.html">
- <span class="dropdown-text">Session 2B</span></a>
+ <span class="dropdown-text">Case Studies</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./session2c-hands-on.html">
- <span class="dropdown-text">Session 2C</span></a>
+ <span class="dropdown-text">Exercises</span></a>
   </li>  
     </ul>
   </li>
@@ -147,14 +159,32 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-spatial-epidemiology" id="toc-introduction-to-spatial-epidemiology" class="nav-link active" data-scroll-target="#introduction-to-spatial-epidemiology">Introduction to Spatial Epidemiology</a></li>
+  <li><a href="#importance-in-public-health" id="toc-importance-in-public-health" class="nav-link" data-scroll-target="#importance-in-public-health">Importance in Public Health</a></li>
+  <li><a href="#key-concepts-in-spatial-epidemiology" id="toc-key-concepts-in-spatial-epidemiology" class="nav-link" data-scroll-target="#key-concepts-in-spatial-epidemiology">Key Concepts in Spatial Epidemiology</a></li>
+  <li><a href="#case-study-stroke-belt-in-the-u.s." id="toc-case-study-stroke-belt-in-the-u.s." class="nav-link" data-scroll-target="#case-study-stroke-belt-in-the-u.s.">Case Study: Stroke Belt in the U.S.</a></li>
+  <li><a href="#case-study-diabetes-belt-in-the-u.s." id="toc-case-study-diabetes-belt-in-the-u.s." class="nav-link" data-scroll-target="#case-study-diabetes-belt-in-the-u.s.">Case Study: Diabetes Belt in the U.S.</a></li>
+  <li><a href="#spatial-epidemiology-in-india" id="toc-spatial-epidemiology-in-india" class="nav-link" data-scroll-target="#spatial-epidemiology-in-india">Spatial Epidemiology in India</a></li>
+  <li><a href="#advancements-in-gis-techniques" id="toc-advancements-in-gis-techniques" class="nav-link" data-scroll-target="#advancements-in-gis-techniques">Advancements in GIS Techniques</a></li>
+  <li><a href="#common-themes-in-spatial-epidemiology" id="toc-common-themes-in-spatial-epidemiology" class="nav-link" data-scroll-target="#common-themes-in-spatial-epidemiology">Common Themes in Spatial Epidemiology</a></li>
+  <li><a href="#practical-exercise-mapping-disease-incidence" id="toc-practical-exercise-mapping-disease-incidence" class="nav-link" data-scroll-target="#practical-exercise-mapping-disease-incidence">Practical Exercise: Mapping Disease Incidence</a></li>
+  <li><a href="#practical-exercise-space-time-analysis" id="toc-practical-exercise-space-time-analysis" class="nav-link" data-scroll-target="#practical-exercise-space-time-analysis">Practical Exercise: Space-Time Analysis</a></li>
+  <li><a href="#limitations-and-challenges" id="toc-limitations-and-challenges" class="nav-link" data-scroll-target="#limitations-and-challenges">Limitations and Challenges</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="slides-spatial-epi-public-health.html"><i class="bi bi-file-slides"></i>RevealJS</a></li><li><a href="session1a-foundational-concepts-spatial-epi.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Session One</h1>
+<h1 class="title">Spatial Epidemiology and Public Health Practice</h1>
 </div>
 
 
@@ -171,8 +201,225 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction-to-spatial-epidemiology" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-spatial-epidemiology">Introduction to Spatial Epidemiology</h2>
+<ul>
+<li><strong>Definition</strong>: Study of geographic patterns and variations in disease.</li>
+<li><strong>Historical Context</strong>:
+<ul>
+<li><strong>John Snow’s Cholera Map (1854)</strong>: Traced cholera outbreak in London.</li>
+</ul></li>
+</ul>
+<div class="notes">
+<p>John Snow’s work in 1854 demonstrated the power of mapping in understanding disease transmission.</p>
+</div>
+</section>
+<section id="importance-in-public-health" class="level2">
+<h2 class="anchored" data-anchor-id="importance-in-public-health">Importance in Public Health</h2>
+<ul>
+<li><strong>Applications</strong>:
+<ul>
+<li>Identifying disease clusters.</li>
+<li>Analyzing geographic patterns of risk factors.</li>
+<li>Informing public health interventions.</li>
+</ul></li>
+<li><strong>Modern Usage</strong>:
+<ul>
+<li>Applied to both infectious and non-communicable diseases.</li>
+<li>Example: Diabetes belt in the U.S. identified using spatial analysis.</li>
+</ul></li>
+</ul>
+<div class="notes">
+<p>Spatial epidemiology is crucial for recognizing and addressing public health issues, including non-communicable diseases.</p>
+</div>
+</section>
+<section id="key-concepts-in-spatial-epidemiology" class="level2">
+<h2 class="anchored" data-anchor-id="key-concepts-in-spatial-epidemiology">Key Concepts in Spatial Epidemiology</h2>
+<ul>
+<li><strong>Geographic Information Systems (GIS)</strong>:
+<ul>
+<li>Tools for spatial analysis of health data.</li>
+<li>Enables visualization and data integration.</li>
+</ul></li>
+<li><strong>Spatial Clustering</strong>: Identifying regions with higher than expected disease incidence.</li>
+<li><strong>Space-Time Analysis</strong>: Examining changes in disease patterns over time.</li>
+</ul>
+<div class="notes">
+<p>GIS technology underpins spatial epidemiology, allowing for detailed analysis and visualization of health data.</p>
+</div>
+</section>
+<section id="case-study-stroke-belt-in-the-u.s." class="level2">
+<h2 class="anchored" data-anchor-id="case-study-stroke-belt-in-the-u.s.">Case Study: Stroke Belt in the U.S.</h2>
+<ul>
+<li><strong>Stroke Belt</strong>:
+<ul>
+<li>High stroke mortality in 11 southeastern states.</li>
+<li>Identified using spatial epidemiology.</li>
+</ul></li>
+<li><strong>Implications</strong>:
+<ul>
+<li>Focused public health interventions.</li>
+<li>Analysis of contributing factors like hypertension and lifestyle.</li>
+</ul></li>
+</ul>
+<div class="notes">
+<p>The Stroke Belt exemplifies how spatial epidemiology can highlight health disparities and guide interventions.</p>
+</div>
+</section>
+<section id="case-study-diabetes-belt-in-the-u.s." class="level2">
+<h2 class="anchored" data-anchor-id="case-study-diabetes-belt-in-the-u.s.">Case Study: Diabetes Belt in the U.S.</h2>
+<ul>
+<li><strong>Diabetes Belt</strong>:
+<ul>
+<li>High prevalence of diabetes in 15 southern states.</li>
+<li>Linked to obesity and sedentary lifestyles.</li>
+</ul></li>
+<li><strong>Interventions</strong>:
+<ul>
+<li>Targeted public health campaigns.</li>
+<li>Community-based lifestyle programs.</li>
+</ul></li>
+</ul>
+<div class="notes">
+<p>Identifying the Diabetes Belt helped tailor public health strategies to address the specific needs of the affected regions.</p>
+</div>
+</section>
+<section id="spatial-epidemiology-in-india" class="level2">
+<h2 class="anchored" data-anchor-id="spatial-epidemiology-in-india">Spatial Epidemiology in India</h2>
+<ul>
+<li><strong>Healthcare Accessibility</strong>:
+<ul>
+<li>GIS used to plan health service locations.</li>
+<li>Ensures no geographic deprivation of essential services.</li>
+</ul></li>
+<li><strong>Example</strong>:
+<ul>
+<li>Mapping of tuberculosis and malaria to improve intervention strategies.</li>
+</ul></li>
+</ul>
+<div class="notes">
+<p>In India, GIS and spatial epidemiology are crucial for optimizing healthcare accessibility and tailoring interventions to specific regions.</p>
+</div>
+</section>
+<section id="advancements-in-gis-techniques" class="level2">
+<h2 class="anchored" data-anchor-id="advancements-in-gis-techniques">Advancements in GIS Techniques</h2>
+<ul>
+<li><strong>Technological Improvements</strong>:
+<ul>
+<li>Enhanced spatial resolution.</li>
+<li>Advanced data integration capabilities.</li>
+</ul></li>
+<li><strong>Predictive Modeling</strong>:
+<ul>
+<li>Using historical data to predict future trends.</li>
+<li>Incorporating socioeconomic and environmental factors.</li>
+</ul></li>
+</ul>
+<div class="notes">
+<p>Advances in GIS technology have significantly enhanced the capabilities of spatial epidemiology, enabling more precise and comprehensive analyses.</p>
+</div>
+</section>
+<section id="common-themes-in-spatial-epidemiology" class="level2">
+<h2 class="anchored" data-anchor-id="common-themes-in-spatial-epidemiology">Common Themes in Spatial Epidemiology</h2>
+<ul>
+<li><strong>Data Integration</strong>:
+<ul>
+<li>Combining health, socioeconomic, and environmental data.</li>
+<li>Comprehensive analysis of disease patterns.</li>
+</ul></li>
+<li><strong>Public Health Impact</strong>:
+<ul>
+<li>Informing targeted interventions.</li>
+<li>Allocating resources effectively.</li>
+</ul></li>
+<li><strong>Challenges</strong>:
+<ul>
+<li>Ensuring data quality and completeness.</li>
+<li>Addressing ethical concerns regarding privacy and confidentiality.</li>
+</ul></li>
+</ul>
+<div class="notes">
+<p>Recurring themes in spatial epidemiology include the integration of diverse data sources, the impactful use of this data for public health interventions, and the challenges associated with data quality and ethics.</p>
+</div>
+</section>
+<section id="practical-exercise-mapping-disease-incidence" class="level2">
+<h2 class="anchored" data-anchor-id="practical-exercise-mapping-disease-incidence">Practical Exercise: Mapping Disease Incidence</h2>
+<ol type="1">
+<li><strong>Objective</strong>:
+<ul>
+<li>Use GIS software to map the incidence of a chosen disease.</li>
+<li>Identify potential clusters and discuss possible causes.</li>
+</ul></li>
+<li><strong>Steps</strong>:
+<ul>
+<li>Collect and input data into GIS software.</li>
+<li>Visualize the spatial distribution of the disease.</li>
+<li>Analyze patterns and identify clusters.</li>
+</ul></li>
+</ol>
+<div class="notes">
+<p>This exercise will help participants apply spatial analysis techniques to real-world data, reinforcing the concepts discussed.</p>
+</div>
+</section>
+<section id="practical-exercise-space-time-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="practical-exercise-space-time-analysis">Practical Exercise: Space-Time Analysis</h2>
+<ol type="1">
+<li><strong>Objective</strong>:
+<ul>
+<li>Analyze changes in disease incidence over time across different regions.</li>
+<li>Predict future trends based on historical data.</li>
+</ul></li>
+<li><strong>Steps</strong>:
+<ul>
+<li>Collect time-series data on disease incidence.</li>
+<li>Input data into GIS software.</li>
+<li>Visualize and analyze space-time patterns.</li>
+</ul></li>
+</ol>
+<div class="notes">
+<p>Space-time analysis will enable participants to understand how disease patterns evolve over time and predict future trends.</p>
+</div>
+</section>
+<section id="limitations-and-challenges" class="level2">
+<h2 class="anchored" data-anchor-id="limitations-and-challenges">Limitations and Challenges</h2>
+<ul>
+<li><strong>Ecological Fallacy</strong>: Misinterpreting aggregate data as applicable to individuals.</li>
+<li><strong>Data Quality</strong>: Inconsistent or incomplete data can affect analysis.</li>
+<li><strong>Confidentiality</strong>: Ensuring patient privacy when mapping diseases in small areas.</li>
+</ul>
+<div class="notes">
+<p>Challenges in spatial epidemiology include ecological fallacy, data quality issues, and maintaining confidentiality.</p>
+</div>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<ul>
+<li><strong>Impact on Public Health</strong>:
+<ul>
+<li>Provides crucial insights for disease prevention and control.</li>
+<li>Helps allocate resources effectively and design targeted interventions.</li>
+</ul></li>
+<li><strong>Future Directions</strong>:
+<ul>
+<li>Continued integration with emerging technologies and data sources.</li>
+<li>Greater emphasis on addressing data quality and ethical concerns.</li>
+</ul></li>
+</ul>
+<div class="notes">
+<p>Spatial epidemiology continues to play a vital role in public health, with ongoing advancements and applications promising to further enhance its impact.</p>
+</div>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li>Lin W. (2022). “How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission.”</li>
+<li>Liu L., et al.&nbsp;(2022). “Epidemiology for public health practice: The application of spatial epidemiology.”</li>
+<li>Bhattacharya D. (2023). “Geographic Information Systems Applications in India’s Public Health.”</li>
+</ul>
+<p>::: Ensure to review the referenced articles for detailed insights and further reading on the topics discussed in this presentation. :::</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

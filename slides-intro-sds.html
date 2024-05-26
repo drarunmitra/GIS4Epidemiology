@@ -9,9 +9,9 @@
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.529">
+  <meta name="generator" content="quarto-1.4.554">
 
-  <title>GIS4Epidemiology - Foundational concetps in Spatial Epidemiology</title>
+  <title>GIS4Epidemiology - Introduction to Spatial Data Science</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -326,84 +326,306 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Foundational concetps in Spatial Epidemiology</h1>
+  <h1 class="title">Introduction to Spatial Data Science</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section class="slide level2">
-
-<p>Spatial epidemiology is a crucial branch of epidemiology that focuses on the geographical distribution of health outcomes and the factors that influence them. By integrating spatial analysis into public health research, it provides valuable insights into how location and environment affect disease patterns and health outcomes.</p>
-</section>
-<section id="definition-and-scope" class="slide level2">
-<h2>Definition and Scope</h2>
-<p>Spatial epidemiology involves the study of spatial variation in disease risk and the identification of factors contributing to this variation. It encompasses a wide range of methods to collect, analyze, and interpret data on the geographical distribution of diseases. The primary aim is to understand how environmental, social, and demographic factors interact within specific locations to influence health.</p>
-</section>
-<section id="importance-of-spatial-data" class="slide level2">
-<h2>Importance of Spatial Data</h2>
-<p>Spatial data, which includes any data with a geographic component, is the cornerstone of spatial epidemiology. This can range from addresses and ZIP codes to more complex geo-statistical data such as from remote-sensing satellites. The quality and granularity of spatial data are critical, as they directly impact the accuracy and reliability of the findings, and influence predictions. High-quality spatial data allows for detailed mapping and analysis, leading to better understanding and decision-making in public health.</p>
-</section>
-<section id="variations-related-to-disease" class="slide level2">
-<h2>Variations related to Disease</h2>
+<section id="acknowledge" class="slide level2">
+<h2>Acknowledge</h2>
 <ul>
-<li>Demographic</li>
-<li>Socioeconomic</li>
-<li>Environmental</li>
-<li>Behavioral</li>
-<li>Genetic</li>
-<li>Disease Risk Factors</li>
+<li>Dr.&nbsp;Elisabetta Pietrostefani &amp;</li>
+<li>Dr.&nbsp;Carmen Cabrera-Arnau</li>
+</ul>
+<p><em>A course in Geographic Data Science</em></p>
+</section>
+<section id="sctimst-trivandrum" class="slide level2">
+<h2>SCTIMST, Trivandrum</h2>
+<div style="font-size:70%">
+<ul>
+<li>Sree Chitra Tirunal Institute for Medical Sciences &amp; Technology, Trivandrum</li>
+<li>An Institution of National Importance established by the Act of the Indian Parliament (Act No.52, 1980)</li>
+</ul>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="font-size:70%">
+<ul>
+<li><p>Dept. of Science &amp; Technology</p></li>
+<li><p>Three major focus areas</p>
+<ul>
+<li>Bio-Medical Technology Wing</li>
+<li>Super specialty Hospital</li>
+<li>Public Health (AMCHSS)</li>
+</ul></li>
+<li><p>Healthcare Technology development</p></li>
+<li><p>inter-disciplinary initiatives</p></li>
+<li><p>Running MPH program since 1997, PhD programs since 2003</p></li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<div style="font-size:60%">
+<p><img data-src="./images/sctimst_three_institutes.jpg"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="introduction" class="slide level2">
+<h2>Introduction</h2>
+<ul>
+<li>Public Health - Science <em>vs.</em> Advocacy</li>
+<li>The need for participatory decision making in public health</li>
+<li>The transparency of open data science approach</li>
+<li>The beauty of computational reports, presentations, etc.</li>
 </ul>
 </section>
-<section id="key-concepts-and-methods" class="slide level2">
-<h2>Key Concepts and Methods</h2>
-<h3 id="geographic-information-systems-gis">Geographic Information Systems (GIS)</h3>
-<p>Geographic Information Systems (GIS) are powerful tools used in spatial epidemiology to capture, store, manipulate, analyze, manage, and present spatial or geographic data. GIS technology enables researchers to visualize disease patterns through maps and spatial models, facilitating the identification of disease clusters and hotspots. By overlaying various data layers, such as population density, environmental exposures, and healthcare access, GIS helps in understanding the complex interplay between location and health.</p>
-<h3 id="spatial-analysis-techniques">Spatial Analysis Techniques</h3>
-<p>Several spatial analysis techniques are employed to examine the distribution of health outcomes and their determinants. These techniques can be broadly categorized into two groups: spatial descriptive analysis and spatial inferential analysis.</p>
-<h4 id="spatial-descriptive-analysis">Spatial Descriptive Analysis</h4>
-<p>This involves summarizing and visualizing spatial data to identify patterns and anomalies. Common methods include:</p>
-<p>Choropleth Maps: These maps use varying shades or colors to represent different levels of a variable, such as disease incidence rates, across geographic areas.</p>
-<p>Kernel Density Estimation: This technique smooths point data (e.g., locations of disease cases) to create a continuous surface, highlighting areas of higher concentration.</p>
-<p>Spatial Autocorrelation: Measures like Moran’s I and Geary’s C are used to assess the degree to which similar values cluster together in space. Positive spatial autocorrelation indicates clustering, while negative autocorrelation suggests dispersion.</p>
-<h4 id="spatial-inferential-analysis">Spatial Inferential Analysis</h4>
-<p>This involves statistical modeling to infer relationships between spatial variables. Key methods include:</p>
-<p>Spatial Regression Models: These models account for spatial dependence in the data, improving the accuracy of estimates and predictions. Examples include spatial lag models and spatial error models.</p>
-<p>Geostatistics: Techniques like kriging are used to predict values at unsampled locations based on the spatial correlation of sampled data points.</p>
-<p>Bayesian Spatial Models: These models incorporate prior knowledge and spatial structure into the analysis, often providing more robust estimates in the presence of complex spatial patterns.</p>
-<h3 id="disease-mapping-and-cluster-detection">Disease Mapping and Cluster Detection</h3>
-<p>Mapping disease incidence and identifying clusters are central to spatial epidemiology. Disease mapping involves creating visual representations of disease data to explore spatial patterns. Cluster detection methods, such as the Kulldorff’s spatial scan statistic, help identify areas with significantly higher or lower disease rates than expected. These clusters can indicate areas requiring further investigation or intervention.</p>
+<section id="work-plan" class="slide level2">
+<h2>Work plan</h2>
 </section>
-<section id="applications-of-spatial-epidemiology" class="slide level2">
-<h2>Applications of Spatial Epidemiology</h2>
-<p>Spatial epidemiology has diverse applications across public health research and practice. Some key areas include:</p>
-<h3 id="environmental-health">Environmental Health</h3>
-<p>Spatial epidemiology plays a crucial role in environmental health by examining how environmental exposures, such as air pollution, water quality, and proximity to industrial sites, affect health outcomes. For example, GIS can be used to map areas with high levels of pollutants and correlate these with respiratory diseases or cancer incidence.</p>
-<h3 id="infectious-disease-control">Infectious Disease Control</h3>
-<p>In the context of infectious diseases, spatial epidemiology is vital for tracking disease spread and identifying hotspots of transmission. During outbreaks, spatial analysis helps public health officials allocate resources efficiently and implement targeted interventions. For instance, mapping the spread of COVID-19 has been essential in managing the pandemic response.</p>
-<h3 id="chronic-disease-surveillance">Chronic Disease Surveillance</h3>
-<p>Spatial epidemiology also contributes to understanding the distribution and determinants of chronic diseases like diabetes, heart disease, and cancer. By analyzing spatial patterns and identifying high-risk areas, health authorities can develop targeted prevention and intervention strategies.</p>
-<h3 id="health-disparities">Health Disparities</h3>
-<p>Investigating health disparities is another important application. Spatial epidemiology can reveal how socioeconomic factors, healthcare access, and other social determinants of health vary across different regions, highlighting areas of inequity that require policy attention.</p>
+<section id="lectures" class="slide level2">
+<h2>Lectures</h2>
+<ul>
+<li>Essential concepts</li>
+<li>Mainly to get the big picture</li>
+<li>Enthusing interest rather than teaching</li>
+<li>Welcome to the open data science initiative!</li>
+</ul>
 </section>
-<section id="challenges-and-future-directions" class="slide level2">
-<h2>Challenges and Future Directions</h2>
-<h3 id="data-quality-and-availability">Data Quality and Availability</h3>
-<p>One of the main challenges in spatial epidemiology is the availability and quality of spatial data. Incomplete or inaccurate data can lead to misleading results. Ensuring high-quality data collection and integration from various sources is essential for reliable analysis.</p>
-<h3 id="privacy-concerns">Privacy Concerns</h3>
-<p>The use of detailed spatial data raises privacy concerns, especially when dealing with sensitive health information. It is crucial to implement robust data protection measures to maintain confidentiality and comply with legal and ethical standards.</p>
-<h3 id="advancements-in-technology">Advancements in Technology</h3>
-<p>Advancements in technology, such as the increasing availability of high-resolution satellite imagery and the development of more sophisticated spatial analysis software, are continually enhancing the capabilities of spatial epidemiology. These innovations enable more precise and comprehensive analyses, leading to better public health outcomes.</p>
-<h3 id="interdisciplinary-collaboration">Interdisciplinary Collaboration</h3>
-<p>Spatial epidemiology benefits from interdisciplinary collaboration, bringing together expertise from epidemiology, geography, statistics, environmental science, and computer science. Such collaboration fosters the development of innovative methods and applications, driving the field forward.</p>
+<section id="lab-work" class="slide level2">
+<h2>Lab work</h2>
+<ul>
+<li>Do it yourself</li>
+<li>Get skilled in the process</li>
+<li>Come out of your comfort zones and collaborate!</li>
+<li>Use data for dialogue!</li>
+</ul>
+</section>
+<section id="what-information-does-gis-use" class="slide level2">
+<h2>What information does GIS use?</h2>
+<ul>
+<li><p>Data that defines geographical features like roads, rivers</p></li>
+<li><p>Soil types, land use, elevation</p></li>
+<li><p>Demographics, socioeconomic attributes</p></li>
+<li><p>Environmental, climate, air-quality</p></li>
+<li><p>Annotations that label features and places</p></li>
+</ul>
+</section>
+<section id="what-is-spatial-data-science" class="slide level2">
+<h2>What is Spatial Data Science?</h2>
+</section>
+<section id="spatial-data-science" class="slide level2">
+<h2>Spatial Data Science</h2>
+<ul>
+<li><strong>Analyse</strong> and <strong>extract</strong> insights from geospatial data</li>
+<li>Work with <strong>real-world data</strong> on a number of domains and problems</li>
+<li>Acquire key <strong>data science skills</strong> and important tools to answer spatial questions</li>
+</ul>
+<center>
+<p><mark>It is especially true in public health</mark></p>
+<center>
+</center></center></section>
+<section id="gis" class="slide level2">
+<h2>GIS</h2>
 
+<img data-src="./images/layers.png" class="r-stretch"></section>
+<section id="layers---image---data" class="slide level2">
+<h2>Layers - Image - Data</h2>
 
+<img data-src="./images/geo_data.jpg" class="r-stretch"></section>
+<section id="gis-world-vs.-real-world" class="slide level2">
+<h2>GIS world vs.&nbsp;Real World</h2>
+
+<img data-src="./images/realworld.png" class="r-stretch"></section>
+<section id="skills-for-public-health-data-science" class="slide level2">
+<h2>Skills for public health data science</h2>
+<p><strong>Hard Skills</strong> - Programming Language - Transparency and Reproducibility - Version control</p>
+<p><strong>Soft Skills</strong> - Communication - Storytelling - Geospatial analytics acumen - Ethical skills</p>
 </section>
-    <div class="quarto-auto-generated-content">
+<section id="r-software-for-spatial-data-science-sds" class="slide level2">
+<h2>R software for Spatial Data Science (SDS)</h2>
+<p><strong>Graphical User Interfaces (GUIs)</strong></p>
+<ul>
+<li>QGIS and GRASS has revolutionized Open source Spatial Information Systems (GIS).</li>
+<li>However, the reproducibility aspect has many challenges</li>
+</ul>
+<p><strong>Command Line Interfaces (CLIs)</strong></p>
+<p>Command Line Interface (CLIs) of R software is a good way to bring in reproducible algorithms for GIS/SDS</p>
+</section>
+<section id="the-spatial-data-revolution" class="slide level2">
+<h2>The Spatial Data ‘Revolution’</h2>
+<p><strong>Advanced Hardware</strong>: High-performance computer hardware and efficient algorithms allow us to process vast data sets quickly.</p>
+<p><strong>Scalable Software</strong>: Scalable solutions with the R environment help us to sift through the data deluge, and extract valuable insights from the noise.</p>
+<p><strong>Spatial Databases</strong>: The advent of spatial databases empowers us to store and manipulate manageable subsets within the vast ocean of spatial data.</p>
+</section>
+<section id="sds-in-public-health" class="slide level2">
+<h2>SDS in Public Health</h2>
+<ul>
+<li><strong>Data Science</strong>:“gathering data messaging it into a tractable form, making it tell its story and presenting that story to others”</li>
+</ul>
+<p><br></p>
+<p>Loukides (2011) What is Data Science?</p>
+</section>
+<section id="traditional-datasets-in-healthcare" class="slide level2">
+<h2>Traditional datasets in healthcare</h2>
+<ul>
+<li>Collected for the purpose (carefully designed)</li>
+<li>Detailed and informative (“rich profile and portraits of the country”)</li>
+<li>High quality</li>
+</ul>
+</section>
+<section id="traditional-health-and-allied-sector-data" class="slide level2">
+<h2>Traditional health and allied sector data</h2>
+<ul>
+<li>Massive enterprises (very costly)</li>
+<li>Coarse in resolution (to preserve privacy they need to be aggregated)</li>
+<li>Slow - the more detailed, the less frequent they are available</li>
+</ul>
+</section>
+<section id="examples" class="slide level2">
+<h2>Examples</h2>
+<ul>
+<li>Decennial census (census geographies)</li>
+<li>Longitudinal surveys</li>
+<li>Custom collected surveys, interviews etc.</li>
+<li>Economic or well-being indicators</li>
+</ul>
+</section>
+<section id="new-forms-of-spatial-data" class="slide level2">
+<h2><em>New Forms</em> of spatial data</h2>
+<p>Tied into the geo-data revolution</p>
+<ul>
+<li><p>Accidental : created for different purposes but available for analysis as a side effect</p></li>
+<li><p>Very diverse in nature: resolution and quality but, potentially much more detailed in both space and time</p></li>
+</ul>
+</section>
+<section id="challenges-arribas-bel-2014" class="slide level2">
+<h2>Challenges (Arribas-Bel, 2014)</h2>
+<ul>
+<li>Bias</li>
+<li>Technical barriers</li>
+<li>Methodological “mismatch”</li>
+</ul>
+</section>
+<section id="part-2" class="slide level2">
+<h2>Part 2</h2>
+</section>
+<section id="geovisualisation" class="slide level2">
+<h2>(Geo)visualisation</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><img data-src="./images/monalisa_data.png"></p>
+</div><div class="column" style="width:5%;">
+<!-- empty column to create gap -->
+</div><div class="column" style="width:30%;">
+<p><img data-src="./images/monalisa.png"></p>
+</div><div class="column" style="width:30%;">
+<div class="fragment">
+<div style="font-size:70%">
+<p>By encoding information visually, they allow to present large amounts of numbers in a meaningful way.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="a-map-for-everyone" class="slide level2">
+<h2>A map for everyone</h2>
+<p><strong>A real public health tool</strong></p>
+<p>Maps can fulfill several needs, looking very different depending on the end-goal.</p>
+<p><strong>MacEachren &amp; Kraak (1997)</strong> identify three main dimensions:</p>
+<ul>
+<li>Knowledge of what is being plotted</li>
+<li>Target audience</li>
+<li>Degree of interactivity</li>
+</ul>
+</section>
+<section id="maceachren-kraak-1997" class="slide level2">
+<h2>MacEachren &amp; Kraak (1997)</h2>
+
+<img data-src="./images/carto.png" class="r-stretch"></section>
+<section id="dibiases-1990-swoopy" class="slide level2">
+<h2>DiBiase’s (1990) “Swoopy”</h2>
+<p>Translating numbers into a (visual) language that the human brain “speaks better”</p>
+
+<img data-src="./images/geovis.png" class="r-stretch"></section>
+<section id="exploratory-visualization" class="slide level2">
+<h2>Exploratory Visualization</h2>
+<p><br></p>
+<p>“forces us to notice what we never expected to see” (Tukey 1977: vi)</p>
+<p><br></p>
+<ul>
+<li><p>Mostly for ourselves in the course of the research process.</p></li>
+<li><p>Many, quick and dirty, and rather unattractive graphs.</p></li>
+</ul>
+</section>
+<section id="explanatory-visualization" class="slide level2">
+<h2>Explanatory Visualization</h2>
+<p><br></p>
+<p>“forces readers to see the information the designer wanted to convey” (Kosslyn 1994: 271)</p>
+<p><br></p>
+<ul>
+<li><p>Mostly for others after the research is completed.</p></li>
+<li><p>Few, carefully crafted, and attractive graphs.</p></li>
+</ul>
+</section>
+<section id="choropleths" class="slide level2">
+<h2>Choropleths</h2>
+<p><em>Thematic map in which values of a variable are encoded using a color gradient of some sort</em></p>
+<ul>
+<li><p>Counterpart of the histogram</p>
+<p><strong>Both allows us to gage the distribution of a variable</strong></p></li>
+</ul>
+</section>
+<section id="part-3" class="slide level2">
+<h2>Part 3</h2>
+</section>
+<section id="spatial-weights" class="slide level2">
+<h2><strong>Spatial Weights</strong></h2>
+<p>For a statistical method to be explicitly spatial, it needs to contain some representation of the geography, or spatial context. One of the most common ways is through <strong>Spatial Weights Matrices</strong></p>
+<ul>
+<li>(Geo)Visualization: translating numbers into a (visual) language (colors) that the human brain can interpret.</li>
+<li>Spatial Weights Matrices: translating geography into a (numerical) language that a computer can interpret.</li>
+</ul>
+</section>
+<section id="spatial-weight-matrices" class="slide level2">
+<h2>Spatial Weight Matrices</h2>
+<p>Spatial Weights Matrices are building block for spatial analysis and statistics.</p>
+<p>They are used to assign a weighted average or sum of neighbouring data values to an observation, or other point in space.</p>
+<ul>
+<li><p>Relates to concepts of spatial ‘smoothing’ and interpolating data</p></li>
+<li><p>They can be used to see how one’s characteristics or outcomes is correlated with their neighbours: e.g.&nbsp;education, criminality, disease risk factors,…</p></li>
+</ul>
+</section>
+<section id="core-element-in-several-spatial-analysis-techniques" class="slide level2">
+<h2>Core element in several spatial analysis techniques</h2>
+<ul>
+<li>Spatial autocorrelation</li>
+<li>Spatial clustering/geo-demographics</li>
+<li>Spatial regression</li>
+</ul>
+</section>
+<section id="spatial-weights-1" class="slide level2">
+<h2>Spatial Weights</h2>
+<p>Spatial Weights represented by <span class="math display">\[W\]</span> N x N positive matrix that contains spatial relations that are translated into values</p>
+<ul>
+<li>If you are not a neighbour, <span class="math inline">\(value = 0\)</span></li>
+<li>If you are a neighbour, <span class="math inline">\(value&lt;0\)</span></li>
+</ul>
+</section>
+<section id="website" class="slide level2">
+<h2>Website</h2>
+
+<img data-src="./images/website.jpg" class="r-stretch"><center>
+<a href="https://drarunmitra.github.io/GIS4Epidemiology/"><code>https://drarunmitra.github.io/GIS4Epidemiology/</code></a>
+</center>
+
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
-</div></div>
+</div>
+</section>
+    </div>
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
@@ -689,6 +911,24 @@
         // clear code selection
         e.clearSelection();
       });
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp("https:\/\/drarunmitra\.github\.io\/GIS4Epidemiology\/");
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
       function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
@@ -725,7 +965,11 @@
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {

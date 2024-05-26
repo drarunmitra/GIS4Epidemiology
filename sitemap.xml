@@ -1,47 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://drarunmitra.github.io/GIS4Epidemiology/session1.html</loc>
-    <lastmod>2024-05-25T04:49:28.081Z</lastmod>
+    <loc>https://drarunmitra.github.io/GIS4Epidemiology/sf_intro_session_new.html</loc>
+    <lastmod>2024-05-26T21:11:11.042Z</lastmod>
   </url>
   <url>
-    <loc>https://drarunmitra.github.io/GIS4Epidemiology/session1a-foundational-concepts.html</loc>
-    <lastmod>2024-05-25T04:49:28.081Z</lastmod>
+    <loc>https://drarunmitra.github.io/GIS4Epidemiology/slides-intro-sf.html</loc>
+    <lastmod>2024-05-26T21:11:11.042Z</lastmod>
   </url>
   <url>
-    <loc>https://drarunmitra.github.io/GIS4Epidemiology/slides-index.html</loc>
-    <lastmod>2024-05-25T04:49:28.081Z</lastmod>
+    <loc>https://drarunmitra.github.io/GIS4Epidemiology/session1a-foundational-concepts-spatial-epi.html</loc>
+    <lastmod>2024-05-26T21:11:11.038Z</lastmod>
   </url>
   <url>
-    <loc>https://drarunmitra.github.io/GIS4Epidemiology/session2b-case-studies.html</loc>
-    <lastmod>2024-05-25T04:49:28.081Z</lastmod>
+    <loc>https://drarunmitra.github.io/GIS4Epidemiology/slides-spatial-epi-public-health.html</loc>
+    <lastmod>2024-05-26T21:11:11.038Z</lastmod>
   </url>
   <url>
-    <loc>https://drarunmitra.github.io/GIS4Epidemiology/session2c-hands-on.html</loc>
-    <lastmod>2024-05-25T04:49:28.081Z</lastmod>
+    <loc>https://drarunmitra.github.io/GIS4Epidemiology/session1-spatial-epi-public-health.html</loc>
+    <lastmod>2024-05-26T21:11:11.038Z</lastmod>
   </url>
   <url>
-    <loc>https://drarunmitra.github.io/GIS4Epidemiology/session2.html</loc>
-    <lastmod>2024-05-25T04:49:28.081Z</lastmod>
+    <loc>https://drarunmitra.github.io/GIS4Epidemiology/slides-spatial-epi.html</loc>
+    <lastmod>2024-05-26T21:11:11.038Z</lastmod>
   </url>
   <url>
-    <loc>https://drarunmitra.github.io/GIS4Epidemiology/session1c-investigate-outbreak.html</loc>
-    <lastmod>2024-05-25T04:49:28.081Z</lastmod>
+    <loc>https://drarunmitra.github.io/GIS4Epidemiology/session1a-concepts-spatial-data-science.html</loc>
+    <lastmod>2024-05-26T21:11:11.038Z</lastmod>
   </url>
   <url>
-    <loc>https://drarunmitra.github.io/GIS4Epidemiology/about.html</loc>
-    <lastmod>2024-05-25T04:49:28.077Z</lastmod>
+    <loc>https://drarunmitra.github.io/GIS4Epidemiology/slides-concepts-sds.html</loc>
+    <lastmod>2024-05-26T21:11:11.038Z</lastmod>
   </url>
   <url>
     <loc>https://drarunmitra.github.io/GIS4Epidemiology/session2a-spatial-data-vis.html</loc>
-    <lastmod>2024-05-25T04:49:28.081Z</lastmod>
+    <lastmod>2024-05-26T21:11:11.042Z</lastmod>
+  </url>
+  <url>
+    <loc>https://drarunmitra.github.io/GIS4Epidemiology/slides-spatial-data-vis.html</loc>
+    <lastmod>2024-05-26T21:11:11.042Z</lastmod>
+  </url>
+  <url>
+    <loc>https://drarunmitra.github.io/GIS4Epidemiology/about.html</loc>
+    <lastmod>2024-05-26T21:11:10.998Z</lastmod>
+  </url>
+  <url>
+    <loc>https://drarunmitra.github.io/GIS4Epidemiology/slides-outbreak.html</loc>
+    <lastmod>2024-05-26T21:11:11.042Z</lastmod>
+  </url>
+  <url>
+    <loc>https://drarunmitra.github.io/GIS4Epidemiology/session1c-investigate-outbreak.html</loc>
+    <lastmod>2024-05-26T21:11:11.042Z</lastmod>
+  </url>
+  <url>
+    <loc>https://drarunmitra.github.io/GIS4Epidemiology/session2c-hands-on.html</loc>
+    <lastmod>2024-05-26T21:11:11.042Z</lastmod>
+  </url>
+  <url>
+    <loc>https://drarunmitra.github.io/GIS4Epidemiology/slides-case-studies.html</loc>
+    <lastmod>2024-05-26T21:11:11.042Z</lastmod>
+  </url>
+  <url>
+    <loc>https://drarunmitra.github.io/GIS4Epidemiology/session2b-case-studies.html</loc>
+    <lastmod>2024-05-26T21:11:11.042Z</lastmod>
   </url>
   <url>
     <loc>https://drarunmitra.github.io/GIS4Epidemiology/index.html</loc>
-    <lastmod>2024-05-25T04:49:28.081Z</lastmod>
+    <lastmod>2024-05-26T21:11:11.038Z</lastmod>
+  </url>
+  <url>
+    <loc>https://drarunmitra.github.io/GIS4Epidemiology/slides-concepts.html</loc>
+    <lastmod>2024-05-26T21:11:11.042Z</lastmod>
+  </url>
+  <url>
+    <loc>https://drarunmitra.github.io/GIS4Epidemiology/session1a-foundational-concepts.html</loc>
+    <lastmod>2024-05-26T21:11:11.042Z</lastmod>
+  </url>
+  <url>
+    <loc>https://drarunmitra.github.io/GIS4Epidemiology/slides-intro-sds.html</loc>
+    <lastmod>2024-05-26T21:11:11.042Z</lastmod>
   </url>
   <url>
     <loc>https://drarunmitra.github.io/GIS4Epidemiology/session1b-intro-sds.html</loc>
-    <lastmod>2024-05-25T04:49:28.081Z</lastmod>
+    <lastmod>2024-05-26T21:11:11.042Z</lastmod>
   </url>
 </urlset>

@@ -9,9 +9,10 @@
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.529">
+  <meta name="generator" content="quarto-1.4.554">
 
-  <title>GIS4Epidemiology - Foundational concetps in Spatial Epidemiology</title>
+  <meta name="author" content="Dr.&nbsp;Arun Mitra">
+  <title>GIS4Epidemiology - Introduction to the  sf Package</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -29,6 +30,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -326,84 +392,251 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Foundational concetps in Spatial Epidemiology</h1>
+  <h1 class="title">Introduction to the <br> <code>sf</code> Package</h1>
 
 <div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Dr.&nbsp;Arun Mitra 
+</div>
+</div>
 </div>
 
 </section>
-<section class="slide level2">
-
-<p>Spatial epidemiology is a crucial branch of epidemiology that focuses on the geographical distribution of health outcomes and the factors that influence them. By integrating spatial analysis into public health research, it provides valuable insights into how location and environment affect disease patterns and health outcomes.</p>
-</section>
-<section id="definition-and-scope" class="slide level2">
-<h2>Definition and Scope</h2>
-<p>Spatial epidemiology involves the study of spatial variation in disease risk and the identification of factors contributing to this variation. It encompasses a wide range of methods to collect, analyze, and interpret data on the geographical distribution of diseases. The primary aim is to understand how environmental, social, and demographic factors interact within specific locations to influence health.</p>
-</section>
-<section id="importance-of-spatial-data" class="slide level2">
-<h2>Importance of Spatial Data</h2>
-<p>Spatial data, which includes any data with a geographic component, is the cornerstone of spatial epidemiology. This can range from addresses and ZIP codes to more complex geo-statistical data such as from remote-sensing satellites. The quality and granularity of spatial data are critical, as they directly impact the accuracy and reliability of the findings, and influence predictions. High-quality spatial data allows for detailed mapping and analysis, leading to better understanding and decision-making in public health.</p>
-</section>
-<section id="variations-related-to-disease" class="slide level2">
-<h2>Variations related to Disease</h2>
+<section id="introduction" class="slide level2">
+<h2>Introduction</h2>
 <ul>
-<li>Demographic</li>
-<li>Socioeconomic</li>
-<li>Environmental</li>
-<li>Behavioral</li>
-<li>Genetic</li>
-<li>Disease Risk Factors</li>
+<li><strong>Objective</strong>: Learn the basics of the <code>sf</code> package in R for spatial data analysis.</li>
+<li><strong>Why <code>sf</code>?</strong>: Simplifies handling, analysis, and visualization of spatial data in R.</li>
 </ul>
 </section>
-<section id="key-concepts-and-methods" class="slide level2">
-<h2>Key Concepts and Methods</h2>
-<h3 id="geographic-information-systems-gis">Geographic Information Systems (GIS)</h3>
-<p>Geographic Information Systems (GIS) are powerful tools used in spatial epidemiology to capture, store, manipulate, analyze, manage, and present spatial or geographic data. GIS technology enables researchers to visualize disease patterns through maps and spatial models, facilitating the identification of disease clusters and hotspots. By overlaying various data layers, such as population density, environmental exposures, and healthcare access, GIS helps in understanding the complex interplay between location and health.</p>
-<h3 id="spatial-analysis-techniques">Spatial Analysis Techniques</h3>
-<p>Several spatial analysis techniques are employed to examine the distribution of health outcomes and their determinants. These techniques can be broadly categorized into two groups: spatial descriptive analysis and spatial inferential analysis.</p>
-<h4 id="spatial-descriptive-analysis">Spatial Descriptive Analysis</h4>
-<p>This involves summarizing and visualizing spatial data to identify patterns and anomalies. Common methods include:</p>
-<p>Choropleth Maps: These maps use varying shades or colors to represent different levels of a variable, such as disease incidence rates, across geographic areas.</p>
-<p>Kernel Density Estimation: This technique smooths point data (e.g., locations of disease cases) to create a continuous surface, highlighting areas of higher concentration.</p>
-<p>Spatial Autocorrelation: Measures like Moran’s I and Geary’s C are used to assess the degree to which similar values cluster together in space. Positive spatial autocorrelation indicates clustering, while negative autocorrelation suggests dispersion.</p>
-<h4 id="spatial-inferential-analysis">Spatial Inferential Analysis</h4>
-<p>This involves statistical modeling to infer relationships between spatial variables. Key methods include:</p>
-<p>Spatial Regression Models: These models account for spatial dependence in the data, improving the accuracy of estimates and predictions. Examples include spatial lag models and spatial error models.</p>
-<p>Geostatistics: Techniques like kriging are used to predict values at unsampled locations based on the spatial correlation of sampled data points.</p>
-<p>Bayesian Spatial Models: These models incorporate prior knowledge and spatial structure into the analysis, often providing more robust estimates in the presence of complex spatial patterns.</p>
-<h3 id="disease-mapping-and-cluster-detection">Disease Mapping and Cluster Detection</h3>
-<p>Mapping disease incidence and identifying clusters are central to spatial epidemiology. Disease mapping involves creating visual representations of disease data to explore spatial patterns. Cluster detection methods, such as the Kulldorff’s spatial scan statistic, help identify areas with significantly higher or lower disease rates than expected. These clusters can indicate areas requiring further investigation or intervention.</p>
+<section id="overview-of-spatial-data-in-r" class="slide level2">
+<h2>Overview of Spatial Data in R</h2>
+<ul>
+<li><strong>Spatial Data</strong>: Data associated with locations in a geometric space.</li>
+<li><strong>Types</strong>:
+<ul>
+<li>Point data</li>
+<li>Line data</li>
+<li>Polygon data</li>
+</ul></li>
+<li><strong>Applications</strong>: Environmental monitoring, urban planning, epidemiology.</li>
+</ul>
 </section>
-<section id="applications-of-spatial-epidemiology" class="slide level2">
-<h2>Applications of Spatial Epidemiology</h2>
-<p>Spatial epidemiology has diverse applications across public health research and practice. Some key areas include:</p>
-<h3 id="environmental-health">Environmental Health</h3>
-<p>Spatial epidemiology plays a crucial role in environmental health by examining how environmental exposures, such as air pollution, water quality, and proximity to industrial sites, affect health outcomes. For example, GIS can be used to map areas with high levels of pollutants and correlate these with respiratory diseases or cancer incidence.</p>
-<h3 id="infectious-disease-control">Infectious Disease Control</h3>
-<p>In the context of infectious diseases, spatial epidemiology is vital for tracking disease spread and identifying hotspots of transmission. During outbreaks, spatial analysis helps public health officials allocate resources efficiently and implement targeted interventions. For instance, mapping the spread of COVID-19 has been essential in managing the pandemic response.</p>
-<h3 id="chronic-disease-surveillance">Chronic Disease Surveillance</h3>
-<p>Spatial epidemiology also contributes to understanding the distribution and determinants of chronic diseases like diabetes, heart disease, and cancer. By analyzing spatial patterns and identifying high-risk areas, health authorities can develop targeted prevention and intervention strategies.</p>
-<h3 id="health-disparities">Health Disparities</h3>
-<p>Investigating health disparities is another important application. Spatial epidemiology can reveal how socioeconomic factors, healthcare access, and other social determinants of health vary across different regions, highlighting areas of inequity that require policy attention.</p>
+<section id="the-sf-package" class="slide level2 smaller">
+<h2>The <code>sf</code> Package</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>The <strong>sf</strong> package is an R implementation of <a href="https://en.wikipedia.org/wiki/Simple_Features">Simple Features</a>.</p>
+<p>This package incorporates:</p>
+<ul>
+<li>A new spatial data class system in R</li>
+<li>Functions for reading and writing data</li>
+<li>Tools for spatial operations on vectors</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./images/sf_hex.gif"></p>
+<figcaption><code>sf</code> package</figcaption>
+</figure>
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">install.packages</span>(<span class="st">"sf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 </section>
-<section id="challenges-and-future-directions" class="slide level2">
-<h2>Challenges and Future Directions</h2>
-<h3 id="data-quality-and-availability">Data Quality and Availability</h3>
-<p>One of the main challenges in spatial epidemiology is the availability and quality of spatial data. Incomplete or inaccurate data can lead to misleading results. Ensuring high-quality data collection and integration from various sources is essential for reliable analysis.</p>
-<h3 id="privacy-concerns">Privacy Concerns</h3>
-<p>The use of detailed spatial data raises privacy concerns, especially when dealing with sensitive health information. It is crucial to implement robust data protection measures to maintain confidentiality and comply with legal and ethical standards.</p>
-<h3 id="advancements-in-technology">Advancements in Technology</h3>
-<p>Advancements in technology, such as the increasing availability of high-resolution satellite imagery and the development of more sophisticated spatial analysis software, are continually enhancing the capabilities of spatial epidemiology. These innovations enable more precise and comprehensive analyses, leading to better public health outcomes.</p>
-<h3 id="interdisciplinary-collaboration">Interdisciplinary Collaboration</h3>
-<p>Spatial epidemiology benefits from interdisciplinary collaboration, bringing together expertise from epidemiology, geography, statistics, environmental science, and computer science. Such collaboration fosters the development of innovative methods and applications, driving the field forward.</p>
+<section id="why-the-sf-package" class="slide level2">
+<h2>Why the <code>sf</code> Package?</h2>
+<ul>
+<li><strong>Integration</strong>: Seamlessly integrates with the tidyverse.</li>
+<li><strong>Efficiency</strong>: More efficient and user-friendly than previous spatial packages.</li>
+<li><strong>Standards</strong>: Adheres to international standards for spatial data.</li>
+</ul>
 
-
+<img data-src="./images/sf_horst.jpg" class="r-stretch quarto-figure-center"><p class="caption">sf package usage</p></section>
+<section id="geometry-types-in-sf" class="slide level2">
+<h2>Geometry Types in <code>sf</code></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="./images/wkt_primitives.png" alt="WKT Primitives"> <img data-src="./images/wkt_multipart.png" alt="WKT Multipart"></p>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./images/sf-classes.png"></p>
+<figcaption>sf Classes</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
-    <div class="quarto-auto-generated-content">
+<section id="loading-spatial-data-into-r-using-sf" class="slide level2">
+<h2>Loading Spatial Data into R using <code>sf</code></h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">library</span>(sf)</span>
+<span id="cb2-2"><a></a>path_to_shape_file <span class="ot">&lt;-</span> <span class="st">"path/to/shapefile.shp"</span></span>
+<span id="cb2-3"><a></a>spatial_data <span class="ot">&lt;-</span> <span class="fu">st_read</span>(path_to_shape_file)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="viewing-the-sf-object" class="slide level2">
+<h2>Viewing the <code>sf</code> Object</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">print</span>(spatial_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="plotting-the-sf-object" class="slide level2">
+<h2>Plotting the <code>sf</code> Object</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">ggplot</span>(spatial_data) <span class="sc">+</span></span>
+<span id="cb4-2"><a></a>  <span class="fu">geom_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">ggplot</span>(spatial_data) <span class="sc">+</span></span>
+<span id="cb5-2"><a></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> some_attribute))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="concept-of-the-sf-package" class="slide level2">
+<h2>Concept of the <code>sf</code> Package</h2>
+<ul>
+<li><strong>Spatial Data Frame</strong>: Combines attributes and geometry.</li>
+<li><strong>Key Functions</strong>:
+<ul>
+<li><code>st_read()</code>: Read spatial data.</li>
+<li><code>st_write()</code>: Write spatial data.</li>
+<li><code>st_transform()</code>: Transform coordinate systems.</li>
+</ul></li>
+</ul>
+
+<img data-src="./images/sf_concept_map.png" class="r-stretch quarto-figure-center"><p class="caption">sf Concept Map</p></section>
+<section id="dependencies-of-the-sf-package" class="slide level2">
+<h2>Dependencies of the <code>sf</code> Package</h2>
+
+<img data-src="./images/sf_deps.png" class="r-stretch quarto-figure-center"><p class="caption">sf Dependencies</p><ul>
+<li><strong>Key Dependencies</strong>:
+<ul>
+<li>GDAL: Geospatial Data Abstraction Library</li>
+<li>PROJ: Cartographic Projections Library</li>
+<li>GEOS: Geometry Engine</li>
+</ul></li>
+</ul>
+</section>
+<section id="methods-in-sf" class="slide level2">
+<h2>Methods in <code>sf</code></h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">methods</span>(<span class="at">class=</span><span class="st">"sf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><strong>Common Methods</strong>:
+<ul>
+<li><code>st_union()</code>: Union of geometries.</li>
+<li><code>st_intersection()</code>: Intersection of geometries.</li>
+<li><code>st_buffer()</code>: Buffer around geometries.</li>
+</ul></li>
+</ul>
+</section>
+<section id="interactive-mapping-with-sf" class="slide level2">
+<h2>Interactive Mapping with <code>sf</code></h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">library</span>(mapview)</span>
+<span id="cb7-2"><a></a><span class="fu">mapview</span>(spatial_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="practical-exercise-loading-and-plotting-data" class="slide level2">
+<h2>Practical Exercise: Loading and Plotting Data</h2>
+<ol type="1">
+<li><strong>Load Data</strong>:
+<ul>
+<li>Use <code>st_read()</code> to load spatial data.</li>
+<li>Example shapefile: <code>"path/to/shapefile.shp"</code></li>
+</ul></li>
+<li><strong>View Data</strong>:
+<ul>
+<li>Print the <code>sf</code> object.</li>
+</ul></li>
+<li><strong>Plot Data</strong>:
+<ul>
+<li>Use <code>ggplot2</code> to create a basic map.</li>
+</ul></li>
+</ol>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">library</span>(sf)</span>
+<span id="cb8-2"><a></a>spatial_data <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"path/to/shapefile.shp"</span>)</span>
+<span id="cb8-3"><a></a><span class="fu">print</span>(spatial_data)</span>
+<span id="cb8-4"><a></a><span class="fu">ggplot</span>(spatial_data) <span class="sc">+</span> <span class="fu">geom_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="practical-exercise-advanced-plotting" class="slide level2">
+<h2>Practical Exercise: Advanced Plotting</h2>
+<ol type="1">
+<li><strong>Color by Attribute</strong>:
+<ul>
+<li>Use <code>aes()</code> to map colors to an attribute.</li>
+</ul></li>
+<li><strong>Interactive Map</strong>:
+<ul>
+<li>Use <code>mapview</code> for interactive mapping.</li>
+</ul></li>
+</ol>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">ggplot</span>(spatial_data) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> attribute))</span>
+<span id="cb9-2"><a></a><span class="fu">library</span>(mapview)</span>
+<span id="cb9-3"><a></a><span class="fu">mapview</span>(spatial_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="spatial-operations-with-sf" class="slide level2">
+<h2>Spatial Operations with <code>sf</code></h2>
+<ul>
+<li><strong>Buffering</strong>: Create buffer zones around geometries.</li>
+</ul>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>buffered <span class="ot">&lt;-</span> <span class="fu">st_buffer</span>(spatial_data, <span class="at">dist =</span> <span class="dv">100</span>)</span>
+<span id="cb10-2"><a></a><span class="fu">ggplot</span>(buffered) <span class="sc">+</span> <span class="fu">geom_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><strong>Intersection</strong>: Find intersecting areas between geometries.</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>intersection <span class="ot">&lt;-</span> <span class="fu">st_intersection</span>(spatial_data, another_spatial_layer)</span>
+<span id="cb11-2"><a></a><span class="fu">ggplot</span>(intersection) <span class="sc">+</span> <span class="fu">geom_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="spatial-joins-with-sf" class="slide level2">
+<h2>Spatial Joins with <code>sf</code></h2>
+<ul>
+<li><strong>Spatial Join</strong>: Combine attributes from different spatial datasets based on their spatial relationship.</li>
+</ul>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>joined_data <span class="ot">&lt;-</span> <span class="fu">st_join</span>(spatial_data, another_spatial_layer)</span>
+<span id="cb12-2"><a></a><span class="fu">ggplot</span>(joined_data) <span class="sc">+</span> <span class="fu">geom_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="coordinate-transformations-with-sf" class="slide level2">
+<h2>Coordinate Transformations with <code>sf</code></h2>
+<ul>
+<li><strong>Transform Coordinates</strong>: Change the coordinate reference system (CRS) of spatial data.</li>
+</ul>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>transformed_data <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(spatial_data, <span class="at">crs =</span> <span class="dv">4326</span>)</span>
+<span id="cb13-2"><a></a><span class="fu">ggplot</span>(transformed_data) <span class="sc">+</span> <span class="fu">geom_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="where-to-look-for-help" class="slide level2">
+<h2>Where to Look for Help?</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./images/sf_cheatsheet.png"></p>
+<figcaption>sf Cheatsheet 1</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./images/sf_cheatsheet2.png"></p>
+<figcaption>sf Cheatsheet 2</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>Resource</strong>: <a href="https://posit.co/wp-content/uploads/2022/10/sf.pdf">sf Cheatsheet</a></li>
+</ul>
+</section>
+<section id="questions" class="slide level2">
+<h2>Questions</h2>
+<ul>
+<li><strong>Any doubts or questions?</strong></li>
+<li><strong>Hands-on practice time!</strong></li>
+</ul>
+
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
-</div></div>
+</div>
+</section>
+    </div>
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
@@ -689,6 +922,24 @@
         // clear code selection
         e.clearSelection();
       });
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp("https:\/\/drarunmitra\.github\.io\/GIS4Epidemiology\/");
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
       function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
@@ -725,7 +976,11 @@
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {

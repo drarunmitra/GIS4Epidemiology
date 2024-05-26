@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>GIS4Epidemiology - Session Two</title>
+<title>GIS4Epidemiology - How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -99,16 +99,28 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-session-one">    
         <li>
-    <a class="dropdown-item" href="./session1a-foundational-concepts.html">
- <span class="dropdown-text">Session 1A</span></a>
+    <a class="dropdown-item" href="./session1-spatial-epi-public-health.html">
+ <span class="dropdown-text">GIS and Public Health</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./session1b-intro-sds.html">
- <span class="dropdown-text">Session 1B</span></a>
+    <a class="dropdown-item" href="./session1a-concepts-spatial-data-science.html">
+ <span class="dropdown-text">Introduction to Spatial Data Science</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./session1a-foundational-concepts-spatial-epi.html">
+ <span class="dropdown-text">Concepts in Spatial Epidemiology</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./session1a-foundational-concepts.html">
+ <span class="dropdown-text">Concepts in Spatial Epidemilogy</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./sf_intro_session_new.html">
+ <span class="dropdown-text">Spatial Data Science in R</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./session1c-investigate-outbreak.html">
- <span class="dropdown-text">Session 1C</span></a>
+ <span class="dropdown-text">Spatial Data Analysis</span></a>
   </li>  
     </ul>
   </li>
@@ -119,15 +131,15 @@ ul.task-list li input[type="checkbox"] {
     <ul class="dropdown-menu" aria-labelledby="nav-menu-session-two">    
         <li>
     <a class="dropdown-item" href="./session2a-spatial-data-vis.html">
- <span class="dropdown-text">Session 2A</span></a>
+ <span class="dropdown-text">Spatial Data Visualization</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./session2b-case-studies.html">
- <span class="dropdown-text">Session 2B</span></a>
+ <span class="dropdown-text">Case Studies</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./session2c-hands-on.html">
- <span class="dropdown-text">Session 2C</span></a>
+ <span class="dropdown-text">Exercises</span></a>
   </li>  
     </ul>
   </li>
@@ -147,14 +159,49 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#spatial-data-types" id="toc-spatial-data-types" class="nav-link" data-scroll-target="#spatial-data-types">Spatial Data Types</a></li>
+  <li><a href="#disease-mapping-techniques" id="toc-disease-mapping-techniques" class="nav-link" data-scroll-target="#disease-mapping-techniques">Disease Mapping Techniques</a>
+  <ul class="collapse">
+  <li><a href="#location-mapping" id="toc-location-mapping" class="nav-link" data-scroll-target="#location-mapping">Location Mapping</a></li>
+  <li><a href="#surface-mapping" id="toc-surface-mapping" class="nav-link" data-scroll-target="#surface-mapping">Surface Mapping</a></li>
+  </ul></li>
+  <li><a href="#advanced-mapping-techniques" id="toc-advanced-mapping-techniques" class="nav-link" data-scroll-target="#advanced-mapping-techniques">Advanced Mapping Techniques</a></li>
+  <li><a href="#overall-spatial-patterns" id="toc-overall-spatial-patterns" class="nav-link" data-scroll-target="#overall-spatial-patterns">Overall Spatial Patterns</a>
+  <ul class="collapse">
+  <li><a href="#clustering-methods" id="toc-clustering-methods" class="nav-link" data-scroll-target="#clustering-methods">Clustering Methods</a></li>
+  </ul></li>
+  <li><a href="#statistical-tests-for-clustering" id="toc-statistical-tests-for-clustering" class="nav-link" data-scroll-target="#statistical-tests-for-clustering">Statistical Tests for Clustering</a>
+  <ul class="collapse">
+  <li><a href="#point-data" id="toc-point-data" class="nav-link" data-scroll-target="#point-data">Point Data</a></li>
+  <li><a href="#aggregate-data" id="toc-aggregate-data" class="nav-link" data-scroll-target="#aggregate-data">Aggregate Data</a></li>
+  </ul></li>
+  <li><a href="#hot-spot-detection" id="toc-hot-spot-detection" class="nav-link" data-scroll-target="#hot-spot-detection">Hot Spot Detection</a>
+  <ul class="collapse">
+  <li><a href="#local-indicators-of-spatial-association-lisa" id="toc-local-indicators-of-spatial-association-lisa" class="nav-link" data-scroll-target="#local-indicators-of-spatial-association-lisa">Local Indicators of Spatial Association (LISA)</a></li>
+  <li><a href="#spatial-scan-statistics" id="toc-spatial-scan-statistics" class="nav-link" data-scroll-target="#spatial-scan-statistics">Spatial Scan Statistics</a></li>
+  </ul></li>
+  <li><a href="#identifying-risk-factors" id="toc-identifying-risk-factors" class="nav-link" data-scroll-target="#identifying-risk-factors">Identifying Risk Factors</a>
+  <ul class="collapse">
+  <li><a href="#neighbourhood-effect" id="toc-neighbourhood-effect" class="nav-link" data-scroll-target="#neighbourhood-effect">Neighbourhood Effect</a></li>
+  <li><a href="#spatial-heterogeneity" id="toc-spatial-heterogeneity" class="nav-link" data-scroll-target="#spatial-heterogeneity">Spatial Heterogeneity</a></li>
+  <li><a href="#spatial-regression-methods" id="toc-spatial-regression-methods" class="nav-link" data-scroll-target="#spatial-regression-methods">Spatial Regression Methods</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="slides-spatial-epi.html"><i class="bi bi-file-slides"></i>RevealJS</a></li><li><a href="session1-spatial-epi-public-health.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Session Two</h1>
+<h1 class="title">How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission</h1>
 </div>
 
 
@@ -171,8 +218,193 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li><strong>Infectious diseases</strong> can be transmitted:
+<ul>
+<li><strong>Directly</strong> (e.g., influenza)</li>
+<li><strong>Indirectly</strong> (e.g., through water, soil)</li>
+</ul></li>
+<li><strong>Spatial dimensions</strong> are crucial for understanding and managing diseases.</li>
+<li>Advancements in <strong>computing and statistical methods</strong> enhance disease visualization and analysis.</li>
+</ul>
+</div><div class="column">
+<p><img src="./images/image1.jpg" class="img-fluid" alt="Introduction to Spatial Epidemiology"> <em>Figure 1: Visualization of spatial dimensions in disease spread.</em></p>
+</div>
+</div>
+</section>
+<section id="spatial-data-types" class="level2">
+<h2 class="anchored" data-anchor-id="spatial-data-types">Spatial Data Types</h2>
+<ul>
+<li><strong>Point Data</strong>:
+<ul>
+<li>Raw data such as incidences, deaths, physical locations (e.g., hospitals)</li>
+</ul></li>
+<li><strong>Aggregate Data</strong>:
+<ul>
+<li>Summaries of individual points like incidence rates by area</li>
+</ul></li>
+</ul>
+<div class="notes">
+<ul>
+<li><strong>Point Data</strong> provides detailed and precise information, allowing for pinpointing specific outbreak locations.</li>
+<li><strong>Aggregate Data</strong> helps in understanding broader trends but can obscure local variations.</li>
+</ul>
+</div>
+</section>
+<section id="disease-mapping-techniques" class="level2">
+<h2 class="anchored" data-anchor-id="disease-mapping-techniques">Disease Mapping Techniques</h2>
+<section id="location-mapping" class="level3">
+<h3 class="anchored" data-anchor-id="location-mapping">Location Mapping</h3>
+<ul>
+<li>Historical examples:
+<ul>
+<li>Yellow fever in New York (1798)</li>
+<li>Cholera in London (1854)</li>
+</ul></li>
+<li><strong>Advantages</strong>: Quick observation of disease spread.</li>
+<li><strong>Limitations</strong>: Privacy issues, difficulty in reflecting population distributions.</li>
+</ul>
+</section>
+<section id="surface-mapping" class="level3">
+<h3 class="anchored" data-anchor-id="surface-mapping">Surface Mapping</h3>
+<ul>
+<li><strong>Choropleth Maps</strong>:
+<ul>
+<li>Example: Filariasis in India, Q fever in the Netherlands.</li>
+</ul></li>
+<li><strong>Advantages</strong>: Visualize incidence rates clearly.</li>
+<li><strong>Limitations</strong>: May hide demographic factors, sensitive to spatial scales.</li>
+</ul>
+<p><img src="./images/image2.jpg" class="img-fluid" alt="Choropleth Map Example"> <em>Figure 2: Example of a choropleth map showing disease incidence.</em></p>
+</section>
+</section>
+<section id="advanced-mapping-techniques" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-mapping-techniques">Advanced Mapping Techniques</h2>
+<div class="columns">
+<div class="column">
+<section id="bayesian-smoothing" class="level3">
+<h3 class="anchored" data-anchor-id="bayesian-smoothing">Bayesian Smoothing</h3>
+<ul>
+<li>Reduces bias in local risk estimation.</li>
+<li><strong>Example</strong>: Applied in studies of dengue, influenza, and tuberculosis.</li>
+</ul>
+</section>
+<section id="kernel-density-estimation-kde" class="level3">
+<h3 class="anchored" data-anchor-id="kernel-density-estimation-kde">Kernel Density Estimation (KDE)</h3>
+<ul>
+<li>Identifies dense points and visualizes as smooth surfaces.</li>
+<li><strong>Example</strong>: Dengue cases in Delhi.</li>
+</ul>
+</section>
+</div><div class="column">
+<p><img src="./images/image3.jpg" class="img-fluid" alt="Bayesian Smoothing"> <em>Figure 3: Illustration of Bayesian Smoothing applied to disease data.</em></p>
+<p><img src="./images/image4.jpg" class="img-fluid" alt="Kernel Density Estimation"> <em>Figure 4: KDE showing the density of dengue cases.</em></p>
+</div>
+</div>
+</section>
+<section id="overall-spatial-patterns" class="level2">
+<h2 class="anchored" data-anchor-id="overall-spatial-patterns">Overall Spatial Patterns</h2>
+<section id="clustering-methods" class="level3">
+<h3 class="anchored" data-anchor-id="clustering-methods">Clustering Methods</h3>
+<ul>
+<li><strong>Nearest Neighbour Ratio</strong>:
+<ul>
+<li>Assesses clustering degree (e.g., rabies in China).</li>
+</ul></li>
+<li><strong>Ripley’s K Function</strong>:
+<ul>
+<li>Measures spatial clustering over distance (e.g., leishmaniasis in Brazil).</li>
+</ul></li>
+</ul>
+<p><img src="./images/image5.jpg" class="img-fluid" alt="Clustering Methods"> <em>Figure 5: Visualization of clustering methods.</em></p>
+<div class="notes">
+<ul>
+<li>Clustering methods help identify hotspots and inform targeted interventions.</li>
+</ul>
+</div>
+</section>
+</section>
+<section id="statistical-tests-for-clustering" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-tests-for-clustering">Statistical Tests for Clustering</h2>
+<section id="point-data" class="level3">
+<h3 class="anchored" data-anchor-id="point-data">Point Data</h3>
+<ul>
+<li><strong>Nearest Neighbour Ratio</strong></li>
+<li><strong>Cuzick and Edwards’ test</strong></li>
+<li><strong>Ripley’s K function</strong></li>
+</ul>
+</section>
+<section id="aggregate-data" class="level3">
+<h3 class="anchored" data-anchor-id="aggregate-data">Aggregate Data</h3>
+<ul>
+<li><strong>Spatial autocorrelation statistics</strong> (e.g., Moran’s I)</li>
+</ul>
+<div class="notes">
+<ul>
+<li>These tests are crucial for confirming whether observed patterns are statistically significant.</li>
+</ul>
+</div>
+</section>
+</section>
+<section id="hot-spot-detection" class="level2">
+<h2 class="anchored" data-anchor-id="hot-spot-detection">Hot Spot Detection</h2>
+<section id="local-indicators-of-spatial-association-lisa" class="level3">
+<h3 class="anchored" data-anchor-id="local-indicators-of-spatial-association-lisa">Local Indicators of Spatial Association (LISA)</h3>
+<ul>
+<li>Identifies clusters of high or low values.</li>
+</ul>
+</section>
+<section id="spatial-scan-statistics" class="level3">
+<h3 class="anchored" data-anchor-id="spatial-scan-statistics">Spatial Scan Statistics</h3>
+<ul>
+<li>Detects clusters in space and time (e.g., leishmaniasis in Brazil).</li>
+</ul>
+<p><img src="./images/image6.jpg" class="img-fluid" alt="Hot Spot Detection"> <em>Figure 6: Example of hot spot detection using LISA and spatial scan statistics.</em></p>
+</section>
+</section>
+<section id="identifying-risk-factors" class="level2">
+<h2 class="anchored" data-anchor-id="identifying-risk-factors">Identifying Risk Factors</h2>
+<section id="neighbourhood-effect" class="level3">
+<h3 class="anchored" data-anchor-id="neighbourhood-effect">Neighbourhood Effect</h3>
+<ul>
+<li>Disease risk influenced by nearby cases.</li>
+</ul>
+</section>
+<section id="spatial-heterogeneity" class="level3">
+<h3 class="anchored" data-anchor-id="spatial-heterogeneity">Spatial Heterogeneity</h3>
+<ul>
+<li>Variation in disease risk across different areas.</li>
+</ul>
+</section>
+<section id="spatial-regression-methods" class="level3">
+<h3 class="anchored" data-anchor-id="spatial-regression-methods">Spatial Regression Methods</h3>
+<ul>
+<li>Adjust for neighbourhood effects and spatial heterogeneity.</li>
+</ul>
+<p><img src="./images/image7.jpg" class="img-fluid" alt="Risk Factors"> <em>Figure 7: Illustration of neighbourhood effect and spatial heterogeneity.</em></p>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<ul>
+<li><strong>Spatial epidemiology</strong> provides insights into the spread and control of infectious diseases.</li>
+<li><strong>Future Directions</strong>: Enhancing GPS methods, optimizing Bayesian estimations.</li>
+<li><strong>Key Impact</strong>: Improved disease surveillance, hypothesis generation, and strategic control measures.</li>
+</ul>
+<p><img src="./images/image8.jpg" class="img-fluid" alt="Conclusion"> <em>Figure 8: The impact of spatial epidemiology on disease control.</em></p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li>Lin, C.-H., &amp; Wen, T.-H. (2022). How spatial epidemiology helps understand infectious human disease transmission.</li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
