@@ -1,13 +1,12 @@
 ---
-title: "Introduction to Spatial Data Science"
+title: "Concepts in Spatial Data Science"
 
 format: 
   html: default
   revealjs: 
-    output-file: slides-index.html
+    output-file: slides-concepts-sds.html
   pdf: default
 ---
-
 
 ## Acknowledge
 

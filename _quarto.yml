@@ -21,10 +21,14 @@ website:
         menu:
           - text: GIS and Public Health
             href: session1-spatial-epi-public-health.qmd
+          - text: Introduction to Spatial Data Science
+            href: session1a-concepts-spatial-data-science.qmd
+          - text: Concepts in Spatial Epidemiology
+            href: session1a-foundational-concepts-spatial-epi.qmd
           - text: Concepts in Spatial Epidemilogy
             href: session1a-foundational-concepts.qmd
-          - text: Introduction to Spatial Data Science
-            href: session1b-intro-sds.qmd
+          - text: Spatial Data Science in R
+            href: sf_intro_session_new.qmd
           - text: Spatial Data Analysis
             href: session1c-investigate-outbreak.qmd
             

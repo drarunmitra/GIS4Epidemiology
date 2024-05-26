@@ -46,11 +46,11 @@ At the end of the day, participants will be able to:
 
 | Time          | Session       |  Topic                                                                                           | 
 |:-------------:|:-------------:|:-------------------------------------------------------------------------------------------------|
-| 10:00 - 10:50 | Session1a       | [Foundational Concepts in Spatial Epidemiology](session1a-foundational-concepts.qmd)  | 
+| 10:00 - 10:50 | Session1a       | [Concepts in Spatial Data Science](session1a-foundational-concepts.qmd)  | 
 |               | | _Bio-Break_                                                                                      | 
 | 11:00 - 11:50 | Session 1b | [Introduction to Spatial Data Science using R](session1b-intro-sds.qmd)               |
 |               | | _Bio-Break_                                                                                      | 
-| 12:00 - 12:50 | Session 1c | [Investigating an Outbreak: Applications of Spatial Epidemiology](session1c-investigate-outbreak.qmd) | 
+| 12:00 - 12:50 | Session 1c | [Applications of Spatial Data Science](session1c-investigate-outbreak.qmd) | 
 |               | | _Lunch_                                                                                          | 
 | 14:00 - 14:50 | Session 2a | [Spatial Data Visualization: Principles and Best Practices](session2a-spatial-data-vis.qmd) | 
 |               | | _Bio-Break_                                                                                      | 
