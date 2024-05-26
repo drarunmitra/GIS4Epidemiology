@@ -19,7 +19,7 @@ website:
         
       - text: Session One
         menu:
-          - text: Foundations of Spatial Epidemilogy
+          - text: Concepts in Spatial Epidemilogy
             href: session1a-foundational-concepts.qmd
           - text: Introduction to Spatial Data Science
             href: session1b-intro-sds.qmd

@@ -1,0 +1,147 @@
+---
+title: "How Spatial Epidemiology Helps Understand Infectious Human Disease Transmission"
+author: "Chia-Hsien Lin and Tzai-Hung Wen"
+date: 2022
+---
+
+# Introduction
+::: columns
+::: column
+- **Infectious diseases** can be transmitted:
+  - **Directly** (e.g., influenza)
+  - **Indirectly** (e.g., through water, soil)
+- **Spatial dimensions** are crucial for understanding and managing diseases.
+- Advancements in **computing and statistical methods** enhance disease visualization and analysis.
+:::
+::: column
+![Introduction to Spatial Epidemiology](/images/image1.jpg)
+*Figure 1: Visualization of spatial dimensions in disease spread.*
+:::
+:::
+
+---
+
+# Spatial Data Types
+- **Point Data**: 
+  - Raw data such as incidences, deaths, physical locations (e.g., hospitals)
+- **Aggregate Data**: 
+  - Summaries of individual points like incidence rates by area
+
+::: notes
+- **Point Data** provides detailed and precise information, allowing for pinpointing specific outbreak locations.
+- **Aggregate Data** helps in understanding broader trends but can obscure local variations.
+:::
+
+---
+
+# Disease Mapping Techniques
+## Location Mapping
+- Historical examples:
+  - Yellow fever in New York (1798)
+  - Cholera in London (1854)
+- **Advantages**: Quick observation of disease spread.
+- **Limitations**: Privacy issues, difficulty in reflecting population distributions.
+
+## Surface Mapping
+- **Choropleth Maps**:
+  - Example: Filariasis in India, Q fever in the Netherlands.
+- **Advantages**: Visualize incidence rates clearly.
+- **Limitations**: May hide demographic factors, sensitive to spatial scales.
+
+![Choropleth Map Example](/images/image2.jpg)
+*Figure 2: Example of a choropleth map showing disease incidence.*
+
+---
+
+# Advanced Mapping Techniques
+::: columns
+::: column
+## Bayesian Smoothing
+- Reduces bias in local risk estimation.
+- **Example**: Applied in studies of dengue, influenza, and tuberculosis.
+
+## Kernel Density Estimation (KDE)
+- Identifies dense points and visualizes as smooth surfaces.
+- **Example**: Dengue cases in Delhi.
+:::
+::: column
+![Bayesian Smoothing](/images/image3.jpg)
+*Figure 3: Illustration of Bayesian Smoothing applied to disease data.*
+
+![Kernel Density Estimation](/images/image4.jpg)
+*Figure 4: KDE showing the density of dengue cases.*
+:::
+:::
+
+---
+
+# Overall Spatial Patterns
+## Clustering Methods
+- **Nearest Neighbour Ratio**:
+  - Assesses clustering degree (e.g., rabies in China).
+- **Ripley’s K Function**:
+  - Measures spatial clustering over distance (e.g., leishmaniasis in Brazil).
+
+![Clustering Methods](/images/image5.jpg)
+*Figure 5: Visualization of clustering methods.*
+
+::: notes
+- Clustering methods help identify hotspots and inform targeted interventions.
+:::
+
+---
+
+# Statistical Tests for Clustering
+## Point Data
+- **Nearest Neighbour Ratio**
+- **Cuzick and Edwards’ test**
+- **Ripley’s K function**
+
+## Aggregate Data
+- **Spatial autocorrelation statistics** (e.g., Moran’s I)
+
+::: notes
+- These tests are crucial for confirming whether observed patterns are statistically significant.
+:::
+
+---
+
+# Hot Spot Detection
+## Local Indicators of Spatial Association (LISA)
+- Identifies clusters of high or low values.
+
+## Spatial Scan Statistics
+- Detects clusters in space and time (e.g., leishmaniasis in Brazil).
+
+![Hot Spot Detection](/images/image6.jpg)
+*Figure 6: Example of hot spot detection using LISA and spatial scan statistics.*
+
+---
+
+# Identifying Risk Factors
+## Neighbourhood Effect
+- Disease risk influenced by nearby cases.
+
+## Spatial Heterogeneity
+- Variation in disease risk across different areas.
+
+## Spatial Regression Methods
+- Adjust for neighbourhood effects and spatial heterogeneity.
+
+![Risk Factors](/images/image7.jpg)
+*Figure 7: Illustration of neighbourhood effect and spatial heterogeneity.*
+
+---
+
+# Conclusion
+- **Spatial epidemiology** provides insights into the spread and control of infectious diseases.
+- **Future Directions**: Enhancing GPS methods, optimizing Bayesian estimations.
+- **Key Impact**: Improved disease surveillance, hypothesis generation, and strategic control measures.
+
+![Conclusion](/images/image8.jpg)
+*Figure 8: The impact of spatial epidemiology on disease control.*
+
+---
+
+# References
+- Lin, C.-H., & Wen, T.-H. (2022). How spatial epidemiology helps understand infectious human disease transmission.
