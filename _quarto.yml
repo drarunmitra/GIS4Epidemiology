@@ -19,6 +19,8 @@ website:
         
       - text: Session One
         menu:
+          - text: GIS and Public Health
+            href: session1-spatial-epi-public-health.qmd
           - text: Concepts in Spatial Epidemilogy
             href: session1a-foundational-concepts.qmd
           - text: Introduction to Spatial Data Science
