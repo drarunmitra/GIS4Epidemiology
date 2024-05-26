@@ -19,20 +19,20 @@ website:
         
       - text: Session One
         menu:
-          - text: Session 1A
+          - text: Foundations of Spatial Epidemilogy
             href: session1a-foundational-concepts.qmd
-          - text: Session 1B
+          - text: Introduction to Spatial Data Science
             href: session1b-intro-sds.qmd
-          - text: Session 1C
+          - text: Spatial Data Analysis
             href: session1c-investigate-outbreak.qmd
             
       - text: Session Two
         menu:
-          - text: Session 2A
+          - text: Spatial Data Visualization
             href: session2a-spatial-data-vis.qmd
-          - text: Session 2B
+          - text: Case Studies
             href: session2b-case-studies.qmd
-          - text: Session 2C      
+          - text: Exercises    
             href: session2c-hands-on.qmd
             
       - text: About
